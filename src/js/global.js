@@ -18,7 +18,7 @@ $(document).ready(function () {
         $(".category__products >span").append("<div class='fbits-item-lista-spot fbits-item-lista-spot-empty'></div>")
     }
 
-    $('.short__description a').on('click', function (e) {
+    $('.desc__short a').on('click', function (e) {
         e.preventDefault();
         var id = $(".descricao__produto"),
             targetOffset = $(id).offset().top;
@@ -49,6 +49,11 @@ $(document).ready(function () {
     if (jQuery('.fbits-categoria').length) {
         $(".categoria__name-span").append(Fbits.Categoria.Nome);
     }
+
+    if (jQuery('.desc__short').length) {
+        $("#conteudo-0 .conteudoAbasProduto .paddingbox").clone().appendTo($('.desc__short'));
+    }
+    
 
 
     $('body').addClass('active__body');
