@@ -28,7 +28,7 @@ $(document).ready(function () {
         }, 500);
     });
     $(".newsletter-box input#Nome").attr("placeholder", "Seu nome aqui");
-    $(".newsletter-box input#Email").attr("placeholder", "Seu e-mail aqui");
+    $(".newsletter-box input#Email").attr("placeholder", "Digite seu e-mail");
 
     $(".category__btn-mobile").click(function () {
         $('body').addClass('filter__open');

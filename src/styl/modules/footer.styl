@@ -2,7 +2,7 @@
     &__informations
         background: #fff
     &__container
-        max-width: 1190px
+        max-width 1200px
         padding: 0 15px
         width: 100%
         margin: 0 auto
@@ -11,21 +11,33 @@
         justify-content: space-between
         flex-wrap: wrap
         padding: 35px 0
- 
-   
-
+        &.payments-column
+            border-top: 1px solid #cecece
+            border-bottom: 1px solid #cecece
+            padding 20px 0
+            .footer__column.footer__column--one
+                width: 100%
+                display: flex 
+                justify-content: center
+                align-items: center
+                h3
+                    margin 0
+                    padding-right 20px
+                    color: #000
+                    font-size: 12px
+                    margin-bottom: -10px;
     &__title
-        color: $cor04
+        color: #2a8aa0
         font-size: 14px
         font-weight: bold
         line-height: 16px
         text-transform: uppercase
         margin-bottom: 10px
     &__link
-        color: $cor02
+        color: #000
         font-size: 14px
-        font-weight: 500
-        line-height: 30px
+        font-weight: 600
+        line-height: 25px
         transition: all .3s
         &:hover
             text-decoration: underline
@@ -46,6 +58,14 @@
         line-height: 15px
         transition: all .3s
     &__item
+        color: #000
+        font-size: 14px
+        font-weight: 600
+        line-height: 25px
+        transition: all .3s
+        strong 
+            font-size: 16px
+            font-weight 800
         &--horary
             margin: 8px 0
     &__contact
@@ -98,8 +118,16 @@
             margin: 0 auto
     &__copyright
         padding 30px 0
+        min-height 52px
+        display: flex
+        align-items: center
+        justify-content: center
+        @media(max-width 991px)
+            padding 20px 15px  
         p
-            max-width: 1190px
+            color: #000
+            font-size: 12px
+            max-width: 420px
             margin: 0 auto
             strong
             span 
@@ -107,6 +135,14 @@
             strong
                 text-transform uppercase
                 margin-bottom 5px
+        .footer-container-copy
+            width 1200px
+            margin: 0 auto
+            position relative
+        .credits
+            position absolute
+            top: 38%
+            right: 0
         &-text
             font-size: 11px
             color: #434343
@@ -131,7 +167,7 @@
             @media(max-width : 475px)
                 padding-top: 30px
     &__column
-        flex: 1 1 24%;
+        flex: 1 1 auto;
 
     @media(max-width: 1290px)
         &__container
@@ -186,20 +222,5 @@ li.footer__item.footer__item--email
         background-repeat: no-repeat
 	
 
-
-.footer__copyright
-    background $cor02
-    min-height 52px
-    display: flex
-    align-items: center
-    justify-content: center
-
-    @media(max-width 991px)
-        padding 20px 15px  
-
-    p
-        margin 0
-        font-size 12px
-        color #fff
-        text-align center
+    
 

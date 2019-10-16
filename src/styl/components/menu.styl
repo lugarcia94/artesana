@@ -15,7 +15,7 @@
             z-index 9
             background: none
         &-container
-            max-width: 1190px
+            max-width 1200px
             width: 100%
             margin: 0 auto
             @media(max-width : 991px)
@@ -94,19 +94,19 @@
                 justify-content: center
                 align-items: center
                 a
-                    color: #fff !important
+                    color: $cor02 !important
                     width: 88px !important
                     height: 30px !important
-                    background-color: $cor01
                 &:hover
                     a
                         background-color: $cor01
             @media(max-width : 991px)
                 flex-wrap: wrap
             > a
-                color #333!important
-                padding 0!important
-                font-size: 14px
+                color #000 !important
+                padding 0 !important
+                font-size: 16px !important
+                font-weight: 800 !important
                 img 
                     display: none
             &:hover
@@ -450,7 +450,7 @@
             margin-top: 0px;
         &__topbar
             transition: .3s
-            margin-top: -35px;
+            margin-top: -50px;
     @media(max-width : 991px)
         .header__mainbar
             box-shadow: 0.307px 0.307px 4px 0 rgba(0,0,0,.11)
