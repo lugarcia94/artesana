@@ -127,7 +127,7 @@
 
     #galeria 
         max-width: 100%
-        margin-top 10px
+        margin-top 30px
         height auto
         .slick-prev
             background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAABRFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0NDQ2NjY3Nzc5OTk6Ojo9PT1BQUFCQkJDQ0NERERPT09TU1NUVFRWVlZYWFhZWVlaWlpdXV1kZGRnZ2doaGhra2tsbGxtbW12dnZ7e3t9fX2EhISFhYWGhoaRkZGSkpKWlpazs7O0tLS6urrBwcHHx8fKysrNzc3Pz8/T09PW1tbc3Nzg4ODi4uLk5OTl5eXn5+fw8PD5+fn6+vr8/Pz9/f3+/v7///+yDEB0AAAAM3RSTlMAAwQFBgcIFhclJicoQEFCQ0VGfH1+gYSFhoeIibi5z9DR0tPe3+Dm5+jp7/Dx8vP19vfuipfMAAABVUlEQVR4AY3T59PSQBgE8KUEAlKCgkLQiAgIEmNgkWLvvSgWxSIWESH//3eRYeTuCHnf3+eb5+b29oEgkjOtmkO7bp0wQvATL53jVtOMQxUtuJR1jscgSVS5q5KCIGvTTzstHOnQn5vBxhGb+9hJrGmnuV9Vwz/HGCSPFd1lEDcOoETFkBITCDcpu/b0/oiCVhgGZZff/Pj8mCIDRcpe/1zOXimXWRRdffHLm7+9RZGFOgVXxlNv9u4GJTVc4Fbv7rfF8v1tyi6Copvfl97kXo8ydCkYPP+6+P3hCSUOGhT1X37x/nx6cImCBk5RMno49ebjgfyuEhXPJh8fSXOKyFLRv3N9qOQcblHVo/JfMBnMPER/dKzkD+4htDPcr6JhLRmwFylsZFz662bxX7rtP8WAIFXhrrMJSGL5DmVuIQqVboqJnz+pw08oV7YaDp2aVT4awdZf/svHPvLAFBEAAAAASUVORK5CYII=') !important
@@ -258,7 +258,7 @@
     .product__price 
         position relative
         border: 1px solid #d7d7d7 
-        padding: 0px 30px
+        padding: 0px 10px
         display: flex
         flex-wrap: wrap
 
@@ -1283,7 +1283,8 @@ div#fbits-avaliar-produto
     .ui-slider-tabs-list
         width 100%!important
         display: flex
-        justify-content: space-between
+        justify-content: space-around
+        border-bottom 1px solid #d7d7d7
 
 .showcase__one
     .slick-prev, .slick-next 
@@ -1616,12 +1617,13 @@ li.atributos-container.atributos-cor
         line-height 20px
 
     a
-        position absolute
-        bottom 0
-        font-size 14px
-        color $cor02
-        text-transform lowercase
-        font-weight 500
+        position: absolute;
+        bottom: 0;
+        font-size: 0.88rem;
+        color: #ff7c5f;
+        text-transform: lowercase;
+        font-weight: 500;
+        right: 0;
 
 .product__variation 
     width: 100%

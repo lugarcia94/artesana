@@ -384,10 +384,10 @@
             &:before
                 content: ''
                 display block
-                width: 70px
+                width: 60px
                 height: 30px 
                 background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAaCAMAAADG6y/lAAABU1BMVEX/fV3/p5H/lXz/tqb/vrD/z8T/jXH/39j/hWf/5+L//f3/i2//7+v/lHv/kXf/08n/ln7/hmn/+/v/fl7/f1///fz/u6v/vq//pI//6+f/5d//mYH/4tz/4dr//Pv/i3D/uqv/187/q5f/yr3/7un/u6z/gGL/j3T/gGD/9/X/9PL/sZ7/g2X/+ff/t6b/wrX/sZ//g2b/iWz/uqr/mID/oYv/r5z/mYL/jHH/zMH/o43/oYz/39f/p5L/m4T/7+z/rZr/2dH/ln3/jXL/nof/xrn/jHD/4Nj/yb3/7uj/sqH/nIX/493/2M//7+r/oIr/0sj/9/b/tKP/v7H/vK3/2dD/hWj/gWH/kHb/zMD/y7//moP/uan/6OP/wbP/k3r/+vn/x7r/taT/rJj/im7/h2v/+fj/1Mv/nYf/7en/0Mb/iGv/qZP/pY//n4n/t6f////aPIskAAAAcXRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AClMwGUAAAFVSURBVHgBjdJVk+JgEIXhA4TAJktwXxwWFmHH3d3d3V36/19NggwJ+WB47t+uOlUNqisdgc19TSqN4BdaMbQM4mYGR5vAQgwGTFhkkaCr46CmmAzWg/9GmfRTAOSGa0EMVSF2sPlb9ryY6YZ7uhqMlU2KFNWc7Gyrg/ro5TsMeUEMHoTzjIDWgUdmUAZseUZAPAroNTJALh4YwRQcOEQLfxiBDyISJr0uAO8CI+BgBekJH8BblDoP0sCtQO0Cs6HixktV8xcCtQ1EzU4NdmAfl+/PAZbOAu23Ls0chF+ag1I8e98fYQYFKDht4BqEzJ3QBQPcJ+DgJHj2uG8SpCQQ8DnRwz2pg3NU/P1HG9CxEdmhcDaC6AjP804lSAOvvFpRCbaAGD/rB2mEAGMmC88kqaWA0TMrFgQiAmmtQLFLGq5TyHL7xAjouE9ctVOTK/+lGFgjxRdD00qXtODBLAAAAABJRU5ErkJggg==')
-                background-position center 
+                background-position left 
                 background-size 50px 30px
                 background-repeat no-repeat
                 margin-right 10px
@@ -596,28 +596,23 @@
     padding 0
     margin 0
     display flex!important
-    
-.addthis_inline_share_toolbox 
-    margin-top: 75px
 
-    &:before
-        content: 'Compartilhe nas redes sociais'
-        color: #333
-        font-weight: 600
-        font-size: 15px
-
-    #atstbx
-        margin-top 5px
-
-    @media(max-width: 767px)
-        width 100%
-        text-align: center
-        margin-top 20px
+.share__product
+    margin-top 20px
+    display: flex
+    align-items: center
+    width: 100%
+    text-transform: uppercase
+    color: #999999
+    font-size: 15px
 
 #description-product 
     position: absolute
     margin-top: -100px
 
+li.fbits-produto-imagensMinicarrossel-item 
+    width: auto!important
+    margin 0!important
 
 div#divGrupoProduto ul:nth-child(3) 
     display: none
