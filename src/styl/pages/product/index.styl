@@ -1,5 +1,5 @@
 #bodyProduto , #bodyListaCompra
-
+    padding-top 20px
     .content.produto
         margin-top: 140px
         .fbits-breadcrumb
@@ -15,9 +15,9 @@
                             font-weight 400
                             &:before
                                 content: 'Home'
-                                font-size: 10px
+                                font-size: 12px
                     span[itemprop]
-                        font-size: 10px
+                        font-size: 12px
                         color: #979797
                         font-weight: 800
                         line-height: 16px
@@ -38,6 +38,8 @@
                     &:last-child
                         span[itemprop]
                             font-weight: bold
+                            color $cor02
+                            font-size 12px
 
     #avaliacao-Produto
         max-height: 180px
@@ -72,6 +74,7 @@
 
     footer
         margin-top 30px
+        border-top: 1px solid #cecece
 
     li.todas-categorias
         left: 0!important
@@ -125,7 +128,7 @@
 
     #galeria 
         max-width: 100%
-        margin-top 10px
+        margin-top 30px
         height auto
         .slick-prev
             background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAABRFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0NDQ2NjY3Nzc5OTk6Ojo9PT1BQUFCQkJDQ0NERERPT09TU1NUVFRWVlZYWFhZWVlaWlpdXV1kZGRnZ2doaGhra2tsbGxtbW12dnZ7e3t9fX2EhISFhYWGhoaRkZGSkpKWlpazs7O0tLS6urrBwcHHx8fKysrNzc3Pz8/T09PW1tbc3Nzg4ODi4uLk5OTl5eXn5+fw8PD5+fn6+vr8/Pz9/f3+/v7///+yDEB0AAAAM3RSTlMAAwQFBgcIFhclJicoQEFCQ0VGfH1+gYSFhoeIibi5z9DR0tPe3+Dm5+jp7/Dx8vP19vfuipfMAAABVUlEQVR4AY3T59PSQBgE8KUEAlKCgkLQiAgIEmNgkWLvvSgWxSIWESH//3eRYeTuCHnf3+eb5+b29oEgkjOtmkO7bp0wQvATL53jVtOMQxUtuJR1jscgSVS5q5KCIGvTTzstHOnQn5vBxhGb+9hJrGmnuV9Vwz/HGCSPFd1lEDcOoETFkBITCDcpu/b0/oiCVhgGZZff/Pj8mCIDRcpe/1zOXimXWRRdffHLm7+9RZGFOgVXxlNv9u4GJTVc4Fbv7rfF8v1tyi6Copvfl97kXo8ydCkYPP+6+P3hCSUOGhT1X37x/nx6cImCBk5RMno49ebjgfyuEhXPJh8fSXOKyFLRv3N9qOQcblHVo/JfMBnMPER/dKzkD+4htDPcr6JhLRmwFylsZFz662bxX7rtP8WAIFXhrrMJSGL5DmVuIQqVboqJnz+pw08oV7YaDp2aVT4awdZf/svHPvLAFBEAAAAASUVORK5CYII=') !important
@@ -172,14 +175,15 @@
             opacity 1
 
         a  
-            width 100%
+            width 100px
+            height 100px
             height auto 
             display: flex!important
             align-items: center
-            max-width 105px
+            max-width 100px
             margin: 0 auto!important
-            opacity 0.6
-            margin-bottom 15px!important
+            opacity 0.6 
+            border: 1px solid #cecece
 
             @media(max-width: 991px)
                 max-width: 100%
@@ -255,9 +259,8 @@
         
     .product__price 
         position relative
-        border: 1px solid #E7E7E7
-        background-color #f3f3f3
-        padding: 45px
+        border: 1px solid #d7d7d7 
+        padding: 0px 10px
         display: flex
         flex-wrap: wrap
 
@@ -272,6 +275,7 @@
 
     .product__details-variation 
         margin: 30px 0
+        
         
         .prodVariante
             float none
@@ -322,9 +326,7 @@
         max-width: 100% 
         width: 100%
         flex-wrap: wrap
-        justify-content: space-between
-        @media(max-width: 1290px)
-            justify-content: center
+        justify-content: space-between 
     .optionAtributos
         >ul
             width: 100%
@@ -333,10 +335,7 @@
                 >ul
                     width: 100%
 
-                    li  
-                        margin: 30px 0
-                        background-color: #f2f2f2
-                        padding: 25px
+                    li    
 
                         @media(max-width: 767px)
                             width 100%
@@ -365,17 +364,15 @@
                 cursor: pointer
                 transition: all 300ms ease-in-out  
                 width: 45px!important
-                height 45px!important 
+                height 35px!important 
                 margin: 0
-                padding: 0
-                border: none!important
+                padding: 0 
                 background: #ffffff
                 color: #333333 
                 margin-right 9px
                 margin-bottom 10px
-                
-                &[data-atributoselecionado="False"]
-                    border: none !important
+                border 1px solid #d7d7d7  !important
+                 
 
                 &[data-atributoselecionado="True"]
                     
@@ -385,7 +382,7 @@
 
                 &:not(.selected)
                     &:hover
-                        background: #373535
+                        background: $cor01
                         color: #fff
                         font-weight: 700
 
@@ -791,6 +788,15 @@
     margin: 0
     line-height: 1.5rem 
     flex: 0 1 240px
+    display: flex
+    align-items: center
+
+    @media(max-width: 767px)
+        justify-content center
+        width 100%
+        flex 0 0 100%
+        margin 10px 0
+
     #divFormaPagamento
         display: flex
         align-items: center
@@ -811,17 +817,17 @@
 
     .precoPor
     .precoPor.com-precoDe 
-        color: #ee3a53
-        font-size: 30px
+        color: $cor01
+        font-size: 25px
         line-height: 32px
         font-weight: 700
-        margin: 5px 0
+        margin:   0
  
     .precoDe
-        color: #a6a6a6
-        font-size: 14px
-        font-weight: 500
-        line-height: 15px
+        color: #999999
+        font-size: 19px
+        font-weight: 400
+        line-height: 21px
         text-decoration: line-through
         width: 100%
         text-align: left
@@ -1284,7 +1290,8 @@ div#fbits-avaliar-produto
     .ui-slider-tabs-list
         width 100%!important
         display: flex
-        justify-content: space-between
+        justify-content: space-around
+        border-bottom 1px solid #d7d7d7
 
 .showcase__one
     .slick-prev, .slick-next 
@@ -1465,12 +1472,14 @@ div#fbits-avaliar-produto
                 font-size: 15px
                 font-style: italic 
 
+.detalhe-produto-itens
+    float none!important
+
 .product__top
     display flex
     justify-content: space-between
     align-items: center
-    flex-wrap: wrap
-    margin-bottom 50px
+    flex-wrap: wrap 
     width: 100%
 .product__details-header
     flex: 1 1 100%
@@ -1509,6 +1518,8 @@ div#fbits-avaliar-produto
     justify-content: flex-end
     display: flex
     flex-wrap wrap
+    margin-top 10px
+
 .center
     max-width none
 
@@ -1594,8 +1605,42 @@ li.atributos-container.atributos-cor
         justify-content: space-between
         .produto-comprar 
             flex: 0 1 265px
+
+            @media(max-width 991px)
+                flex 0 0 100%
+
         .fbits-forma-pagamento
             flex: 0 1 240px
 
 .fbits-indicacao-amigo, .fbits-avaliar-produto
     float none!important
+
+.desc__short
+    position: relative
+    max-height: 100px
+    overflow: hidden
+    margin-bottom 30px
+    .paddingbox
+        font-family 'Lato'
+        font-size 14px
+        color #666666
+        font-weight 400
+        line-height 20px
+
+    a
+        position: absolute;
+        bottom: 0;
+        font-size: 0.88rem;
+        color: #ff7c5f;
+        text-transform: lowercase;
+        font-weight: 500;
+        right: 0;
+
+        @media(max-width: 991px)
+            display none
+
+.product__variation 
+    width: 100%
+    background #f6f6f6
+    border 1px solid #d7d7d7  
+    padding 10px

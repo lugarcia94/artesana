@@ -10,7 +10,7 @@
             align-items: center
             justify-content: space-between
             flex-wrap: wrap
-            padding: 35px 0 10px 0
+            padding: 0
     @media(max-width 1290px)
         max-width: 991px
         margin 0 auto
@@ -50,11 +50,13 @@
                 &:last-child
                     span[itemprop]
                         font-weight: bold
+                        color: $cor02
     &__inforesult
         font-size: 13px
         color: #333333
         font-weight: 500
         line-height: 16px
+        
 
     &__ordenation
         display flex
@@ -67,9 +69,12 @@
             font-size: 14px;
             line-height: 30px;
             color: #333333;
-            font-weight: 500;
+            font-weight: 700;
             text-align: right;
             white-space: nowrap
+
+            @media(max-width: 767px)
+                display none
         select 
             height 30px
             background-color: #ffffff
@@ -81,6 +86,10 @@
             padding-left: 9px
             background-image url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZjk1YTZjIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUxLjg0N3B4IiBoZWlnaHQ9IjQ1MS44NDdweCIgdmlld0JveD0iMCAwIDQ1MS44NDcgNDUxLjg0NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDUxLjg0NyA0NTEuODQ3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTIyNS45MjMsMzU0LjcwNmMtOC4wOTgsMC0xNi4xOTUtMy4wOTItMjIuMzY5LTkuMjYzTDkuMjcsMTUxLjE1N2MtMTIuMzU5LTEyLjM1OS0xMi4zNTktMzIuMzk3LDAtNDQuNzUxYzEyLjM1NC0xMi4zNTQsMzIuMzg4LTEyLjM1NCw0NC43NDgsMGwxNzEuOTA1LDE3MS45MTVsMTcxLjkwNi0xNzEuOTA5YzEyLjM1OS0xMi4zNTQsMzIuMzkxLTEyLjM1NCw0NC43NDQsMGMxMi4zNjUsMTIuMzU0LDEyLjM2NSwzMi4zOTIsMCw0NC43NTFMMjQ4LjI5MiwzNDUuNDQ5QzI0Mi4xMTUsMzUxLjYyMSwyMzQuMDE4LDM1NC43MDYsMjI1LjkyMywzNTQuNzA2eiIvPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=') !important
             background-size 10px
+            width 250px
+
+            @media(max-width: 767px)
+                width auto
     &__pagination
         .fbits-paginacao > ul
             a
@@ -115,6 +124,8 @@
         max-width: 290px
         width: 100%
         margin-right 20px
+        @media(min-width 992px)
+            margin-top: 10px
         &-close
             display: none
 
@@ -124,42 +135,28 @@
         .fbits-filtro-pai
             margin: 0
             border none
-            padding: 20px 0
-            border: 1px solid #d9d9d9
-            margin-bottom 30px
-            padding-left 20px
+            padding: 0
             // &:first-child
             //     padding 0
         .fbits-filtro-titulo-pai
             font-size: 15px;
-            color: $cor02
+            color: $cor01
             line-height: 20px
             text-align: left
             text-transform: uppercase
             font-weight: 800
             display flex
             align-items: center
-            justify-content: flex-start
-            margin-bottom: 30px
+            justify-content: flex-start 
             padding-bottom 20px
             position relative
-            &:before
-                content: ''
-                height 1px
-                background #cecece
-                width: calc(100%+20px)
-                position: absolute
-                bottom: 0px
-                left -20px
+            border-bottom: 1px solid #cecece
+ 
 
             &:after
-                content: ''
-                height 40px
-                background $cor01
-                width: 5px
+                 
                 position: absolute
-                top: -12px
-                left -20px
+                right 0px 
 
         .fbits-filtro-quantidade
             color  $cor01
@@ -186,14 +183,12 @@
                     appearance none
                     width: 15px
                     height 15px
-                    border: 1px solid #D9D9D9
-                    border-radius: 50%
+                    border: 1px solid #cecece 
                     margin 0
                     margin-right 5px
                     
                     &:checked
-                        background: #ee3a53
-                        box-shadow inset 0 0 0 4px white
+                        background: $cor02
                     
                 label 
                     margin 0
@@ -296,7 +291,7 @@
     &__btn-mobile
         display: none
     &__content 
-        margin-top: 120px;
+        margin-top: 100px
 
 //mobile
 @media(max-width : 991px)
@@ -321,7 +316,7 @@
             background: rgba(0,0,0, 0.75)
             &-wrapper
                 max-width: 250px
-                padding: 0 15px
+                padding: 15px
                 width: 100%
                 background: #fff
                 height: 100vh
@@ -333,8 +328,8 @@
                 position absolute
                 top: 0px
                 left 255px
-                color #ee3a53
-                font-size 18px
+                color $cor02
+                font-size 25px
                 line-height normal
                 display: flex;
                 align-items: center;
@@ -359,14 +354,21 @@
             width: 100%
             height 40px
             margin: 0 auto
-            background: #333333
+            background: $cor01
             font-size: 14px
             color: #FFFFFF
             text-transform: uppercase
             font-weight: bold
             transition: all .3s
-            margin-top: 15px
+            margin: 15px auto
             cursor: pointer
+            position: fixed
+            bottom: 0
+            z-index: 99
+            width: 100%
+            max-width: 100%
+            left: 0
+            margin: 0
             &:hover
                 background: #ffffff
                 color: #333333
@@ -395,6 +397,12 @@
         .fbits-item-lista-spot
             flex: 1 1 100%
 
+.header__cat-order 
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-bottom: 1px solid #cecece
+    padding-bottom: 20px
 
 .categoria__name
     display block
@@ -403,15 +411,17 @@
     line-height: 27px
     text-align: left 
     text-transform: uppercase
-    font-weight: 800
-    margin-bottom: 20px
-    padding-bottom 0px
-    border-bottom 1px solid #ccc
+    font-weight: 800 s
+    padding-bottom 0px 
     position relative
 
 
     &-span
         display block
+        font-weight: 800
     
     .fbits-item-lista-spot.fbits-item-lista-spot-empty
         display none
+
+li.fbits-filtro-pai.category__filter-options-item
+    margin-bottom 30px!important

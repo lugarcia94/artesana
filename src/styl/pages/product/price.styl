@@ -185,6 +185,7 @@
     max-width: 100%
     width: 100%
     height: 50px 
+    margin-top: 10px
     
 
     a
@@ -195,39 +196,40 @@
         background-color: $cor01
         background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48Zz48cGF0aCBkPSJNNDQ3Ljk4OCwxMzkuNjk2Yy0wLjE1Ni0yLjA4NC0xLjktMy42OTYtMy45ODgtMy42OTZoLTcydi0yMEMzNzIsNTIuMDM2LDMxOS45NiwwLDI1NiwwUzE0MCw1Mi4wMzYsMTQwLDExNnYyMEg2OGMtMi4wODgsMC0zLjgzMiwxLjYxMi0zLjk4OCwzLjY5NmwtMjgsMzY4Yy0wLjA4NCwxLjEwOCwwLjI5NiwyLjIwNCwxLjA1NiwzLjAyQzM3LjgyNCw1MTEuNTM2LDM4Ljg4OCw1MTIsNDAsNTEyaDQzMmMxLjExMiwwLDIuMTc2LTAuNDY0LDIuOTMyLTEuMjhjMC43NTYtMC44MTYsMS4xNC0xLjkxMiwxLjA1Ni0zLjAyTDQ0Ny45ODgsMTM5LjY5NnogTTE3MiwxMTZjMC00Ni4zMTYsMzcuNjgtODQsODQtODRzODQsMzcuNjg0LDg0LDg0djIwSDE3MlYxMTZ6IE0xNTYsMjQ4Yy0yMi4wNiwwLTQwLTE3Ljk0NC00MC00MGMwLTE1Ljk2NCw4LTMwLjM0OCwyNC0zNi42NlYyMDhjMCw4LjgyNCw3LjE4LDE2LDE2LDE2czE2LTcuMTc2LDE2LTE2di0zNi42MzZjMTYsNi4zMTIsMjQsMjAuODA0LDI0LDM2LjYzNkMxOTYsMjMwLjA1NiwxNzguMDYsMjQ4LDE1NiwyNDh6IE0zNTYsMjQ4Yy0yMi4wNiwwLTQwLTE3Ljk0NC00MC00MGMwLTE1Ljk2NCw4LTMwLjM0OCwyNC0zNi42NlYyMDhjMCw4LjgyNCw3LjE4LDE2LDE2LDE2czE2LTcuMTc2LDE2LTE2di0zNi42MzZjMTYsNi4zMTIsMjQsMjAuODA0LDI0LDM2LjYzNkMzOTYsMjMwLjA1NiwzNzguMDYsMjQ4LDM1NiwyNDh6Ii8+PC9nPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=')
         background-repeat: no-repeat
-        background-position 73% 10px
+        background-position 95%  
         background-size: 20px 25px
         cursor: pointer
         color: #fff
         font-weight: 800
         border-radius: 2px
         align-items: center
-        justify-content: flex-start
+        justify-content: center
         text-transform: uppercase
         display: flex
         height: 50px
         width: 100%
         text-decoration: none
         transition: $transition
-        padding-left 65px
+        padding-left 0 
         &:hover
-            color: #fff
-            text-decoration: none
-            background: darken(#4AC87A, 20%)    
+            opacity .7
+
         @media(max-width: 991px)
             padding-left: 10px
 
 .product__payment
     display flex
     justify-content: flex-end
-    width 100%
-    margin-top: -50px
-    .addListaDesejos 
-        width: 220px
-        margin-right 75px
+    width: auto
+    position: absolute
+    left: 50%
+
     @media(max-width: 991px)
-        margin-top 10px
-        justify-content: flex-start
+        margin 10px 0
+        position relative
+        justify-content:center
+        width 100%
+        left 0
 
 #cepCarrinho 
     .summary
@@ -354,6 +356,13 @@
 
 .product__frete
     width: 100%
+    background: #f6f6f6
+    border: 1px solid #d7d7d7
+    padding: 10px
+
+    br
+        display none
+
     .details.carrinhoInputBlock
         display flex
         justify-content: space-between
@@ -366,20 +375,28 @@
             justify-content: flex-start
             align-items: center
             flex: 0 1 190px
+            margin: 0
+
+            @media(max-width: 991px)
+                justify-content center
+                width 100%
+                flex 0 0 100%
+
             &:after
-                content: 'Calcule o Frete e Prazo de Entrega:'
+                content: 'Calcule o Frete e Prazo de Entrega'
                 font-size: 14px
                 text-decoration: none !important
                 font-weight bold
-                color: $cor02
-                width: 150px;
+                color: #666666
+                width: 150px
+                text-transform uppercase
             &:before
                 content: ''
                 display block
-                width: 70px
+                width: 60px
                 height: 30px 
-                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAaCAMAAADG6y/lAAABblBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzPWQcWlAAAAeXRSTlMAAQMEBgcKCwwPEBUfICIjJCUoLjA0NTg6PD0/QEFLTE5PVVdYWl1gZWZnamtvcXh6foCBhIaHiImLjo+QkpSYm5ygoqWorK2wsrO1uLm6vL/Aw8TGyMnLzs/Q0dLT1NjZ2tzf4OHi4+Tm6Orr7e7v8PP0+Pn6/P3+jq3CEAAAAV9JREFUeNqN0vk3AmEUxvE7Q0SI7GTJln2ZVMgWIvtO1sjQWCJRef57M8mcpnmn0+fHe873nnPf85LKfA+29BgxNcBI0DDwOhlCBQI7MQRxbJe12UxFB1mJgI2yJi5ld4aBKjmYnUXxp5Ed7FXL6trdn/jppIwO37xihLKGFytyAvXo2mc8lhADl8KZhRFQN9BDLD7gxsIIOBF+mrnUu4JclOsDWkWIvmCghRF4IJFjXm8ZwCbPCATEiYHfB9ZLqfjACqzxVChwBjMW/h95fJKngoGk3qnDDno35P0HgL2oQPtbudGLj7OB/MDsjbzttjIDPxSCNjCdQpZ26IIVYQ4ICXdITQuqMMIBYMvzjhfhMDeoR8Z3JdVA55qjPihipCrdFkUxpgRW4FXMlVCCfiAqPrhIqwm4ckeQqtJMR4Cd2TieeNJbgmKKNEwnkCW7iIEbOpeOeilPmetW2momxS/O5cAJ6CiVsgAAAABJRU5ErkJggg==')
-                background-position center 
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAaCAMAAADG6y/lAAABU1BMVEX/fV3/p5H/lXz/tqb/vrD/z8T/jXH/39j/hWf/5+L//f3/i2//7+v/lHv/kXf/08n/ln7/hmn/+/v/fl7/f1///fz/u6v/vq//pI//6+f/5d//mYH/4tz/4dr//Pv/i3D/uqv/187/q5f/yr3/7un/u6z/gGL/j3T/gGD/9/X/9PL/sZ7/g2X/+ff/t6b/wrX/sZ//g2b/iWz/uqr/mID/oYv/r5z/mYL/jHH/zMH/o43/oYz/39f/p5L/m4T/7+z/rZr/2dH/ln3/jXL/nof/xrn/jHD/4Nj/yb3/7uj/sqH/nIX/493/2M//7+r/oIr/0sj/9/b/tKP/v7H/vK3/2dD/hWj/gWH/kHb/zMD/y7//moP/uan/6OP/wbP/k3r/+vn/x7r/taT/rJj/im7/h2v/+fj/1Mv/nYf/7en/0Mb/iGv/qZP/pY//n4n/t6f////aPIskAAAAcXRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AClMwGUAAAFVSURBVHgBjdJVk+JgEIXhA4TAJktwXxwWFmHH3d3d3V36/19NggwJ+WB47t+uOlUNqisdgc19TSqN4BdaMbQM4mYGR5vAQgwGTFhkkaCr46CmmAzWg/9GmfRTAOSGa0EMVSF2sPlb9ryY6YZ7uhqMlU2KFNWc7Gyrg/ro5TsMeUEMHoTzjIDWgUdmUAZseUZAPAroNTJALh4YwRQcOEQLfxiBDyISJr0uAO8CI+BgBekJH8BblDoP0sCtQO0Cs6HixktV8xcCtQ1EzU4NdmAfl+/PAZbOAu23Ls0chF+ag1I8e98fYQYFKDht4BqEzJ3QBQPcJ+DgJHj2uG8SpCQQ8DnRwz2pg3NU/P1HG9CxEdmhcDaC6AjP804lSAOvvFpRCbaAGD/rB2mEAGMmC88kqaWA0TMrFgQiAmmtQLFLGq5TyHL7xAjouE9ctVOTK/+lGFgjxRdD00qXtODBLAAAAABJRU5ErkJggg==')
+                background-position left 
                 background-size 50px 30px
                 background-repeat no-repeat
                 margin-right 10px
@@ -387,26 +404,38 @@
             display: none
         input#txtCalculaFreteProduto
             height 40px
-            flex: 0 1 240px
+            flex: 0 1 210px
             border-color: #f3f3f3
+            border 1px solid #d7d7d7
             font-size: 14px
             font-weight: 500
-            color: $cor02
+            color: #333333
             padding-left: 0
+            @media(max-width 991px)
+                flex: 0 0 100%
             &::placeholder
-                color: $cor02
+                color: #333333
                 padding-left: 0
         input#btnCalculaFreteProduto
-            background-color: #f3f3f3
-            color: $cor02
+            background-color: #d7d7d7
+            color: #333
             font-weight: bold
-            height 40px
-            width: 115px
-            letter-spacing: 0px
+            height: 2.5rem
+            width: 7.19rem
+            letter-spacing: 0
+
+            @media(max-width 991px)
+                flex: 0 0 100%
+
         a#naoSeiCep, a.helpCep
             font-size: 9px
             color: #9a9a9a
             text-decoration: underline
+            margin-right: 30px
+
+            @media(max-width 991px)
+                margin 10px auto
+
     @media(max-width 991px)
         width: 100%
 
@@ -418,29 +447,29 @@
 .link-add-lista-produto
     border-radius: 3px
     text-transform uppercase
-    font-size: 12px
+    font-size: 16px
     line-height: 12px
     font-weight: 600 
-    width: 100%
-    color: $cor02
+    width: 100% 
     text-align: center
     align-items: center
     display: flex
     cursor: pointer
     justify-content: center
     margin-top 10px
+    color #999999
     transition: all 150ms ease-in-out
 
     &:before
         @extend $ico-before
-        background-image url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEwcHgiIGhlaWdodD0iNTEwcHgiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTAgNTEwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGcgaWQ9ImZhdm9yaXRlIj48cGF0aCBkPSJNMjU1LDQ4OS42bC0zNS43LTM1LjdDODYuNywzMzYuNiwwLDI1Ny41NSwwLDE2MC42NUMwLDgxLjYsNjEuMiwyMC40LDE0MC4yNSwyMC40YzQzLjM1LDAsODYuNywyMC40LDExNC43NSw1My41NUMyODMuMDUsNDAuOCwzMjYuNCwyMC40LDM2OS43NSwyMC40QzQ0OC44LDIwLjQsNTEwLDgxLjYsNTEwLDE2MC42NWMwLDk2LjktODYuNywxNzUuOTUtMjE5LjMsMjkzLjI1TDI1NSw0ODkuNnoiLz48L2c+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg==')
-        height: 12px
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAQCAMAAADDGrRQAAAAJ1BMVEX/fV3/hmn/3dX/7+r/saD/1Mv/9vT/oIr/jnP/l3//w7X/qZT///+8KJ+3AAAADXRSTlP///////////////8APegihgAAAHJJREFUeAFNzUGORCEIANFCafV31/3PO5/FEGujeYSA1fR+0JXAb84fkMuydXhyE8HOh7PKkq86Iob6Jcs4WlikB2WSXiVTZN/2oLgZdoNdNiNGU8RU+qT9o6f2BhZSOINhm58XX/p4WWHRbYVNba7lf38ZvgobxRB6LQAAAABJRU5ErkJggg==')
+        height: 20px
         width: 20px
         padding: 0
         margin-right 3px
+        background-size auto
 
-    &:hover
-        border: 1px solid $cor01
+ 
 
 .product__alertaprazo
     background: $cor02 
@@ -578,7 +607,7 @@
         margin-bottom 25px
  
 .product__frete 
-    margin-top: 20px
+    margin-top: 10px
 
 .carrinhoInputBlock
     float: none
@@ -586,28 +615,24 @@
     padding 0
     margin 0
     display flex!important
-    
-.addthis_inline_share_toolbox 
-    margin-top: 75px
 
-    &:before
-        content: 'Compartilhe nas redes sociais'
-        color: #333
-        font-weight: 600
-        font-size: 15px
+.share__product
+    margin-top 20px
+    display: flex
+    align-items: center
+    width: 100%
+    text-transform: uppercase
+    color: #999999
+    font-size: 15px
 
-    #atstbx
-        margin-top 5px
-
-    @media(max-width: 767px)
-        width 100%
-        text-align: center
-        margin-top 20px
+    @media(max-width: 320px)
+        font-size 13px
 
 #description-product 
     position: absolute
     margin-top: -100px
 
+ 
 
 div#divGrupoProduto ul:nth-child(3) 
     display: none
