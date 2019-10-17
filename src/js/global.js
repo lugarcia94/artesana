@@ -121,8 +121,8 @@ $(document).ready(function () {
 
     //slick ruler
     $('.ruler__list').slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         arrow: false,
         dots: false,
         responsive: [{
