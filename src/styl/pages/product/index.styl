@@ -74,6 +74,7 @@
 
     footer
         margin-top 30px
+        border-top: 1px solid #cecece
 
     li.todas-categorias
         left: 0!important
@@ -174,14 +175,15 @@
             opacity 1
 
         a  
-            width 100%
+            width 100px
+            height 100px
             height auto 
             display: flex!important
             align-items: center
-            max-width 105px
+            max-width 100px
             margin: 0 auto!important
-            opacity 0.6
-            margin-bottom 15px!important
+            opacity 0.6 
+            border: 1px solid #cecece
 
             @media(max-width: 991px)
                 max-width: 100%
@@ -324,9 +326,7 @@
         max-width: 100% 
         width: 100%
         flex-wrap: wrap
-        justify-content: space-between
-        @media(max-width: 1290px)
-            justify-content: center
+        justify-content: space-between 
     .optionAtributos
         >ul
             width: 100%
@@ -790,6 +790,13 @@
     flex: 0 1 240px
     display: flex
     align-items: center
+
+    @media(max-width: 767px)
+        justify-content center
+        width 100%
+        flex 0 0 100%
+        margin 10px 0
+
     #divFormaPagamento
         display: flex
         align-items: center
@@ -1598,6 +1605,10 @@ li.atributos-container.atributos-cor
         justify-content: space-between
         .produto-comprar 
             flex: 0 1 265px
+
+            @media(max-width 991px)
+                flex 0 0 100%
+
         .fbits-forma-pagamento
             flex: 0 1 240px
 
@@ -1624,6 +1635,9 @@ li.atributos-container.atributos-cor
         text-transform: lowercase;
         font-weight: 500;
         right: 0;
+
+        @media(max-width: 991px)
+            display none
 
 .product__variation 
     width: 100%

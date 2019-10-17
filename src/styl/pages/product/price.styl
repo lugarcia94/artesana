@@ -225,8 +225,11 @@
     left: 50%
 
     @media(max-width: 991px)
-        margin-top 10px
-        justify-content: flex-start
+        margin 10px 0
+        position relative
+        justify-content:center
+        width 100%
+        left 0
 
 #cepCarrinho 
     .summary
@@ -373,6 +376,12 @@
             align-items: center
             flex: 0 1 190px
             margin: 0
+
+            @media(max-width: 991px)
+                justify-content center
+                width 100%
+                flex 0 0 100%
+
             &:after
                 content: 'Calcule o Frete e Prazo de Entrega'
                 font-size: 14px
@@ -402,6 +411,8 @@
             font-weight: 500
             color: #333333
             padding-left: 0
+            @media(max-width 991px)
+                flex: 0 0 100%
             &::placeholder
                 color: #333333
                 padding-left: 0
@@ -412,11 +423,19 @@
             height: 2.5rem
             width: 7.19rem
             letter-spacing: 0
+
+            @media(max-width 991px)
+                flex: 0 0 100%
+
         a#naoSeiCep, a.helpCep
             font-size: 9px
             color: #9a9a9a
             text-decoration: underline
             margin-right: 30px
+
+            @media(max-width 991px)
+                margin 10px auto
+
     @media(max-width 991px)
         width: 100%
 
@@ -606,13 +625,14 @@
     color: #999999
     font-size: 15px
 
+    @media(max-width: 320px)
+        font-size 13px
+
 #description-product 
     position: absolute
     margin-top: -100px
 
-li.fbits-produto-imagensMinicarrossel-item 
-    width: auto!important
-    margin 0!important
+ 
 
 div#divGrupoProduto ul:nth-child(3) 
     display: none

@@ -1,6 +1,6 @@
 .product__details
     width: 100%
-    max-width: 715px
+    max-width: 50%
     display: flex
     justify-content: space-between
     flex-wrap wrap
@@ -290,6 +290,9 @@
     height auto!important
     padding 30px 0
 
+section.descricao__produto 
+    margin-top: 50px
+
 .paddingbox
     font-family 'Lato'!important
 
@@ -336,6 +339,21 @@
             text-transform: none
             text-transform: uppercase
 
+            @media(max-width 425px)
+                font-size 15px
+                margin 0 5px
+
+.ui-slider-left-arrow.edge div
+    opacity 1
+
+    .ui-slider-left-arrow div:before, .ui-slider-right-arrow div:before 
+        content: "\eb36";
+        font-family: 'icofont';
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #007e97;
+        font-size: 20px;
 
 .conteudoAbasProduto 
     font-size: 16px
@@ -356,6 +374,9 @@
             color #333333
             font-size: 20px
             font-weight 700
+
+            @media(max-width 425px)
+                font-size 15px
   
 .ui-slider-tab-content
     padding: 0!important
