@@ -51,9 +51,12 @@
                     .footer__contact
                         margin: 0
     .menuMain
+        display none
         width: 100%;
         border-bottom: 1px solid #cecece
         background-color: #fff;
+        @media(max-width: 991px)
+            display block
         .menu-header-mobile
         .menu-footer-mobile
             display none
@@ -86,13 +89,20 @@
             border: none
             box-shadow none
             align-items: center
-            height: 55px;
+            height: 109px;
+            &:hover
+                ul.filho
+                    display flex
             &.ultimo
                 width: 88px !important
-                height: 30px !important
+                height: 109px !important
                 display: flex
                 justify-content: center
                 align-items: center
+                @media(max-width: 991px)
+                    height: initial !important
+                    a
+                        justify-content: flex-start !important
                 a
                     color: $cor02 !important
                     width: 88px !important
@@ -102,6 +112,7 @@
                         background-color: $cor01
             @media(max-width : 991px)
                 flex-wrap: wrap
+                height: initial
             > a
                 color #000 !important
                 padding 0 !important
@@ -116,40 +127,48 @@
             
 
             > ul.filho
-                padding 50px !important
-                top: 55px !important
+                display none
+                top: 109px !important
                 border-bottom: 1px solid #e3e0d8 !important
-
+                left: -310%;
+                position: absolute
+                justify-content: space-between
+                min-height 300px
+                @media(max-width: 1290px)
+                    top: 109px !important
+                    padding: 30px
+                    max-width 991px
+                    left: -245%;
                 > li 
+                    flex: 0 1 50%
                     margin 0 1%
-
+                    &:hover
+                        color: initial
                     > a
                         color $cor02 !important
                         font-weight: 700 !important
                         text-transform uppercase !important
-                        &:hover
-                            color: $cor01 !important
-                            text-decoration none !important
-                            border-bottom none !important
+                        text-align center
+                        border-bottom: 1px solid $cor02
                     ul
                         position relative!important
-                        display: block!important
+                        display: flex !important
+                        justify-content: space-between
+                        flex-wrap: wrap
                         transform: none!important
                         padding 0!important
                         min-width 0!important
                         top 0px!important
-                        
-
+                        width: initial !important
+                        border: none
                         li
-                            width 100%!important
-
+                            flex 0 1 50%
                             a   
                                 font-size 13px
-                                color: $cor02
-                                text-transform none!important
-
+                                color: #020202
+                                text-transform none !important
                                 &:hover
-                                    text-decoration underline
+                                    text-decoration: underline
             
                 
             @media(max-width : 991px)
@@ -162,13 +181,13 @@
                     &:after
                         content: ''
                         display block
-                        width: 30px
-                        height 3px
-                        left 50%
-                        transform: translateX(-50%)
-                        position absolute
-                        bottom 0px
-                        background-color: $cor01
+                        border-top: 10px solid transparent;
+                        border-bottom: 10px solid transparent;
+                        border-right: 10px solid $cor01;
+                        transform: rotate(90deg)
+                        position absolute                     
+                        left: calc(50% - 8px);
+                        bottom -5px
                     .menu__dropdow
                         max-height: 325px
                         opacity: 1
@@ -367,11 +386,11 @@
                 @media(max-width : 991px)
                     justify-content: flex-start
                     height 35px!important
-                    font-size: 12px
+                    font-size: 14px !important
                     text-align: left
                     padding-right: 45px
                     display: flex!important
-                    color $cor02!important
+                    color $cor01!important
 
             .todas-categorias
                 height 55px !important
@@ -490,11 +509,6 @@
             background-color:rgba(0,0,0,0.75)
             z-index -1
 
-
-.menu li.item.raiz li.menu-geral-filho:hover>a, .menu li.item.raiz ul.filho li:hover a
-    color $cor02
-    text-decoration: none!important
-
 button.btn-close-menu-mobile    
     display none
     @media(max-width: 991px)
@@ -512,14 +526,12 @@ button.btn-close-menu-mobile
                             font-size: 11px !important
                             padding-left: 0 !important
                             width: 100% !important
-                    a
-                        font-size: 11px !important
+
 
 @media(max-width: 991px)
     .moving--down .header .menuMain
         margin-top initial
     .header
-    
         .menuMain
             position fixed
             top 0px
@@ -536,7 +548,7 @@ button.btn-close-menu-mobile
                 left: 0
                 overflow-y: auto;
             .container
-                .menu
+                ul.menu
                     height initial
                     li.todas-categorias
                         span.todas-categorias
@@ -545,6 +557,7 @@ button.btn-close-menu-mobile
                                 justify-content: flex-start !important
                     li.item.ultimo
                         justify-content: flex-start
+                        height initial
                         a
                             text-align: center
                             justify-content: center 
@@ -569,8 +582,9 @@ button.btn-close-menu-mobile
                     align-items: center
                     flex-wrap: wrap
                     span 
-                        color: $cor02
+                        color: #020202
                         font-weight bold
+                        margin-right 5px
                     li
                         width 40px
                         height 40px
@@ -584,6 +598,7 @@ button.btn-close-menu-mobile
                             font-weight bold
             button.btn-close-menu-mobile    
                 position absolute
+                font-size: 0 !important
                 top: 15px
                 right 15px
                 background-color transparent
@@ -591,5 +606,7 @@ button.btn-close-menu-mobile
                 font-weight bold
                 width: 25px
                 height 25px
-                border: 1px solid #cecece
+                background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDA3ZTk3IiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0Ny45NzEgNDcuOTcxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0Ny45NzEgNDcuOTcxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTI4LjIyOCwyMy45ODZMNDcuMDkyLDUuMTIyYzEuMTcyLTEuMTcxLDEuMTcyLTMuMDcxLDAtNC4yNDJjLTEuMTcyLTEuMTcyLTMuMDctMS4xNzItNC4yNDIsMEwyMy45ODYsMTkuNzQ0TDUuMTIxLDAuODhjLTEuMTcyLTEuMTcyLTMuMDctMS4xNzItNC4yNDIsMGMtMS4xNzIsMS4xNzEtMS4xNzIsMy4wNzEsMCw0LjI0MmwxOC44NjUsMTguODY0TDAuODc5LDQyLjg1Yy0xLjE3MiwxLjE3MS0xLjE3MiwzLjA3MSwwLDQuMjQyQzEuNDY1LDQ3LjY3NywyLjIzMyw0Ny45NywzLDQ3Ljk3czEuNTM1LTAuMjkzLDIuMTIxLTAuODc5bDE4Ljg2NS0xOC44NjRMNDIuODUsNDcuMDkxYzAuNTg2LDAuNTg2LDEuMzU0LDAuODc5LDIuMTIxLDAuODc5czEuNTM1LTAuMjkzLDIuMTIxLTAuODc5YzEuMTcyLTEuMTcxLDEuMTcyLTMuMDcxLDAtNC4yNDJMMjguMjI4LDIzLjk4NnoiLz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PC9zdmc+')
+                background-repeat: no-repeat
+                background-size: 25px
                 border-radius 50px  

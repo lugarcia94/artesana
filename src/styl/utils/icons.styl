@@ -130,20 +130,34 @@ $ico-before
 
 @svg-load cart url("../assets/svg/cart.svg")
 .header__mainbar-cart
+    &.mobile
+        display none
+        @media(max-width: 991px)
+            display block
+            background-color: #007e97;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
     .carrinho.carrinhoHead
         a
             &:before
                 content: ''
                 display: flex
-                width:  18px
-                height 22px
+                width:  20px
+                height 23px
                 background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAMAAAC3SZ14AAABDlBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////uKVtWAAAAWXRSTlMAAQMEBQkKDA0XGBkbHh8gJCYwMTU5Ojs+P0BJSlBTVmFjZWprbXFzdHp+g4WKi4+QkZWZm6OlpqmqsbO1t7m6u7y/wMPFxsvS09Xa293l6evv8fX29/r9/rYqhC4AAAC/SURBVHjaXcjrVkFBGIDhNyq7g4aRSilEETpROqgGxRbpgNR3/zfSXsufmZ6fD3O7vZ9JYxXLzux+P/c29Kx6eVyAlfGxVd85As0b5paUUlJSAWOUihJoi6MAjC61lrIOdDpa98+AaZYNKQMh3w/RbEBE9jiXLyAlkqLegrgkSPYrgGeMR2UA27KGJf8Jmd8wlgNZpPCBbUvWqb5ii8kmV0/YliXNwzWOySH+KY7hCe9FHN0aM3PhGN1x+/zP0R8ZOySOpLVLHgAAAABJRU5ErkJggg==')
                 background-size: 35px
                 background-position: center
                 background-repeat: no-repeat
-                background-size: 18px;
+                background-size: 20px 21px;
                 position relative
                 z-index 1
+        // @media(max-width: 1290px)
+        //     a
+        //         &:before
+        //             width: 36px
 
 @svg-load facebook url("../assets/svg/facebook.svg")
 @svg-load youtube url("../assets/svg/youtube.svg")
@@ -212,8 +226,10 @@ $ico-before
     fill: $cor01
 
 .header__mainbar-mobile
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAQlBMVEUAAADrO07tOlPtOVTvO1TrPVLuOlPuOlPuOlPuOlPuOlPuO1LuOlTuOlPvO1PtO1PuOlPuOVPuOlPuOlLuOlLuOlOXv7dZAAAAFXRSTlMAGlNVUhnd2/38o6FYqKpW9fTzp6SOH6DMAAAAWElEQVR42tXTMRaAIAwD0CigBUVA7f2v6g3SoS78tR368hr4LWsgYsKm1A412AuiVEbJdH5gCme9iNrQlRo/RD2UutHokU/AFF5RQor5cv6o7eKkaFTP7QPWTigvanuUqAAAAABJRU5ErkJggg==')
-    background-size: auto
+    min-width: 40px !important
+    min-height: 42px
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDA3ZTk3IiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTI0cHgiIGhlaWdodD0iMTI0cHgiIHZpZXdCb3g9IjAgMCAxMjQgMTI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjQgMTI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTExMiw2SDEyQzUuNCw2LDAsMTEuNCwwLDE4czUuNCwxMiwxMiwxMmgxMDBjNi42LDAsMTItNS40LDEyLTEyUzExOC42LDYsMTEyLDZ6Ii8+PHBhdGggZD0iTTExMiw1MEgxMkM1LjQsNTAsMCw1NS40LDAsNjJjMCw2LjYsNS40LDEyLDEyLDEyaDEwMGM2LjYsMCwxMi01LjQsMTItMTJDMTI0LDU1LjQsMTE4LjYsNTAsMTEyLDUweiIvPjxwYXRoIGQ9Ik0xMTIsOTRIMTJjLTYuNiwwLTEyLDUuNC0xMiwxMnM1LjQsMTIsMTIsMTJoMTAwYzYuNiwwLDEyLTUuNCwxMi0xMlMxMTguNiw5NCwxMTIsOTR6Ii8+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg==')
+    background-size: 40px
     background-position: center
     background-repeat: no-repeat
 @svg-load arrowmenumobile url("../assets/svg/arrow-menu-mobile.svg")

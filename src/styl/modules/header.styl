@@ -8,6 +8,8 @@
     flex-wrap: wrap
     &__navigation
         flex: 0 1 425px
+        @media(max-width: 991px)
+            display: none
     .topbar
         &__right
             width: 300px;
@@ -29,6 +31,18 @@
                     &:last-child
                         border-left: 1px dashed #89c0d6
                         border-right: 1px dashed #89c0d6
+            .topbar-user
+                position: relative
+            .topbar-whishlist
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAMAAAC+oj0CAAAAyVBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////gQXHWAAAAQnRSTlMAAQMEBgoPEBQdJic0PD1CRUdLTFdYXGNlZmdsdXZ3fn+DkpianZ6irq+wsrTAxMbHyM7W2Nrc4unt8PP29/j6/f5SlGXYAAAAzElEQVR4AWXIV3KCUBiA0Q8Uey+KmthLgiWxFy+i//4XlRkGHMI9jwcw7e1DjgMLrMFRHlvbBEitX06vPXUP2ezBnbZ7zmudAmN1LQHkTvv9KQdQuq4M6lLFl1cqj68qdZwNgWKRwMbh0kfTvyBNNE3B7aDpuOxmaGY7hrc0MenbkMx9QszkngFbGvzTEBtg4ZWJKHsLAJJLVeGtopZJgvda4ba8cCExl098HzJP8GaMZGyCOZaRQVT3+WVZ388uMTX186tqaArnc4HQH8BLFcwRgUyVAAAAAElFTkSuQmCC')
+                background-repeat: no-repeat
+                background-size: auto
+                background-position: center
+                a
+                    display: block
+                    width: 100%
+                    height 100%
+
         &__info
             display: flex 
             justify-content: space-between
@@ -123,6 +137,15 @@
                     a
                         font-size 13px
                         color: #fff
+            @media(max-width: 991px)
+                height initial
+                padding-bottom 20px
+                border-bottom: 1px solid #cecece
+                .links__topbar
+                    li
+                        a
+                            font-size: 16px
+                            color: #020202 !important
 
         &-list
             padding-left: 220px
@@ -296,12 +319,15 @@
             position relative
 
             @media(max-width : 991px)
-                width auto
+                width 100%
+                max-width initial !important
 
         &-links
             display: flex 
             align-items: center
-
+            justify-content: center;
+            width: 100%;
+            height: 100%;
             img
                 max-width: 40px;
             span
@@ -377,10 +403,11 @@
                     top: 50px
                     left: 50%
                     transform: translateX(-50%)
-                    padding: 20px 15px
+                    padding: 15px
                     background-color: #ffffff
                     border: 1px solid #d2d2d2
                     transition: 1s
+                    z-index: 9999
                     h3
                         font-size: 15px
                         text-transform: uppercase
@@ -397,6 +424,16 @@
                             background-color: #fff
                     a
                         text-transform uppercase
+                        padding 10px
+                        color: #ffffff
+                        font-weight: 800
+                        text-align center
+                        min-width: 160px;
+                        margin: 10px 0;
+                        &:first-child
+                            background-color: $cor01
+                        &:last-child
+                            background-color: $cor02
                         &:after
                             display: none
                     &:before
@@ -455,11 +492,6 @@
         &__mainbar-container
             max-width: 991px
         &__mainbar 
-            &-links
-                min-width: 113px
-                margin-right 20px
-                img 
-                    display none
             &-cart
                 span 
                     display none
@@ -494,7 +526,24 @@
                 height: 30px
             &-serach
                 padding-top 10px
-
+            &-cart
+                &.mobile
+                    margin-right 10px
+                    .carrinho.carrinhoHead a
+                        justify-content: center;
+                        span.minicart-qtde-itens
+                            color: #333 !important;
+                            float: none;
+                            position: absolute;
+                            background-color: #fff;
+                            bottom: -0.5rem;
+                            right: -10px;
+                            left: initial !important;
+                            border: 2px solid #007e97;
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
         
 
     

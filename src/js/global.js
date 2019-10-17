@@ -203,7 +203,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.btNews').attr('value', 'QUERO ME CADASTRAR');
+    $('.btNews').attr('value', 'CADASTRAR');
 
     $(".botoesSpot .spotTelevendas").each(function () {
         $(this).closest(".spot").addClass("spot__request");

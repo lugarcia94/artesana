@@ -14,10 +14,11 @@
         &.payments-column
             border-top: 1px solid #cecece
             border-bottom: 1px solid #cecece
-            padding 20px 0
+            padding 20px 0  
             .footer__column.footer__column--one
                 width: 100%
                 display: flex 
+                flex-wrap: wrap
                 justify-content: center
                 align-items: center
                 h3
@@ -139,10 +140,16 @@
             width 1200px
             margin: 0 auto
             position relative
+            p
+                text-align center
         .credits
             position absolute
             top: 38%
             right: 0
+            text-align center
+            @media(max-width: 991px)
+                position relative
+                margin-top 20px
         &-text
             font-size: 11px
             color: #434343
@@ -168,7 +175,26 @@
                 padding-top: 30px
     &__column
         flex: 1 1 auto;
-
+        .social-icons
+            display flex 
+            li 
+                margin-right 10px
+                a
+                    display: block
+                    min-width: 35px 
+                    min-height: 35px
+            .instagram  
+                a
+                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAMAAABgOjJdAAAAe1BMVEUAAAAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyCRPKntAAAAKHRSTlMAAQIHChITFCgxMjQ1QkpPV15pdXh9j5Wen6WxxcbHytri6PDx+vz+l3UACgAAARJJREFUeAGNlOFSgzAQhJdSpFqKgrQoFSwN1e/9n9BMmo4oceL3o5PL7Oz0cnvIoqTsRn4zdmUiz2YgzLCRYze5cjJz/N3OOdji0hapfpIW7cVKrEsywHmrENszDIlK6xASPDb32lqXUh20WvIMlwe10GmEQjNWcrwBexUwCkjlyZreYPomk16AJ6WAYJKnNlwxte5e3/eJNDmF0ZUDWD7c70FXzFxRA6cqV16dgHqpyGxxXLvj+ggmWyga62AFjrV1aRaKHirdqKBfKOw5143c384VK9uFvrEdraIe8f8R7yX+Hv9+0+VcPpdzCc/WM8Ef+fCkQDhjHpcxn9MwLqc+62Fc1uP7Et+5+N7Gdz/+/fgC0XtIme8w/+8AAAAASUVORK5CYII=')
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size 35px
+            .facebook  
+                a
+                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAApVBMVEUAAAAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyC1WltZAAAANnRSTlMAAwkLDBIwMTM7QGhqdYiKkJKdoKWmrq+4ubrCw9Hd4OXm5+jp6uvs7e7v8PHy8/X3+Pn6+/5NAXr2AAAA/0lEQVR4Ad3U7U7CMBjF8aOiU/D9HaZYLJQ+tYXB8Nz/pVk3TQyuY/Gj/8+/ZM2S5wDIcrGpJM8QG3i25QdA5lk6lcqV9BlylqMeUvVGJXMIXZpE5CiwVNiqn8/FxvwDAEX72+zdBX71mDI3BVfyqtRsmTTHnuF8H8CRTZp7lldAu5lQDqFtrEgaoQN0+5sDw6cpVOyy3RhU/c1cB2uXtVlYa91Lg7llrDZVw0azCiJj4FlE1nw/azShj++e+Hayy0wpB83fmhszBcbGmAUn2P3mYZO5mGm9qs1S69lp93/4f011p2lT3Wl170lT3/v2bmy4UWrN4sdudNmfLjv2AbRvZi2+QU7wAAAAAElFTkSuQmCC')
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size 35px
     @media(max-width: 1290px)
         &__container
             max-width: 991px
