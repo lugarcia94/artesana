@@ -111,3 +111,97 @@ body.minhaConta.fbits-minhaConta div.content.minhaconta .sideBar .filtroTitle.ti
     margin: 0 auto
     padding 0 15px
     overflow initial
+
+  
+.topbar__right
+  .topbar-cart
+    cursor: pointer
+    &:hover
+      section.submenu-carrinho
+        display: block !important
+section.submenu-carrinho
+  border-top-color: transparent !important 
+  position: absolute;
+  right: -40px;
+  top: 36px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #cecece;
+  z-index: 99999;
+  &:before
+    content: '';
+    width: 0.94rem;
+    height: 0.94rem;
+    position: absolute;
+    transform rotate(45deg)
+    top: -0.5rem;
+    right: 40px;
+    background-color: #d2d2d2;
+  &:after
+      content: '';
+      width: 100%;
+      height: 0.94rem;
+      position: absolute;
+      top: -1px;
+      left: 0;
+      background-color: #fff;
+  .lista-itens-carrinho
+    margin-top 0px
+    display: flex
+    flex-wrap: wrap
+    li
+      background-color transparent
+      border-left: none !important
+      border-right: none !important
+      height: initial !important
+      margin-top: 5px !important
+      padding-bottom: 5px
+      border-bottom: 1px solid #cecece
+      &:last-child
+      &:first-child
+        background-color transparent
+        border-left: none !important
+        border-right: none !important
+      &:last-child
+        border-bottom: none
+    figure 
+      display flex
+      > a
+        width: 50px
+        border: 1px solid #cecece;
+        padding: 5px;
+      figcaption
+        display flex
+        flex-wrap: wrap
+        align-items: center
+        width: 145px;
+        padding 0
+        header 
+          h1
+            a
+              font-size: 12px
+              text-align: left 
+              color: #020202
+              &:before
+                display none !important
+          small 
+            display: none
+        aside
+          display none
+  > div
+    a.finalizar
+      diaplay: flex
+      justify-content: center
+      align-items: center
+      margin-top: 20px
+      &:before
+        display none !important
+      button.buy.button.success
+        text-align: center
+        margin: 0 auto 
+        width: 100%
+        max-width: 100%
+        background-color $cor01
+        
+    h1.price
+      display none
