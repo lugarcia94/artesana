@@ -162,48 +162,7 @@
                 color: $cor02
                 font-weight: 700
                 line-height: 17px
-        .spotImg
-            img 
-                width: auto!important
-                max-width: 100%
-                margin: 0 auto
-                display: block
-        .spotTitle
-            font-size: 14px
-            color: $cor02
-            font-weight: 600
-            line-height: 16px
-            text-align: center
-            text-transform: none
-            height 50px
-            overflow hidden
-        .botoesSpot
-            display: block
-            opacity 0
-            visibility: hidden
-            height 40px
-            overflow hidden
-            @media(max-width : 991px)
-                display: none
-            &--spotIndisponivel
-                height: auto
-                padding: 10px 0
-                font-size: 0.75rem
-                color: #434343
-                font-weight: bold
-                line-height: 0.94rem
-                text-align: center
-                text-transform: uppercase
-                input 
-                    color: #434343
-                    &#btnEnviarAviseMe
-                        border: 1px solid #ddd
-                        background: #ddd
-                        height 2.5rem
-                        cursor: pointer
-                        transition: all .3s
-                        &:hover
-                            background: #ffffff
+  
             
 
     .slick-next
@@ -352,3 +311,17 @@ section.showcase.instagram
     display: flex
     align-items: center
     margin-bottom: 20px!important
+
+
+.spot
+    .price__none 
+        position: absolute
+        bottom: 0
+        text-align: center
+        left: 5px
+
+
+.logged
+    .price__none
+        display: none!important
+

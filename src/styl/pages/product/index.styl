@@ -1601,6 +1601,14 @@ li.atributos-container.atributos-cor
     width 100%
     max-width: 100%
     flex 1 1 100% !important
+    position relative
+
+    .price__none
+        position: absolute
+        top: 50%
+        z-index: 99
+        transform: translateY(-50%)
+
     [id*=produto-variante]
         display flex
         justify-content: space-between
@@ -1668,3 +1676,9 @@ li.atributos-container.atributos-cor
 .botoesSpot
     .wishLink    
         display none!important
+
+.upload__img 
+    font-size: 14px
+    text-transform: uppercase
+    color: #007e97
+    font-weight: bold

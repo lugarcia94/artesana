@@ -51,7 +51,7 @@ $(document).ready(function () {
     }
 
     if (jQuery('.desc__short').length) {
-        $("#conteudo-0 .conteudoAbasProduto .paddingbox").clone().appendTo($('.desc__short'));
+        $("#conteudo-0 .conteudoAbasProduto .paddingbox p").clone().appendTo($('.desc__short'));
     }
     
 
@@ -259,6 +259,10 @@ $(document).ajaxComplete(function (event, xhr, settings) {
         $(".popUp-News input#btnCadastrarNews").attr("value", "QUERO GANHAR!")
     }
     $("input.inputSearch[type='text']").attr("placeholder", "O que você procura?");
+
+    if ($('.conteudoAbasProduto .price__none').length) { 
+        $('.conteudoAbasProduto .price__none').appendTo($('.product__details-topo'));
+    }
 });
 
 if ($(window).width() < 992) {
@@ -285,4 +289,14 @@ if ($(window).width() < 992) {
         autoplaySpeed: 4000,
         arrows: false
     });
+}
+
+var userLogged = Fbits.Usuario.Email;
+
+if($(userLogged)!= null) {
+    $('body').addClass('logged');
+}
+
+if($('.fbits-login').length) {
+    $('<a href="mailto:name@email.com" class="upload__img">Faça upload de imagem via e-mail.</a>').appendTo($('.cadastroUsuario.cadastroFisica'));
 }
