@@ -4,45 +4,40 @@
     left: 0
     width: 100%
     z-index: 99
-    display: flex
-    flex-wrap: wrap
-    &__navigation
-        flex: 0 1 425px
-        @media(max-width: 991px)
-            display: none
-    .topbar
+    background-color: #fff
+    height: initial
+    .topBar
+        background-color: #ffffff
+        border: 1px solid #cecece
+        height: 30px
+        > div
+            display initial
+            padding: initial
+        &__container
+            display: flex !important
+            justify-content: space-between
+            max-width: 1245px
+            margin: 0 auto
+            height: 30px
+        &__left
+            display flex
+            align-items: center
+            justify-content: space-between
+            flex: 0 1 390px
+            span,
+            a
+                font-size: 11px
+                color: #818181
+            strong  
+                color: #818181
         &__right
-            width: 300px;
-            heght: 100%
-            ul
-                display flex
-                justify-content: space-between
-                li
-                    background-color: #56a5c4
-                    height 50px
-                    flex: 1 1 33%
-                    display: flex 
-                    justify-content: center
-                    align-items: center
-                    margin 0
-                    &:first-child
-                        border-right: 1px dashed #89c0d6
-                        border-left: 1px dashed #89c0d6
-                    &:last-child
-                        border-left: 1px dashed #89c0d6
-                        border-right: 1px dashed #89c0d6
-            .topbar-user
-                position: relative
-            .topbar-whishlist
-                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAMAAAC+oj0CAAAAyVBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////gQXHWAAAAQnRSTlMAAQMEBgoPEBQdJic0PD1CRUdLTFdYXGNlZmdsdXZ3fn+DkpianZ6irq+wsrTAxMbHyM7W2Nrc4unt8PP29/j6/f5SlGXYAAAAzElEQVR4AWXIV3KCUBiA0Q8Uey+KmthLgiWxFy+i//4XlRkGHMI9jwcw7e1DjgMLrMFRHlvbBEitX06vPXUP2ezBnbZ7zmudAmN1LQHkTvv9KQdQuq4M6lLFl1cqj68qdZwNgWKRwMbh0kfTvyBNNE3B7aDpuOxmaGY7hrc0MenbkMx9QszkngFbGvzTEBtg4ZWJKHsLAJJLVeGtopZJgvda4ba8cCExl098HzJP8GaMZGyCOZaRQVT3+WVZ388uMTX186tqaArnc4HQH8BLFcwRgUyVAAAAAElFTkSuQmCC')
-                background-repeat: no-repeat
-                background-size: auto
-                background-position: center
-                a
-                    display: block
-                    width: 100%
-                    height 100%
-
+            display flex
+            justify-content: space-between
+            align-items: center
+            flex: 0 1 450px
+            a
+                font-size: 11px
+                color: #818181
         &__info
             display: flex 
             justify-content: space-between
@@ -53,15 +48,19 @@
                 font-size: 13px
                 display flex
                 align-items: center
-        &__whats
+        &__whatsapp
+            display: flex
+            align-items: center
+            color: #57ca6f !important
             &:before
                 content: ''
+                display: block;
                 margin-right 5px
-                width: 12px
-                height: 12px
-                background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMTIzLjgzMjAzMSA0NzUuNDY0ODQ0YzM5LjU1ODU5NCAyMy44MDQ2ODcgODQuNzg5MDYzIDM2LjM1MTU2MiAxMzEuMjYxNzE5IDM2LjM1MTU2MiAxNDAuODI0MjE5IDAgMjU2LjkwNjI1LTExNC45MTQwNjIgMjU2LjkwNjI1LTI1NS45MTAxNTYgMC0xNDAuODMyMDMxLTExNS45MTc5NjktMjU1LjkwNjI1LTI1Ni45MDYyNS0yNTUuOTA2MjUtMTQwLjU1ODU5NCAwLTI1NC45MTAxNTYgMTE0LjgwMDc4MS0yNTQuOTEwMTU2IDI1NS45MDYyNSAwIDQ3LjA5Mzc1IDEyLjU1MDc4MSA5Mi42Njc5NjkgMzYuMzUxNTYyIDEzMi4yNTc4MTJsLTM2LjUzNTE1NiAxMjMuODM1OTM4em0tOTMuNjU2MjUtMjE5LjU1ODU5NGMwLTEyNC41NzAzMTIgMTAwLjg5ODQzOC0yMjUuOTE3OTY5IDIyNC45MTc5NjktMjI1LjkxNzk2OSAxMjUuMTIxMDk0IDAgMjI2LjkxNzk2OSAxMDEuMzQ3NjU3IDIyNi45MTc5NjkgMjI1LjkxNzk2OSAwIDEyNC41NzQyMTktMTAxLjc5Njg3NSAyMjUuOTE3OTY5LTIyNi45MTc5NjkgMjI1LjkxNzk2OS00My4wNTQ2ODggMC04NC44OTQ1MzEtMTIuMTk1MzEzLTEyMC45ODQzNzUtMzUuMjczNDM4bC01Ljc2NTYyNS0zLjY4MzU5My04My45ODgyODEgMjQuNzgxMjUgMjQuNzc3MzQzLTgzLjk5MjE4OC0zLjY4MzU5My01Ljc2MTcxOWMtMjMuMDc4MTI1LTM2LjA5NzY1Ni0zNS4yNzM0MzgtNzguMjc3MzQzLTM1LjI3MzQzOC0xMjEuOTg4Mjgxem0wIDAiLz48cGF0aCBkPSJtMTI0LjYyODkwNiAyMDguNzUzOTA2YzQuOTUzMTI1IDI2LjAxMTcxOSAxOS42NTYyNSA3Ni4wNDI5NjkgNjIuNDY0ODQ0IDExOC44NTE1NjMgNDIuODA4NTk0IDQyLjgwODU5MyA5Mi44Mzk4NDQgNTcuNTE1NjI1IDExOC44NTU0NjkgNjIuNDY4NzUgMjkuNzg5MDYyIDUuNjcxODc1IDczLjUwMzkwNiA2LjUyNzM0MyA5NC44NjcxODctMTQuODM1OTM4bDExLjkxMDE1Ni0xMS45MTAxNTZjNi4wMTE3MTktNi4wMTE3MTkgOS4zMjQyMTktMTQuMDA3ODEzIDkuMzI0MjE5LTIyLjUxMTcxOXMtMy4zMTI1LTE2LjQ5NjA5NC05LjMyNDIxOS0yMi41MDc4MTJsLTQ3LjYyODkwNi00Ny42Mjg5MDZjLTYuMDE1NjI1LTYuMDE1NjI2LTE0LjAwNzgxMi05LjMyNDIxOS0yMi41MTE3MTgtOS4zMjQyMTktOC41MDM5MDcgMC0xNi40OTYwOTQgMy4zMDg1OTMtMjIuNTExNzE5IDkuMzI0MjE5bC0xMS45MDYyNSAxMS45MDYyNWMtNy4yNzM0MzggNy4yNzM0MzctMjEuMDAzOTA3IDcuMzA0Njg3LTI4LjMzMjAzMS4wODk4NDNsLTQ3LjUwNzgxMy00OS41Yy0uMDcwMzEzLS4wNzQyMTktLjE0MDYyNS0uMTQ4NDM3LS4yMTQ4NDQtLjIxODc1LTcuMjg1MTU2LTcuMjg1MTU2LTcuMjg1MTU2LTE5LjE0MDYyNSAwLTI2LjQyNTc4MWwxMS45MDYyNS0xMS45MDYyNWMxMi40NDUzMTMtMTIuNDQ1MzEyIDEyLjQ0NTMxMy0zMi41ODIwMzEgMC00NS4wMjM0MzhsLTQ3LjYyODkwNi00Ny42Mjg5MDZjLTEyLjQxMDE1Ni0xMi40MTAxNTYtMzIuNjA1NDY5LTEyLjQxMDE1Ni00NS4wMTk1MzEgMGwtMTEuOTA2MjUgMTEuOTEwMTU2di0uMDAzOTA2Yy0xNy4wNTA3ODIgMTcuMDU0Njg4LTIyLjczNDM3NSA1My40MDYyNS0xNC44MzU5MzggOTQuODc1em0zNi4wNDI5NjktNzMuNjY0MDYyYzEyLjUtMTIuMjE0ODQ0IDExLjgzMjAzMS0xMi40NDkyMTkgMTMuMjEwOTM3LTEyLjQ0OTIxOS40NzI2NTcgMCAuOTQ1MzEzLjE3OTY4NyAxLjMwNDY4OC41MzkwNjMgNTAuMTg3NSA1MC40NTcwMzEgNDguMTcxODc1IDQ3LjQ5MjE4NyA0OC4xNzE4NzUgNDguOTM3NSAwIC41MDM5MDYtLjE4MzU5NC45NDUzMTItLjUzOTA2MyAxLjMwNDY4N2wtMTEuOTEwMTU2IDExLjkwNjI1Yy0xOC45NjQ4NDQgMTguOTY0ODQ0LTE5LjAzOTA2MiA0OS42NjQwNjMtLjEyMTA5NCA2OC43MTQ4NDRsNDcuNTM1MTU3IDQ5LjUzMTI1Yy4wNzQyMTkuMDcwMzEyLjE0NDUzMS4xNDQ1MzEuMjE4NzUuMjE4NzUgMTguOTYwOTM3IDE4Ljk2MDkzNyA1MS44MDg1OTMgMTkuMDIzNDM3IDcwLjgzMjAzMSAwbDExLjkwNjI1LTExLjkwNjI1Yy43MTg3NS0uNzE4NzUgMS44OTA2MjUtLjcxODc1IDIuNjA5Mzc1IDAgNTAuMTg3NSA1MC40NTMxMjUgNDguMTcxODc1IDQ3LjQ4ODI4MSA0OC4xNzE4NzUgNDguOTMzNTkzIDAgLjUwNzgxMy0uMTgzNTk0Ljk0NTMxMy0uNTM5MDYyIDEuMzA0Njg4bC0xMS45MTAxNTcgMTEuOTA2MjVjLTguMTYwMTU2IDguMTYwMTU2LTM0LjE1MjM0MyAxMy4wNDI5NjktNjguMDU0Njg3IDYuNTg1OTM4LTIyLjYyNS00LjMxMjUtNjYuMTI4OTA2LTE3LjA4NTkzOC0xMDMuMjU3ODEzLTU0LjIxNDg0NC0zNy4xMjg5MDYtMzcuMTI4OTA2LTQ5LjkwMjM0My04MC42MzI4MTMtNTQuMjEwOTM3LTEwMy4yNTc4MTMtNi40NjA5MzgtMzMuOTAyMzQzLTEuNTc4MTI1LTU5Ljg5ODQzNyA2LjU4MjAzMS02OC4wNTQ2ODd6bTAgMCIvPjwvc3ZnPg==')
+                min-width: 13px
+                height: 13px
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiM0Y2M3NjY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT53aGF0c2FwcDwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjgsMTMuODhBMTQsMTQsMCwwLDEsMTQsMjcuNzZoMGExMy44NywxMy44NywwLDAsMS02LjYzLTEuNjlMMCwyOGwyLTcuMTlBMTMuODgsMTMuODgsMCwwLDEsMjMuODEsNC4wNywxMy45NCwxMy45NCwwLDAsMSwyOCwxMy44OFptLTIuMzQsMGExMS41NywxMS41NywwLDAsMC0zLjUxLTguMTVBMTEuNDEsMTEuNDEsMCwwLDAsMTQsMi4zNCwxMS41MywxMS41MywwLDAsMCw0LjIzLDIwbC4yNy40NEwzLjM0LDI0LjcxLDcuNywyMy41NmwuNDIuMjVBMTEuNTEsMTEuNTEsMCwwLDAsMTQsMjUuNDIsMTEuNjcsMTEuNjcsMCwwLDAsMjUuNjYsMTMuODhaTTIxLDE3LjE5YTIuOSwyLjksMCwwLDEtLjE5LDEuNjUsMy41MywzLjUzLDAsMCwxLTIuMzQsMS42NWMtMS4xLjE3LTIsLjA5LTQuMTYtLjg3YTE1LjM3LDE1LjM3LDAsMCwxLTUuOTMtNS4yM0E2Ljc4LDYuNzgsMCwwLDEsNi45NCwxMC44LDMuODcsMy44NywwLDAsMSw4LjE1LDcuOTFhMS4yNiwxLjI2LDAsMCwxLC45My0uNDNoLjY2Yy4yMSwwLC41LS4wOC43OC41OXMxLDIuNCwxLjA3LDIuNThhLjY2LjY2LDAsMCwxLDAsLjZjLS42NiwxLjMzLTEuMzgsMS4yOC0xLDEuOWE5LjQ0LDkuNDQsMCwwLDAsNC43Miw0LjEyYy4zNC4xOC41NS4xNC43NS0uMDlhMTcsMTcsMCwwLDAsMS4xLTEuMzZjLjIzLS4zNS40Ni0uMjkuNzgtLjE3czIsLjk1LDIuMzcsMS4xMlMyMC44OSwxNywyMSwxNy4xOVoiLz48L2c+PC9nPjwvc3ZnPg==')
                 background-repeat: no-repeat
-                background-size: auto 
+                background-size: 13px;
                 background-position center
             &:after
                 content: '|'
@@ -78,472 +77,47 @@
                 background-repeat: no-repeat
                 background-size: auto 
                 background-position center
-    &__topbar
-        background-color: $cor01
-        width: 100%
-        height 50px
-        transition: all .3s
-        
-        @media(max-width : 991px)
-            order: 1
-            display none
-        &-container
-            max-width 1200px
+    &__main
+        background-color: #fff
+        padding 15px 0
+        .align-items
             width: 100%
-            height 50px
-            margin: 0 auto
-            display: flex
-            align-items: center
+            padding 0
+            display flex
             justify-content: space-between
-            min-height 35px
-
-            ul
-                display flex
-                align-items: center
-
-                li
-                    margin 0 3px
-
-                span
-                    font-size: 13px
-                    color: #fffbfc
-                    margin-right: 10px
-                    text-transform: uppercase
-            ul.telefone__mid 
-                li 
-                    color: #fff
-                    font-size: 13px
-                    font-weight: 600
-                    display: flex
-                    align-items: center
-
-                    img
-                        margin-right 5px
-
-                    &:last-child
-                        &:before
-                            content: '|'
-                            margin 0 10px 0 5px
-                            font-weight 300
-
-            .links__topbar
-                li
-                    &:last-child
-                        &:before
-                            content: '|'
-                            margin 0 10px 0 5px
-                            font-weight 300
-                            color: #fff
-                    a
-                        font-size 13px
-                        color: #fff
-            @media(max-width: 991px)
-                height initial
-                padding-bottom 20px
-                border-bottom: 1px solid #cecece
-                .links__topbar
-                    li
-                        a
-                            font-size: 16px
-                            color: #020202 !important
-
-        &-list
-            padding-left: 220px
-            display: flex
             align-items: center
-            justify-content: space-between
-            @media(max-width : 1249px)
-                max-width: 55%
-                padding: 0
-            @media(max-width : 991px)
-                max-width: 100%
-                padding: 0 30px
-        .slick-prev
-            left 0
-            width: 30px
-            height 30px
-        .slick-next
-            right 0
-            width: 30px
-            height 30px
-        &-item
-            padding-right: 35px
-            font-size: 12px
-            line-height: 15px
-            font-weight: 800
-            color: #FFFFFF
-            display: flex!important
-            align-items: center
-            @media(max-width : 1300px)
-                padding-right: 15px
-            @media(max-width : 1249px)
-                justify-content: center
-            @media(max-width : 991px)
-                padding: 0
-            &--two
-                @media(max-width : 991px)
-                    font-size: 0px
-                    &:after
-                        content: '25 anos no mercado'
-                        font-size: 12px
-
-        &-phones
-            display: flex
-            align-items: center
-            justify-content: space-between
-            @media(max-width : 991px)
-                display: none
-        &-phone
-            font-size: 12px
-            color: #FFFFFF
-            line-height: 15px
-            display: flex
-            align-items: center
-
-            @media(max-width 991px)
-                color: #333
-                font-weight: 600
-            &--one
-                padding-right: 20px
-    &__mainbar
-        background: #fff;
-        position: relative
-        z-index: 1
-        width: 100%
-        border-bottom: 1px solid #cecece
-        z-index: 999
-        
- 
-        &-container
-            max-width 1200px
+    &__container
+        display: flex !important
+        justify-content: space-between
+        max-width: 1245px
+        margin: 0 auto
+    &__nav
+        background-color: #f5f5f5
+    .headerLogo
+        margin-left 30px
+        img     
+            max-width: 133px
+    .div-busca
+        flex 0 1 608px
+        .headerSearch 
             width: 100%
-            margin: 0 auto
-            
-        &-wrapper
-            display: flex
-            align-items: center
-            justify-content: space-between
-            min-height: 100px
-            padding: 15px 0
-            @media(max-width : 991px)
-                flex-wrap: wrap
-
-                .menu   
-                    display none!important
-        &-mobile
-            display: none
-            @media(max-width : 991px)
-                display: block
-                width: 27px
-                height 22px
-
-
-        &-logo
-            position: relative
-            display: flex
-            align-items: center
-
-            .headerLogo
-                max-width: 130px
-                width: 130px
-                img 
-                    max-width: 130px
-
-            @media(max-width : 991px)
-                width 33%
-                justify-content center
-
-                a
-                    width 100%
-
-        &-serach
-            max-width: 360px
-            width: 100%
-            position relative
-            @media(max-width : 991px)
-                max-width: 100%
-                order 1
-                padding-bottom: 11px
-                padding-top: 31px
-                transition: all .3s
-            .headerSearch
+            .inputSearch[type="text"]
                 width: 100%
-                float: none
-                margin: 0
-                opacity: 1
-                visibility: visible
-
-            input.inputSearch 
-                font-size: 13px
-                color: #666666 
-                border: 1px solid #d9d9d9 !important;
-                &::placeholder
-                    font-size: 13px
-                    color: #666666
-
-            button#btnBusca.btSearch
-                position absolute
-                background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmY3YzVmIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiAgdmlld0JveD0iMCAwIDEwMjQgMTAyNCI+PGcgaWQ9Imljb21vb24taWdub3JlIj48L2c+PHBhdGggZD0iTTkyMi43NSA4NzMuNDMybC0yMDguOTE4LTIxNy4wNDRjNTEuNzg5LTYxLjI5IDgzLjI1OC0xNDEuMTQ2IDgzLjI1OC0yMjguMzYgMC0xOTYuMDExLTE1OC44ODUtMzU0Ljg5Ni0zNTQuODk2LTM1NC44OTZzLTM1NC44OTYgMTU4Ljg4NS0zNTQuODk2IDM1NC44OTZjMCAxOTYuMDExIDE1OC44ODUgMzU0Ljg5NiAzNTQuODk2IDM1NC44OTYgNzYuMjI4IDAgMTQ2LjgwMS0yNC4wMDEgMjA0LjYzMi02NC44NjJsLTEuMDk5IDAuNzY4IDIxMC40NTYgMjE4Ljc0OWM4LjM0NyA4Ljc4NyAyMC4xMDEgMTQuMjc4IDMzLjExOCAxNC4yNzggMC4wNTUgMCAwLjExMSAwIDAuMTY2IDBoLTAuMDAxYzI1LjQ4My0wLjE2NiA0Ni4wNzgtMjAuODcxIDQ2LjA3OC00Ni40MDggMC0xMi40MTEtNC44ODctMjMuNjctMTIuNzk2LTMxLjk2NWwwLjAwMSAwLjAwMXpNNDQyLjY5IDE2Ni43MTZjMTQ0LjY1OSAwIDI2MS45MTQgMTE3LjI1NSAyNjEuOTE0IDI2MS45MTRzLTExNy4yNTUgMjYxLjkxNC0yNjEuOTE0IDI2MS45MTRjLTE0NC42NTkgMC0yNjEuOTE0LTExNy4yNTUtMjYxLjkxNC0yNjEuOTE0djBjMC4xMS0xNDQuNjA1IDExNy4zMDktMjYxLjgwNSAyNjEuOTE0LTI2MS45MTRoMC4wMDF6Ij48L3BhdGg+PC9zdmc+')
-                background-repeat: no-repeat
-                background-position: center
-                background-size: 15px
-                border-radius 50px
-                height 39px
-                width: 40px
-                &:hover
-                    color: #ffffff
-                .icon.isearch
-                    display: none
-                    
-        &-account, &-order, &-contact
-            border-right: 1px solid #D8D8D8
-            padding: 12px 20px
-            @media(max-width : 991px)
-                display: none
-            a
-                color: #373535
+                height 46px
+                border: 1px solid #0080c7 !important
+                border-radius: 5px
+        button#btnBuscaMobile
+            font-size: 12px
+            font-weight bold
+            color: #fff
+            text-transform uppercase
+            background-color #0080c7
+            background-image: none
+            width: 90px
+            height: 46px
+            margin: 0
+            border-radius: 0 5px 5px 0
+    .top-icons
+        .user-login
+            span    
                 font-size: 12px
-                text-transform: uppercase
-                font-weight: 600
-                white-space: nowrap
-                border-bottom: 1px solid transparent
-                &:hover
-                    border-bottom: 1px solid #fff115
-
-        &-right
-            display: flex
-            align-items: center
-            justify-content: space-between
-            max-width: 360px
-            width 100%
-            position relative
-
-            @media(max-width : 991px)
-                width 100%
-                max-width initial !important
-
-        &-links
-            display: flex 
-            align-items: center
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            img
-                max-width: 40px;
-            span
-                font-size 13px
-                font-weight: 600
-                color: #333
-                display: block
-
-                a
-                    display block
-                    color: #333
-                    font-weight: 800
-                    &:after 
-                        content: '';
-                        display: inline-block;
-                        width: 10px;
-                        height: 10px;
-                        margin-left: 5px;
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZjk1YTZjIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjg0LjkyOXB4IiBoZWlnaHQ9IjI4NC45MjlweCIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTI4Mi4wODIsNzYuNTExbC0xNC4yNzQtMTQuMjczYy0xLjkwMi0xLjkwNi00LjA5My0yLjg1Ni02LjU3LTIuODU2Yy0yLjQ3MSwwLTQuNjYxLDAuOTUtNi41NjMsMi44NTZMMTQyLjQ2NiwxNzQuNDQxTDMwLjI2Miw2Mi4yNDFjLTEuOTAzLTEuOTA2LTQuMDkzLTIuODU2LTYuNTY3LTIuODU2Yy0yLjQ3NSwwLTQuNjY1LDAuOTUtNi41NjcsMi44NTZMMi44NTYsNzYuNTE1QzAuOTUsNzguNDE3LDAsODAuNjA3LDAsODMuMDgyYzAsMi40NzMsMC45NTMsNC42NjMsMi44NTYsNi41NjVsMTMzLjA0MywxMzMuMDQ2YzEuOTAyLDEuOTAzLDQuMDkzLDIuODU0LDYuNTY3LDIuODU0czQuNjYxLTAuOTUxLDYuNTYyLTIuODU0TDI4Mi4wODIsODkuNjQ3YzEuOTAyLTEuOTAzLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY1QzI4NC45MjksODAuNjA3LDI4My45ODQsNzguNDE3LDI4Mi4wODIsNzYuNTExeiIvPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 10px;
-            &.atendimento
-                position relative
-                .atendimento__sub
-                    display: none;
-                    position: absolute
-                    top: 50px
-                    left: 50%
-                    transform: translateX(-50%)
-                    padding: 20px 15px
-                    background-color: #ffffff
-                    border: 1px solid #d2d2d2
-                    transition: 1s
-                    h3
-                        font-size: 15px
-                        text-transform: uppercase
-                        font-weight: 800
-                        margin-bottom: 10px
-                        color: $cor02
-                        &:before
-                            content: ''
-                            width: 100%
-                            height: 15px 
-                            position absolute
-                            top: 0
-                            left: 0
-                            background-color: #fff
-                    &:before
-                        content: ''
-                        width: 15px 
-                        height: 15px
-                        transform: rotate(45deg)
-                        position: absolute
-                        top: -8px
-                        left: 47%
-                        background-color: #d2d2d2
-                    &:after
-                        content: ''
-                        width: 100% 
-                        height: 15px
-                        position: absolute
-                        top: -15px
-                        left: 0
-                        background-color: transparent
-                &:hover
-                    .atendimento__sub
-                        display: block
-            &.user-bemvindo
-                .login__sub
-                    display: none;
-                    position: absolute
-                    top: 50px
-                    left: 50%
-                    transform: translateX(-50%)
-                    padding: 15px
-                    background-color: #ffffff
-                    border: 1px solid #d2d2d2
-                    transition: 1s
-                    z-index: 9999
-                    h3
-                        font-size: 15px
-                        text-transform: uppercase
-                        font-weight: 800
-                        margin-bottom: 10px
-                        color: $cor02
-                        &:before
-                            content: ''
-                            width: 100%
-                            height: 15px 
-                            position absolute
-                            top: 0
-                            left: 0
-                            background-color: #fff
-                    a
-                        text-transform uppercase
-                        padding 10px
-                        color: #ffffff
-                        font-weight: 800
-                        text-align center
-                        min-width: 160px;
-                        margin: 10px 0;
-                        &:first-child
-                            background-color: $cor01
-                        &:last-child
-                            background-color: $cor02
-                        &:after
-                            display: none
-                    &:before
-                        content: ''
-                        width: 15px 
-                        height: 15px
-                        transform: rotate(45deg)
-                        position: absolute
-                        top: -8px
-                        left: 47%
-                        background-color: #d2d2d2
-                    &:after
-                        content: ''
-                        width: 100% 
-                        height: 15px
-                        position: absolute
-                        top: 0
-                        left: 0
-                        background-color: #fff
-                &:hover
-                    .login__sub
-                        display: block
-        &-cart
-            display: flex 
-            span
-                font-size: 13px;
-                font-weight: 600;
-                color: #fff;
-                margin-left: 5px;
-            span.minicart-qtde-itens
-                &:before
-                &:after 
-                    display: none !important
-            @media(max-width : 991px)
-                padding: 0
-            .carrinho.carrinhoHead
-                a
-                    float none
-                    display: flex!important
-                    align-items: center
-                .icon.icart
-                    display: none
-                .minicart-txt-itens
-                    display: none
-                .minicart-qtde-itens
-                    color: #fff !important
-                    font-size: 15px
-                    color: #333;
-                    float: none
-                    position: absolute
-                    left: 25px
-                    bottom: -8px
-
-    @media(max-width: 1290px)
-        &__topbar-container
-        &__mainbar-container
-            max-width: 991px
-        &__mainbar 
-            &-cart
-                span 
-                    display none
-                span.minicart-qtde-itens
-                    display block
-                    background-color transparent 
-                    left: 10px !important
-                    &:before
-                    &:after
-                        display none !important
-                .carrinho.carrinhoHead
-                    position relative
-                    a
-                        margin-right: 10px;
-                span.minicart-qtde-itens
-                    left: 10px;
-            &-right
-                max-width: 315px;
-    @media(max-width: 991px)
-        &__mainbar
-            &-container
-                padding 0 15px
-            &-links
-                display none
-            &-logo
-                width: 60%
-                .headerLogo
-                    max-width: 100% !important 
-                    img 
-                        max-width: 100% !important
-            &-mobile
-                height: 30px
-            &-serach
-                padding-top 10px
-            &-cart
-                &.mobile
-                    margin-right 10px
-                    .carrinho.carrinhoHead a
-                        justify-content: center;
-                        span.minicart-qtde-itens
-                            color: #333 !important;
-                            float: none;
-                            position: absolute;
-                            background-color: #fff;
-                            bottom: -0.5rem;
-                            right: -10px;
-                            left: initial !important;
-                            border: 2px solid #007e97;
-                            padding: 0;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-        
-
-    
