@@ -79,7 +79,7 @@
                 background-position center
     &__main
         background-color: #fff
-        padding 15px 0
+        padding 10px 0
         .align-items
             width: 100%
             padding 0
@@ -91,12 +91,25 @@
         justify-content: space-between
         max-width: 1245px
         margin: 0 auto
+    &__wrapper
+        display: flex 
+        justify-content: space-between
+        align-items: center
+        width 100%
+        height 40px
     &__nav
         background-color: #f5f5f5
+        height: 40px
+        .menu-nav
+            flex: 0 1 770px
+    
     .headerLogo
         margin-left 30px
+        width: 133px
+        max-width: 133px
         img     
             max-width: 133px
+            width: 100%;
     .div-busca
         flex 0 1 608px
         .headerSearch 
@@ -106,6 +119,13 @@
                 height 46px
                 border: 1px solid #0080c7 !important
                 border-radius: 5px
+                padding-left 40px
+                font-size: 14px
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5idXNjYTwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzEuNzgsMzAuMzdsLTEuNDEsMS40MWEuNzQuNzQsMCwwLDEtMS4wNiwwbC03LjU5LTcuNTlhLjc1Ljc1LDAsMCwxLS4yMi0uNTN2LS44MmExMywxMywwLDEsMSwxLjM0LTEuMzRoLjgyYS43NS43NSwwLDAsMSwuNTMuMjJsNy41OSw3LjU5QS43NC43NCwwLDAsMSwzMS43OCwzMC4zN1pNMjMsMTNBMTAsMTAsMCwxLDAsMTMsMjMsMTAsMTAsMCwwLDAsMjMsMTNaIi8+PC9nPjwvZz48L3N2Zz4=')
+                background-size: 16px
+                background-repeat no-repeat
+                background-position-x: 15px
+                background-position-y center
         button#btnBuscaMobile
             font-size: 12px
             font-weight bold
@@ -118,6 +138,109 @@
             margin: 0
             border-radius: 0 5px 5px 0
     .top-icons
+        width: 375px
+        &.icons-right
+            justify-content: space-between
         .user-login
             span    
                 font-size: 12px
+                color:#7f7f7f
+        > div
+            width: 115px
+            height: initial;
+            margin-left: 0
+            font-family: 'Exo', sans-serif
+            float: none
+            .headerLogin 
+                display: flex !important
+                justify-content: center 
+                align-items: center 
+                width: 100% !important
+                background-image: initial
+                padding 0
+                &:before
+                    content: ''
+                    display block
+                    min-width: 28px
+                    margin-right: 5px
+                    height 28px
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMSAzMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT51c2VyPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMSwxNS41QTE1LjUsMTUuNSwwLDEsMSwxNS41LDAsMTUuNSwxNS41LDAsMCwxLDMxLDE1LjVabS0yLDBBMTMuNSwxMy41LDAsMSwwLDUuNTksMjQuNjMsNiw2LDAsMCwxLDExLjUsMTkuNWMxLjI5LDAsMS45LjcxLDQsLjcxczIuNzItLjcxLDQtLjcxYTYsNiwwLDAsMSw1LjkxLDUuMTNBMTMuNDIsMTMuNDIsMCwwLDAsMjksMTUuNVptLTUuNSwxMGE0LDQsMCwwLDAtNC00Yy0uNywwLTEuNzEuNzEtNCwuNzFzLTMuMzEtLjcxLTQtLjcxYTQsNCwwLDAsMC00LDR2Ljg1YTEzLjQsMTMuNCwwLDAsMCwxNiwwWk0yMSwxMi41QTUuNSw1LjUsMCwxLDEsMTUuNSw3LDUuNSw1LjUsMCwwLDEsMjEsMTIuNVptLTIsMEEzLjUsMy41LDAsMSwwLDE1LjUsMTYsMy41LDMuNSwwLDAsMCwxOSwxMi41WiIvPjwvZz48L2c+PC9zdmc+')
+                    background-repeat: no-repeat
+                    background-position: center 
+                    background-size: 28px
+                    margin-right 15px
+                .loginHead
+                    display block
+                    height: 41px
+                    .textloginp.usuario_nao_identificado
+                        display flex
+                        flex-wrap: wrap
+                        font-size: 0
+                        span 
+                            display: block
+                            text-transform: initial
+                            &:before    
+                                content: 'Olá,'
+                                margin-right 5px
+                            &:after    
+                                content: 'Entrar'
+                                display block
+                                font-size: 16px;
+                                font-weight: 800;
+                                line-height: 8px;
+                                letter-spacing: 1px
+        .ico-carrinho,
+        .carrinhoHead
+            width: 190px !important
+            float: none
+            *
+                float: none
+                font-family: 'Exo', sans-serif !important
+            span.minicart-txt-itens
+                display block
+                font-size: 13px
+                font-weight bold
+                color: #7f7f7f
+        .ico-carrinho
+            img
+                width 30px
+                height 30px
+                position absolute
+                top: 8px;
+                left: 10px;
+                z-index: 1;
+        .carrinhoHead
+            position relative
+            a
+                height: 46px
+                background-color #fff
+                box-shadow: 0px 0px 4px #a7a7a7;
+                border-radius: 5px;
+                display flex
+                flex-direction: column
+                justify-content: center
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy42OCAxNS44MyI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZXRhMl9kb3duPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNy40NiwyLjUyLDE0LjM3LDE1LjYxYS43NS43NSwwLDAsMS0xLjA2LDBMLjIyLDIuNTJhLjc1Ljc1LDAsMCwxLDAtMS4wNkwxLjQ2LjIyYS43NS43NSwwLDAsMSwxLjA2LDBMMTMuODQsMTEuNTEsMjUuMTYuMjJhLjc1Ljc1LDAsMCwxLDEuMDYsMGwxLjI0LDEuMjRBLjc1Ljc1LDAsMCwxLDI3LjQ2LDIuNTJaIi8+PC9nPjwvZz48L3N2Zz4=')
+                background-size: 12px
+                background-repeat no-repeat
+                background-position-x: 93%
+                background-position-y center
+                span 
+                    position relative !important
+                    right: initial !important
+                    bottom: initial !important
+                    top: initial !important
+                    text-align: left 
+                    padding-left 50px
+                    height: 15px;
+                    margin-top -5px
+                    &.minicart-qtde-itens
+                        display flex
+                        justify-content: flex-start
+                        align-items: center
+                        text-transform initial !important
+                        color: #7f7f7f !important
+                        &:after 
+                            display block !important
+                            content: 'item(s)'
+                            display: inline-block
+                            margin-left: 5px

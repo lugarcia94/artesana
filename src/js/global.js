@@ -258,7 +258,7 @@ $(document).ajaxComplete(function (event, xhr, settings) {
         $(".popUp-News input#modal-Email").attr("placeholder", "Seu e-mail aqui")
         $(".popUp-News input#btnCadastrarNews").attr("value", "QUERO GANHAR!")
     }
-    $("input.inputSearch[type='text']").attr("placeholder", "O que você procura?");
+    $("input.inputSearch[type='text']").attr("placeholder", "O que você esta buscando?");
 
     if ($('.conteudoAbasProduto .price__none').length) { 
         $('.conteudoAbasProduto .price__none').appendTo($('.product__details-topo'));
