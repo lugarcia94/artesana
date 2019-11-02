@@ -10,6 +10,7 @@
         background-color: #ffffff
         border: 1px solid #cecece
         height: 30px
+        transition: .3s
         > div
             display initial
             padding: initial
@@ -80,6 +81,8 @@
     &__main
         background-color: #fff
         padding 10px 0
+        z-index: 1;
+        position: relative;
         .align-items
             width: 100%
             padding 0
@@ -100,8 +103,38 @@
     &__nav
         background-color: #f5f5f5
         height: 40px
+        transition: .3s
         .menu-nav
             flex: 0 1 770px
+        &-right
+            display: flex
+            align-items: center 
+            justify-content: space-between
+            width: 375px
+            height: 40px
+            a
+                display: flex
+                align-items: center
+                height 100%
+                font-size: 15px
+                font-weight: 600
+                &.ofertas-btn
+                    justify-content: center
+                    width: 105px
+                    background-color: $cor02
+                    color: #fff
+                &.calc-btn
+                    color: $cor02
+                    &:before
+                        content: ''
+                        margin-right 5px
+                        width: 20px
+                        height: 20px
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNlNTg4MjI7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5jYWxjdWxhZG9yYTwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzAsMlYyOGEyLDIsMCwwLDEtMiwySDJhMiwyLDAsMCwxLTItMlYyQTIsMiwwLDAsMSwyLDBIMjhBMiwyLDAsMCwxLDMwLDJaTTE0LDJIMlYxNEgxNFptMCwxNEgyVjI4SDE0Wk00LDguNXYtMUEuNS41LDAsMCwxLDQuNSw3aDdhLjUuNSwwLDAsMSwuNS41djFhLjUuNSwwLDAsMS0uNS41aC03QS41LjUsMCwwLDEsNCw4LjVabS42NywxNS42MmEuNTguNTgsMCwwLDEsLjE1LS4zNUw2LjU5LDIyLDQuODIsMjAuMjNhLjUuNSwwLDAsMSwwLS43MWwuNy0uN2EuNS41LDAsMCwxLC43MSwwTDgsMjAuNTlsMS43Ny0xLjc3YS41LjUsMCwwLDEsLjcxLDBsLjcuN2EuNS41LDAsMCwxLDAsLjcxTDkuNDEsMjJsMS43NywxLjc3YS41LjUsMCwwLDEsMCwuNzFsLS43LjdhLjUuNSwwLDAsMS0uNzEsMEw4LDIzLjQxLDYuMjMsMjUuMThhLjUuNSwwLDAsMS0uNzEsMGwtLjctLjdBLjYxLjYxLDAsMCwxLDQuNjcsMjQuMTJaTTI4LDJIMTZWMTRIMjhabTAsMTRIMTZWMjhIMjhaTTE4LDguNXYtMWEuNS41LDAsMCwxLC41LS41SDIxVjQuNWEuNS41LDAsMCwxLC41LS41aDFhLjUuNSwwLDAsMSwuNS41VjdoMi41YS41LjUsMCwwLDEsLjUuNXYxYS41LjUsMCwwLDEtLjUuNUgyM3YyLjVhLjUuNSwwLDAsMS0uNS41aC0xYS41LjUsMCwwLDEtLjUtLjVWOUgxOC41QS41LjUsMCwwLDEsMTgsOC41Wm0wLDEydi0xYS41LjUsMCwwLDEsLjUtLjVoN2EuNS41LDAsMCwxLC41LjV2MWEuNS41LDAsMCwxLS41LjVoLTdBLjUuNSwwLDAsMSwxOCwyMC41Wm0wLDR2LTFhLjUuNSwwLDAsMSwuNS0uNWg3YS41LjUsMCwwLDEsLjUuNXYxYS41LjUsMCwwLDEtLjUuNWgtN0EuNS41LDAsMCwxLDE4LDI0LjVaIi8+PC9nPjwvZz48L3N2Zz4=')
+                        background-repeat: no-repeat
+                        background-size: auto 
+                        background-position center
+                    
     
     .headerLogo
         margin-left 30px

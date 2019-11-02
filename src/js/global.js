@@ -148,18 +148,20 @@ $(document).ready(function () {
         ]
     });
 
-    //circle ruler
-    $('.circle__wrapper').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        arrow: false,
+    //brands
+    $('.brands__content').slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        arrow: true,
         dots: false,
         responsive: [{
             breakpoint: 992,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                arrows: true
+                dots: true,
+                autoplay: true,
+                arrows: false
             }
         },
         {
@@ -167,12 +169,15 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                arrows: true
+                dots: true,
+                autoplay: true,
+                arrows: false
             }
         }
         ]
     });
 
+    
     //compre junto
     $('.divCompreJuntoCarrossel').slick({
         slidesToShow: 1,

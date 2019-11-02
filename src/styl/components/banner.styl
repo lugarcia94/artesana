@@ -1,26 +1,29 @@
 .fullbanner
-    margin-top: 148px;
+    margin-top: 155px
+    &__container
+        max-width: 1366px
+        margin: 0 auto
     .slick-dots
-        bottom: 30px
-    @media(max-width: 991px)
-        margin-top: 160px;
-        .fbits-componente-banner .fbits-banner-item 
-            a 
-                img
-                    width 230% !important
-                    max-width 230%
-                    left 50%
-                    transform: translateX(-50%)
-
-.fullbanner
+        bottom: 15px
+        li
+            width: 10px !important
+            height: 10px !important
+            button  
+                border: none !important
+                background-color: #fff !important
+                width: 10px !important
+                height: 10px !important
+            &.slick-active
+                button  
+                    background-color: $cor01 !important
     .slick-prev
-        left 0
+        left 60px
         @media(max-width : 991px)
             left 5px !important
             width: 30px
             height 30px
     .slick-next
-        right 0
+        right 60px
         @media(max-width : 991px)
             right 5px !important
             width: 30px
@@ -37,12 +40,20 @@
             transform: translateX(-50%)
     .fbits-banner-item
         overflow hidden
+    @media(max-width: 991px)
+        margin-top: 160px;
+        .fbits-componente-banner .fbits-banner-item 
+            a 
+                img
+                    width 230% !important
+                    max-width 230%
+                    left 50%
+                    transform: translateX(-50%)
 
 
 .mini-banner
     &__container
-        max-width: 1330px
-        padding: 0 0.94rem
+        max-width: 1245px
         width: 100%
         margin: 0 auto
     &__wrapper
@@ -55,10 +66,8 @@
         @media(max-width : 767px)
             padding-top: 20px
         .fbits-banner-item
-            flex: 0 1 33%
-            overflow hidden
-            display: flex
-            justify-content: center
+            flex: 0 1 400px
+
             
             @media(max-width : 767px)
                 flex: 0 1 100%
@@ -70,7 +79,62 @@
                 @media(max-width : 767px)
                     margin: 0 auto
                 &:hover
-                    transform: scale(1.1)
+                    transform: scale(1.05)
+
+.blockBottom
+    &__container
+        max-width: 1245px
+        width: 100%
+        margin: 0 auto
+    &__wrapper
+        display flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 50px 0
+    &__item
+        flex: 0 1 565px
+        background-color: $cor01
+        padding: 40px
+        border-radius: 10px
+        display: flex
+        align-items: center
+        h2
+            font-size: 25px
+            font-weight: 800
+            color: #fff
+            margin: 0
+            margin-bottom 10px
+            letter-spacing: 2px
+        p
+            font-size: 16px
+            font-weight: 500
+            color: #fff
+            margin-bottom 35px
+            line-height: 30px
+            letter-spacing: 1.5px
+        a
+            font-size: 15px
+            font-weight: 500
+            color: #fff
+            text-decoration: underline
+            &:after
+                content: '';
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin-left: 5px;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjg0LjkyOXB4IiBoZWlnaHQ9IjI4NC45MjlweCIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTI4Mi4wODIsNzYuNTExbC0xNC4yNzQtMTQuMjczYy0xLjkwMi0xLjkwNi00LjA5My0yLjg1Ni02LjU3LTIuODU2Yy0yLjQ3MSwwLTQuNjYxLDAuOTUtNi41NjMsMi44NTZMMTQyLjQ2NiwxNzQuNDQxTDMwLjI2Miw2Mi4yNDFjLTEuOTAzLTEuOTA2LTQuMDkzLTIuODU2LTYuNTY3LTIuODU2Yy0yLjQ3NSwwLTQuNjY1LDAuOTUtNi41NjcsMi44NTZMMi44NTYsNzYuNTE1QzAuOTUsNzguNDE3LDAsODAuNjA3LDAsODMuMDgyYzAsMi40NzMsMC45NTMsNC42NjMsMi44NTYsNi41NjVsMTMzLjA0MywxMzMuMDQ2YzEuOTAyLDEuOTAzLDQuMDkzLDIuODU0LDYuNTY3LDIuODU0czQuNjYxLTAuOTUxLDYuNTYyLTIuODU0TDI4Mi4wODIsODkuNjQ3YzEuOTAyLTEuOTAzLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY1QzI4NC45MjksODAuNjA3LDI4My45ODQsNzguNDE3LDI4Mi4wODIsNzYuNTExeiIvPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 10px;
+                transform: rotate(-90deg)
+            &:hover
+                text-decoration: underline
+    &__image
+        width: 130px
+        margin-right 25px
+
 
 .mini-footer
     &__container
@@ -119,7 +183,25 @@
     .fbits-banner-item
         overflow hidden
 
+.brands
+    margin-bottom 80px
+    &__container
+        max-width: 1245px
+        width: 100%
+        margin: 0 auto
 
+    &__title
+        font-size: 1.38rem 
+        font-weight: 800 
+        color: #0080c7 
+        text-align: center
+        margin-bottom: 40px
+    &__content
+        padding-left 20px
+
+
+.fbits-background
+    margin 0
 .full__banner-beneficios 
     
     display: flex

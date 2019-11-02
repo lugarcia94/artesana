@@ -103,10 +103,7 @@
                     height: initial !important
                     a
                         justify-content: flex-start !important
-                a
-                    color: $cor02 !important
-                    width: 88px !important
-                    height: 30px !important
+                
                 &:hover
                     a
                         background-color: $cor01
@@ -114,11 +111,12 @@
                 flex-wrap: wrap
                 height: initial
             > a
-                color #000 !important
+                color $cor01 !important
                 padding 0 !important
-                font-size: 9px !important
-                font-weight: 800 !important
+                font-size: 14px !important
+                font-weight: 500 !important
                 height: 40px !important;
+                text-transform initial !important
                 img 
                     display: none
             &:hover
@@ -465,12 +463,8 @@
 
 .moving
     .header
-        .menuMain
-            transition: .3s
-            margin-top: 0px;
-        &__topbar
-            transition: .3s
-            margin-top: -50px;
+        .topBar
+            margin-top: -30px;
     @media(max-width : 991px)
         .header__mainbar
             box-shadow: 0.307px 0.307px 4px 0 rgba(0,0,0,.11)
@@ -479,9 +473,8 @@
 
 .moving--down
     .header
-        .menuMain
-            transition: .3s
-            margin-top: -60px;
+        &__nav
+            margin-top -40px
     @media(min-width : 992px)
         .header__navbar
             transform: translateY(-100%)
