@@ -27,8 +27,8 @@ $(document).ready(function () {
             scrollTop: targetOffset - 120
         }, 500);
     });
-    $(".newsletter-box input#Nome").attr("placeholder", "Seu nome aqui");
-    $(".newsletter-box input#Email").attr("placeholder", "Digite seu e-mail");
+    $("div#fbits-cadastro-newsletter input#Nome").attr("placeholder", "Digite seu nome");
+    $("div#fbits-cadastro-newsletter input#Email").attr("placeholder", "Digite seu e-mail");
 
     $(".category__btn-mobile").click(function () {
         $('body').addClass('filter__open');
@@ -208,7 +208,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.btNews').attr('value', 'CADASTRAR');
+    $('div#fbits-cadastro-newsletter .btNews').attr('value', 'Enviar');
 
     $(".botoesSpot .spotTelevendas").each(function () {
         $(this).closest(".spot").addClass("spot__request");

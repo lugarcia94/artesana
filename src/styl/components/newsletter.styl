@@ -55,15 +55,7 @@
                 width: 100%
                 display block
 
-.footerNewsForm
-    width: 100% !important
-    input.btNews
-        margin 10px auto
-        float none
-        background: transparent 
-        border: 1px solid #fff
-        padding 0 50px
-        width: initial
+
 .newsletter
     background-color: $cor01 !important
     padding: 15px
@@ -121,9 +113,7 @@
             width: 47.827%
             margin: 0
             border: 1px solid #E7E7E7
-            color: #BABABA
-            &::placeholder
-                color: #BABABA
+
             @media(max-width : 810px)
                 width: 100%
                 margin-bottom: 12px
@@ -168,3 +158,50 @@
         height: 35px
         display: block
         margin-right 5px
+
+
+.row-fbits-news.footerNewsletter
+    max-width: 1030px
+    .centerContent
+        display: flex !important
+        justify-content: space-between
+        max-width: 100%
+        .news-left
+            flex: 0 1 290px
+            .title-news
+                h3
+                    font-size: 25px
+                    font-weight: 800
+                    color: #fff
+                    margin 0
+                    margin-bottom 15px
+            .txtNews 
+                font-size: 14px
+                color: #ffffff
+                text-align: left
+                line-height: 18px
+                margin 0
+        .footerNewsForm
+            width: initial 
+            flex: 0 1 715px
+            display: flex 
+            justify-content: space-between
+            align-items: center
+            margin-top 25px
+            input[type="text"]
+                margin 0 10px !important
+                background-color: #066db1
+                border: 1px solid #009af0
+                border-radius: 5px
+                color: #fff !important
+                &::placeholder
+                    color: #fff !important
+            .btNews
+                background-color: #fff
+                border: 1px solid #009af0
+                border-radius: 5px
+                font-size: 14px
+                color $cor01
+                padding 0
+                width: 85px
+                text-align center
