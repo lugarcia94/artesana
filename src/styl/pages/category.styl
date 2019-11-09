@@ -151,7 +151,7 @@
             padding-bottom 20px
             position relative
             border-bottom: 1px solid #cecece
- 
+            
 
             &:after
                  
@@ -430,3 +430,179 @@ body.fbits-categoria
 
 li.fbits-filtro-pai.category__filter-options-item
     margin-bottom 30px!important
+
+
+.content-category
+    padding-bottom 15px
+    border-bottom: 1px solid #e1e1e1
+
+    &__container
+        max-width 1245px
+        margin 0 auto
+    &__wrapper
+        .breadc
+            ol
+                li
+                    display none
+                    &:last-child
+                        display block
+                        text-align center
+                        a
+                            font-weight 800 !important
+                            font-size: 22px
+                            color: #0080c7
+        .content    
+            .fbits-conteudo-item
+                max-width 1000px
+                font-size: 12px
+                color: #7f7f7f
+                text-align center
+                margin 0 auto
+                @media(max-width 1300px)
+                    max-width 800px
+                    font-size: 12px
+
+
+.container-categoria
+    @media(max-width 767px)
+        padding-top 0 !important
+.fbits-topo-categoria
+    position relative
+    &:before
+        content: 'Refinar busca'
+        font-size: 18px
+        font-weight bold
+        color: #0080c7
+        position absolute
+        top: 30px
+        left: 60px
+        @media(max-width 1300px)
+            left: 20px
+    li.filtroPai, li.fbits-filtroSelecionados-pai, li.fbits-filtro-pai
+        border-bottom: none
+
+.fbits-categoria .interna.cf, .busca .interna.cf
+    max-width 1366px
+    display flex
+    @media(max-width 1300px)
+        padding: 0
+        max-width 991px
+        margin 15px auto
+        float: none
+    @media(max-width 991px)
+        .fbits-topo-categoria.divmobile
+            display none !important
+    .spots-interna
+        > span 
+            display: flex !important;
+            flex-wrap: wrap;
+            .fbits-item-lista-spot
+                flex: 0 1 25%
+                margin-bottom 40px
+                @media(max-width 1300px)
+                    flex: 0 1 33%
+            @media(max-width 991px)
+                justify-content: center 
+                .fbits-item-lista-spot
+                    flex: 0 1 auto
+                    margin 15px !important
+    .fbits-topo-categoria.divdesk
+        width: 300px
+        border-right: 1px solid #e1e1e1
+        border-left: 1px solid #e1e1e1
+        border-top: 1px solid #e1e1e1
+        padding-top 70px
+        height: fit-content;
+        li.fbits-filtro-pai.componente-filtro
+            .fbits-filtro-titulo-pai
+                padding-left 60px
+                font-size: 12px
+                text-transform capitalize !important
+                color: #0080c7
+                @media(max-width 1300px)
+                    padding-left 20px !important
+                &:after
+                    left: initial 
+                    right: 30px
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy42OCAxNS44MyI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZXRhMl9kb3duPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNy40NiwyLjUyLDE0LjM3LDE1LjYxYS43NS43NSwwLDAsMS0xLjA2LDBMLjIyLDIuNTJhLjc1Ljc1LDAsMCwxLDAtMS4wNkwxLjQ2LjIyYS43NS43NSwwLDAsMSwxLjA2LDBMMTMuODQsMTEuNTEsMjUuMTYuMjJhLjc1Ljc1LDAsMCwxLDEuMDYsMGwxLjI0LDEuMjRBLjc1Ljc1LDAsMCwxLDI3LjQ2LDIuNTJaIi8+PC9nPjwvZz48L3N2Zz4=')
+                &.faberto.filtro-aberto
+                    &:after
+                        transform rotate(180deg)
+            ul.fbits-lista-filtro-filho
+                padding-left 60px !important
+                @media(max-width 1300px)
+                    padding-left 20px !important
+    .fbits-mainBar
+        background-color #f7f7f7
+        position relative
+        
+        .ordenar
+            position: absolute;
+            top: 55px
+            right: 80px
+            margin-bottom 0
+            span.fbits-ordenar-por
+                margin-top: 5px;
+                
+            span.customSelect
+                @media(max-width 991px)
+                    display none !important
+            select#Parametro
+                border: 1px solid #0080c7;
+                background-color: #f7f7f7;
+                height: 30px !important;
+                border-radius: 5px;
+                max-width: 130px;
+                color: #0080c7
+                @media(max-width 991px)
+                    border: 1px solid #0080c7 !important
+                    background-color: #f7f7f7 !important
+                    height: 30px !important
+                    border-radius: 5px !important
+                    max-width: 130px !important
+                    color: #0080c7 !important
+                    background-image: none !important
+                    margin-top 20px
+            @media(max-width 1300px)
+                width: fit-content
+                top: 45px
+                right: 155px
+            @media(max-width 991px)
+                display none
+                position: relative
+                top: initial
+                right: initial
+                margin 0px auto
+                width: 160px !important
+                max-width: 160px !important
+                float none
+        section.showcase
+            padding: 120px 60px !important
+            margin 0
+            @media(max-width 1300px)
+                padding: 120px 30px !important
+            @media(max-width 991px)
+                padding: 60px 15px !important
+            .showcase__container
+                padding 0 !important
+            .col-md-12
+                padding 0
+            .fbits-item-lista-spot
+                .spot   
+                    width: 100%;
+                    max-width: 200px;
+                    float: none;
+                    margin: 0 auto;
+                    padding: 0;
+                    border: 1px solid #cecece !important;
+                    border-radius: 5px;
+                    min-height: 375px;
+                    .precoParcela, 
+                    section.fbits-section-home .spot .precoParcela
+                        width: 100%
+                        text-align: center
+                    &:hover
+                        .botoesSpot
+                            display none !important
+                .botoesSpot
+                    display none
