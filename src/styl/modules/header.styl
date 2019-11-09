@@ -11,6 +11,8 @@
         border: 1px solid #cecece
         height: 30px
         transition: .3s
+        @media(max-width: 991px)
+            display: none
         > div
             display initial
             padding: initial
@@ -20,6 +22,8 @@
             max-width: 1245px
             margin: 0 auto
             height: 30px
+            @media(max-width: 1299px)
+                max-width: 991px
         &__left
             display flex
             align-items: center
@@ -89,23 +93,53 @@
             display flex
             justify-content: space-between
             align-items: center
+            @media(max-width: 991px)
+                flex-wrap: wrap
+                height: initial !important
+                .div-busca
+                    width: 100%
+                    max-width: initial 
+                    flex: initial
+                    order: 5
     &__container
         display: flex !important
         justify-content: space-between
         max-width: 1245px
         margin: 0 auto
+        @media(max-width: 1299px)
+            max-width: 991px
+            padding 0 15px
     &__wrapper
         display: flex 
         justify-content: space-between
         align-items: center
         width 100%
         height 40px
+
     &__nav
         background-color: #f5f5f5
         height: 40px
         transition: .3s
+        @media(max-width: 991px)
+            .menu-nav
+                flex: 0 1 250px !important
+                ul.menu
+                    > li.item.todas-categorias
+                        display: none !important
+            &-right 
+                width: 50px !important
+                a
+                    &.ofertas-btn
+                        font-size: 12px !important
+                .calc-btn
+                    display: none
+                .ofertas-btn
+                    color: #e58822 !important
+                    background-color: transparent !important
         .menu-nav
             flex: 0 1 770px
+            @media(max-width: 1299px)
+                flex: 0 1 640px
         &-right
             display: flex
             align-items: center 
@@ -143,10 +177,18 @@
         img     
             max-width: 133px
             width: 100%;
+        @media(max-width: 1299px)
+            margin-left: 0
+        @media(max-width: 768px)
+            width: 100px
     .div-busca
         flex 0 1 608px
+        @media(max-width: 1299px)
+            flex 0 1 480px
         .headerSearch 
             width: 100%
+            @media (max-width: 990px)
+                margin: 0 !important
             .inputSearch[type="text"]
                 width: 100%
                 height 46px
@@ -159,6 +201,10 @@
                 background-repeat no-repeat
                 background-position-x: 15px
                 background-position-y center
+                @media(max-width: 991px)
+                    font-size 12px !important
+                    &::placeholderr
+                        font-size 12px !important
         button#btnBuscaMobile
             font-size: 12px
             font-weight bold
@@ -170,10 +216,29 @@
             height: 46px
             margin: 0
             border-radius: 0 5px 5px 0
+            @media(max-width: 991px)
+                width: 85px
     .top-icons
         width: 375px
+        @media(max-width: 991px)
+            width: 150px
+            &.icons-right
+                display: flex !important
+                justify-content: flex-end !important
+                top: initial !important
+            .ico-carrinho
+                right: initial !important
+        @media(max-width: 768px)
+            width: 80px !important
+            &.icons-right
+                display: flex !important
+                float: none !important 
+                right: initial !important
+            > div
+                width: 40px !important
         &.icons-right
             justify-content: space-between
+            
         .user-login
             span    
                 font-size: 12px
@@ -202,9 +267,15 @@
                     background-position: center 
                     background-size: 28px
                     margin-right 15px
+                    @media(max-width: 1299px)
+                        height 32px
+                    @media(max-width: 991px)
+                        margin-right: 0
                 .loginHead
                     display block
                     height: 41px
+                    @media(max-width: 991px)
+                        display none
                     .textloginp.usuario_nao_identificado
                         display flex
                         flex-wrap: wrap
@@ -234,6 +305,17 @@
                 font-size: 13px
                 font-weight bold
                 color: #7f7f7f
+            @media(max-width: 991px)
+                width 50px !important
+                height: 30px
+                background-image: none !important
+                float: none !important
+                img 
+                    position relative !important
+                    top: initial !important
+                    left: initial !important
+                #fbits-resumo-carrinho
+                    display: none
         .ico-carrinho
             img
                 width 30px
@@ -242,6 +324,8 @@
                 top: 8px;
                 left: 10px;
                 z-index: 1;
+            &:before
+                display none
         .carrinhoHead
             position relative
             a
@@ -272,8 +356,140 @@
                         align-items: center
                         text-transform initial !important
                         color: #7f7f7f !important
+                        @media(max-width: 1299px)
+                            font-size: 12px;
                         &:after 
                             display block !important
                             content: 'item(s)'
                             display: inline-block
                             margin-left: 5px
+
+.icomobile-hamburguer
+    display none !important
+    position: relative !important
+    top: initial !important
+    left: initial !important
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyMy41Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzAwODBjNzt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmhhbWJ1cmd1ZXJfMjwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNLjc1LDMuNUEuNzYuNzYsMCwwLDEsMCwyLjc1di0yQS43Ni43NiwwLDAsMSwuNzUsMGgyNi41QS43Ni43NiwwLDAsMSwyOCwuNzV2MmEuNzYuNzYsMCwwLDEtLjc1Ljc1Wm0wLDEwQS43Ni43NiwwLDAsMSwwLDEyLjc1di0yQS43Ni43NiwwLDAsMSwuNzUsMTBoMjYuNWEuNzYuNzYsMCwwLDEsLjc1Ljc1djJhLjc2Ljc2LDAsMCwxLS43NS43NVptMCwxMEEuNzYuNzYsMCwwLDEsMCwyMi43NXYtMkEuNzYuNzYsMCwwLDEsLjc1LDIwaDI2LjVhLjc2Ljc2LDAsMCwxLC43NS43NXYyYS43Ni43NiwwLDAsMS0uNzUuNzVaIi8+PC9nPjwvZz48L3N2Zz4=') !important
+    background-repeat: no-repeat
+    background-position: center
+    width: 35px !important
+    height: 35px !important
+    @media(max-width: 768px)
+        display: block !important
+        width: 25px !important
+        height: 25px !important
+
+.menu-mobile
+    position fixed 
+    top: 0
+    left: -350px
+    z-index 99
+    background-color: #f5f5f5
+    width: 300px
+    height 100vh
+    transition: .3s
+    .menu-mobile__helpers
+        display flex
+    .close-menu
+        width: 30px
+        height: 30px
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5mZWNoYXI8L3RpdGxlPjxnIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiI+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE5Ljg1LDE3LjczYS41LjUsMCwwLDEsMCwuNzFsLTEuNDEsMS40MWEuNS41LDAsMCwxLS43MSwwbC0xLjMyLTEuMzJMMTAsMTIuMTIsMi4yNywxOS44NWEuNS41LDAsMCwxLS43MSwwTC4xNSwxOC40NGEuNS41LDAsMCwxLDAtLjcxTDcuODgsMTAsLjE1LDIuMjdhLjUuNSwwLDAsMSwwLS43MUwxLjU2LjE1YS41LjUsMCwwLDEsLjcxLDBMMTAsNy44OCwxNy43My4xNWEuNS41LDAsMCwxLC43MSwwbDEuNDEsMS40MWEuNS41LDAsMCwxLDAsLjcxTDE4LjUzLDMuNTksMTIuMTIsMTBaIi8+PC9nPjwvZz48L3N2Zz4=')
+        background-repeat: no-repeat
+        background-size: 18px
+        background-position center
+    &__header
+        display flex
+        justify-content: space-between
+        align-items: center
+        padding 15px
+        a,
+        span 
+            font-size: 12px
+            &:after
+                display: none !important
+        .tel-icopn
+            display flex
+            align-items: center
+            color: #828282 !important
+            &:before
+                content: ''
+                width: 10px
+                height: 10px
+                display block
+                background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjODI4MjgyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PC9kZWZzPjx0aXRsZT50ZWxlZm9uZTwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzIsM0EyOSwyOSwwLDAsMSwzLDMyYTEuNDksMS40OSwwLDAsMS0xLjQ2LTEuMTZMMCwyNC4zNGExLjUyLDEuNTIsMCwwLDEsLjg3LTEuNzNsNy0zQTEuNTEsMS41MSwwLDAsMSw5LjY2LDIwbDMuMSwzLjc5QTIzLjE0LDIzLjE0LDAsMCwwLDIzLjg0LDEyLjc2bC0zLjc5LTMuMWExLjUsMS41LDAsMCwxLS40My0xLjc1bDMtN0ExLjUxLDEuNTEsMCwwLDEsMjQuMzQsMGw2LjUsMS41QTEuNDksMS40OSwwLDAsMSwzMiwzWiIvPjwvZz48L2c+PC9zdmc+')
+                background-repeat: no-repeat
+                background-size: 10px
+                margin-right: 5px
+                margin-left 10px
+
+    &__nav
+        ul.menu
+            flex-wrap: wrap
+            padding: 0 15px
+            height initial
+            li.item.raiz.todas-categorias
+                display none !important
+            > li.item.raiz.item0
+                width: 100% !important
+                border-top: 1px solid #cecece
+                height 40px !important
+                a
+                    font-size: 16px !important
+                &:nth-child(2)
+                    order: initial !important
+                    max-width: initial !important
+                    a
+                        font-size: 16px !important
+                &:nth-child(3)
+                    order: initial !important
+                    max-width: initial !important
+                    a
+                        font-size: 16px !important
+                &:nth-child(4)
+                    order: initial !important
+                    max-width: initial !important
+                    a
+                        font-size: 16px !important
+                &:nth-child(5)
+                    display block !important
+                    a
+                        font-size: 16px !important
+                &:nth-child(6)
+                    display block !important
+                    a
+                        font-size: 16px !important
+    .header__nav-right
+        padding: 10px 15px !important
+        flex-wrap: wrap
+        max-width: 100% !important
+        max-height:initial !important
+        width: 100% !important
+        height:initial !important
+        a
+            font-size: 16px !important
+            font-weight: 500 !important
+            height 40px !important
+            display flex !important
+            align-items: center
+            border-top: 1px solid #cecece
+        a.calc-btn
+            max-width: 100% !important
+            width: 100% !important
+            flex-direction: row-reverse
+            justify-content: space-between !important
+        a.ofertas-btn
+            max-width: 100% !important
+            width: 100% !important
+            text-align: left !important
+            justify-content: flex-start
+            border-bottom: 1px solid #cecece
+
+.mask-mobile
+    position: absolute 
+    display: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background-color: rgba(0,0,0,.5)
+    z-index 1

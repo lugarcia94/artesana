@@ -4,6 +4,8 @@
         display block
         max-width: 1245px
         margin: 0 auto
+        @media(max-width: 1299px)
+            max-width: 991px
     &__element
         display: flex !important
         align-items: center
@@ -145,9 +147,23 @@
                 text-transform: uppercase
                 color: $cor01
 
-    @media(max-width: 991px)
-        &__item
-            justify-content: center
+    @media(max-width: 768px)
+        &__list
+            max-height 60px
+            overflow hidden
+        &__destaque,
+        &__text
+            font-size: 12px !important
+        &__element
+            padding 0px !important
+            min-width: 200px !important;
+            margin-bottom 10px
+            height: 55px 
+            &:before
+                min-width: 30px !important
+                min-height: 30px !important
+                background-size: 30px !important
+                margin-right: 10px !important
 .fbits-categoria
     .ruler
         border-top: 1px solid #cecece

@@ -1,5 +1,4 @@
 .fullbanner
-    margin-top: 155px
     &__container
         max-width: 1366px
         margin: 0 auto
@@ -40,8 +39,6 @@
             transform: translateX(-50%)
     .fbits-banner-item
         overflow hidden
-    @media(max-width: 991px)
-        margin-top: 160px;
         .fbits-componente-banner .fbits-banner-item 
             a 
                 img
@@ -50,7 +47,9 @@
                     left 50%
                     transform: translateX(-50%)
 
-
+.banner-mobile
+    @media(max-width: 768px)
+        margin-bottom 0 !important
 .mini-banner
     &__container
         max-width: 1245px
@@ -76,10 +75,17 @@
                 transition: all .3s
                 display: block
                 max-width: 100%
-                @media(max-width : 767px)
+                @media(max-width : 991px)
                     margin: 0 auto
                 &:hover
                     transform: scale(1.05)
+    @media(max-width : 1301px)
+        &__container
+            max-width: 991px
+        &__wrapper
+            justify-content: center 
+        .fbits-banner-item
+            margin: 10px
 
 .blockBottom
     &__container
@@ -134,8 +140,38 @@
     &__image
         width: 130px
         margin-right 25px
-
-
+    @media(max-width : 1301px)
+        &__container
+            max-width: 991px
+        &__wrapper
+            justify-content: center 
+        &__item
+            margin 10px
+    @media(max-width : 768px)
+        &__item
+            flex-wrap: wrap
+            justify-content: center 
+            padding 30px 15px
+        &__image
+            margin 0
+            max-width: 80px
+        &__content
+            justify-content: center 
+            h2
+                text-align: center
+                font-size: 16px
+                margin-top 20px
+            p   
+                text-align: center
+                font-size: 12px
+                line-height 14px
+                margin-bottom 15px
+            a
+                margin 0 auto 
+                font-size: 12px
+                line-height 14px
+                display: block
+                text-align: center
 .mini-footer
     &__container
         max-width: 1330px
@@ -198,6 +234,13 @@
         margin-bottom: 40px
     &__content
         padding-left 20px
+    @media(max-width : 1301px)
+        &__container
+            max-width: 991px
+    @media(max-width : 480px)
+        margin-bottom 20px
+        .fbits-banner-item
+            margin-right: 10px
 
 
 .fbits-background

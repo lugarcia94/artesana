@@ -10,13 +10,20 @@
         padding: 0 40px !important 
         width: 100%
         margin: 0 auto
+        @media(max-width: 1299px)
+            max-width: 991px !important
+        @media(max-width: 991px)
+            max-width: 100% !important
+            padding 0 15px !important
+            .col-md-12
+                padding: 0 !important
     &__title
         font-size: 22px !important
         font-weight: 800 !important
         color: $cor01 !important
         text-decoration: uppercase
         @media(max-width: 355px)
-            font-size: 15px !important
+            font-size: 18px !important
     .line
         span 
             display: none
@@ -24,6 +31,9 @@
             height 1px
             background-color: #d9d9d9
             margin-top: -12px
+    .fbits-item-lista-spot
+        @media(max-width : 991px)
+            margin 0 5px !important
     .fbits-componente-listaSpot
         .spot
             width: 100%
@@ -38,6 +48,7 @@
                 display: none !important
             @media(max-width : 991px)
                 padding: 5px
+                min-height: initial 
             &:hover 
                 .botoesSpot
                     display: none !important
@@ -181,15 +192,26 @@
                 color: $cor02
                 font-weight: 700
                 line-height: 17px
-  
+        
             
 
     .slick-next
         right: -20px !important
+        @media(max-width: 991px)
+            top: initial 
+            bottom: -56px !important
+            right: 45% !important
+        @media(max-width: 768px)
+            right: 35% !important
         
     .slick-prev
         left: -20px !important
-        
+        @media(max-width: 991px)
+            top: initial 
+            bottom: -45px
+            left: 45% !important
+        @media(max-width: 768px)
+            left: 35% !important
     
     .slick-dots
         display: flex
@@ -266,7 +288,6 @@ section.showcase.instagram
                 content: '@'
                 
 .showcase
-
     .spot
         .spotImg
             margin-bottom 10px !important
