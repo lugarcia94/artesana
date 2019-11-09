@@ -175,6 +175,19 @@
                     color: #fff
                     margin 0
                     margin-bottom 15px
+            @media(max-width: 991px)
+                flex: initial 
+                width: 100%
+                text-align: center 
+                h3
+                    text-align: center 
+                .txtNews.left
+                    width: 100%
+                    text-align: center
+                    margin 0 auto
+                    display: flex 
+                    justify-content: center
+                
             .txtNews 
                 font-size: 14px
                 color: #ffffff
@@ -205,3 +218,13 @@
                 padding 0
                 width: 85px
                 text-align center
+        @media(max-width: 991px)
+            div#fbits-cadastro-newsletter
+                margin: 20px auto
+                margin-bottom 0
+                display flex
+                flex-wrap: wrap
+                input 
+                    margin 5px 0 !important
+                    &[type="submit"]
+                        margin 5px auto !important

@@ -76,10 +76,28 @@
 
         @media(max-width : 991px)
             justify-content: flex-start
+            min-width 210px
             > li.item.raiz
-                width: fit-content !important
-                
-                &:nth-child(4n+2)
+                width: 100% !important
+                &:nth-child(2)
+                    order: 2
+                    max-width: 110px !important
+                    a
+                        font-size: 12px !important
+                        
+                &:nth-child(3)
+                    order: 1
+                    max-width: 70px !important
+                    a
+                        font-size: 12px !important
+                &:nth-child(4)
+                    order: 3
+                    max-width: 70px !important
+                    a
+                        font-size: 12px !important
+                &:nth-child(5)
+                    display none !important
+                &:nth-child(6)
                     display none !important
 
 

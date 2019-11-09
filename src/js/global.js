@@ -1,10 +1,10 @@
 $(document).ready(function () {
     //menu mobile
-    $('.header__mainbar-mobile').click(function(){
-        $('.header .menuMain').addClass('open');
+    $('.icomobile-hamburguer').click(function(e){
+        $('body').addClass('menu-mob-open')
     })
-    $('.header .menuMain button.btn-close-menu-mobile').click(function(){
-        $('.header .menuMain').removeClass('open');
+    $('.menu-mobile .close-menu').click(function(){
+        $('body').removeClass('menu-mob-open');
     })
 
     //produto frete
@@ -140,17 +140,24 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                dots: true,
                 autoplay: true,
                 arrows: false
             }
         },
         {
-            breakpoint: 481,
+            breakpoint: 767,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1,
-                dots: true,
+                autoplay: true,
+                arrows: false
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
                 autoplay: true,
                 arrows: false
             }
@@ -170,17 +177,7 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 6,
                 slidesToScroll: 3,
-                dots: true,
-                autoplay: true,
-                arrows: false
-            }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 2,
-                dots: true,
+                dots: false,
                 autoplay: true,
                 arrows: false
             }
@@ -190,7 +187,6 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                dots: true,
                 autoplay: true,
                 arrows: false
             }
@@ -300,13 +296,7 @@ if ($(window).width() < 992) {
         arrows: true,
     });
 
-    $('.mini-banner .mini-banner__wrapper').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        arrows: false
-    });
+
 
     $('.mini-footer .mini-footer__banners').slick({
         slidesToShow: 1,
