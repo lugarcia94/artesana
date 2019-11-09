@@ -126,6 +126,16 @@ $(document).ready(function () {
         arrow: false,
         dots: false,
         responsive: [{
+            breakpoint: 1300,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: true,
+                autoplay: true,
+                arrows: false
+            }
+        },
+        {
             breakpoint: 992,
             settings: {
                 slidesToShow: 2,
@@ -154,10 +164,21 @@ $(document).ready(function () {
         slidesToScroll: 1,
         arrow: true,
         dots: false,
-        responsive: [{
+        responsive: [
+        {
+            breakpoint: 1301,
+            settings: {
+                slidesToShow: 6,
+                slidesToScroll: 3,
+                dots: true,
+                autoplay: true,
+                arrows: false
+            }
+        },
+        {
             breakpoint: 992,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 4,
                 slidesToScroll: 2,
                 dots: true,
                 autoplay: true,
@@ -167,7 +188,7 @@ $(document).ready(function () {
         {
             breakpoint: 481,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 dots: true,
                 autoplay: true,
