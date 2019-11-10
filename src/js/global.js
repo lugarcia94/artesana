@@ -58,8 +58,25 @@ $(document).ready(function() {
 
                         $.ajax(settings3).done(function(infsProd) {
                             //console.log("infos", infsProd);
-                            var varimgid = infsProd.produtoVarianteId;
-                            console.log("log do id infosprod", varimgid);
+                            /**
+                             * Calculates in percent, the change between 2 numbers.
+                             * e.g from 1000 to 500 = 50%
+                             *
+                             * @param oldNumber The initial value
+                             * @param newNumber The value that changed
+                             */
+                            function getPercentageChange(oldNumber, newNumber) {
+                                var decreaseValue = oldNumber - newNumber;
+
+                                return (decreaseValue / oldNumber) * 100;
+                            }
+                            var varimgid = infsProd.produtoVarianteId,
+                                desconto = getPercentageChange(
+                                    infsProd.precoDe,
+                                    infsProd.precoPor
+                                );
+                            desconto = desconto.toFixed();
+                            console.log("Informação do produto: ", infsProd);
 
                             var imageseting = {
                                 async: true,
@@ -91,20 +108,47 @@ $(document).ready(function() {
                                         }
                                     }
                                 }
+
+                                //Labels
+                                var label = "",
+                                    prices =
+                                        '<div class="prices"><span>R$' +
+                                        infsProd.precoPor +
+                                        "</span></div>";
+
+                                if (infsProd.precoDe != infsProd.precoPor) {
+                                    label =
+                                        '<div class="labels"><small>' +
+                                        desconto +
+                                        "%</small>off</div>";
+                                    //Preços
+                                    prices =
+                                        '<div class="prices"><small>de <strike>R$' +
+                                        infsProd.precoDe +
+                                        "</strike> por </small><span>R$" +
+                                        infsProd.precoPor +
+                                        "</span></div>";
+                                }
+
                                 var produto =
                                     '<div class="tool__product-item">\
-                                <div class="tool__product-info">\
-                                    <div class="labels"></div>\
-                                    <div class="tool__imagelist">' +
+                                    <div class="tool__product-info">' +
+                                    label +
+                                    '\
+                                        <div class="tool__imagelist">' +
                                     figure +
                                     "</div>\
-                                    <header>" +
+                                        <header>" +
                                     infsProd.nome +
                                     '</header>\
-                                    <input type="number" name="qtd-prod" value="1">\
-                                    <div class="prices"><span>R$' +
-                                    infsProd.precoPor +
-                                    '</span></div></div>\
+                                    <div class="tool__product-input">\
+                                        <button class="tool__product-input-plus"></button>\
+                                        <input type="number" name="qtd-prod" value="1">\
+                                        <button class="tool__product-input-minus"></button>\
+                                        </div>' +
+                                    prices +
+                                    '\
+                                    </div>\
                                     <button class="tool__js-addtoList" data-include="' +
                                     infsProd.produtoVarianteId +
                                     '"><i class="tool__iconselect"></i> Incluir no carrinho</button>\
@@ -154,15 +198,14 @@ $(document).ready(function() {
             if (ListProdsTool.hasOwnProperty(id)) {
                 const itns = ListProdsTool[id];
                 if (id == ListProdsTool.length - 1) {
-                    _produtoVarianteId += itns[0] + "," + itns[1];
+                    _produtoVarianteId += "p=" + itns[0] + "," + itns[1];
                 } else {
-                    _produtoVarianteId += itns[0] + "," + itns[1] + "&";
+                    _produtoVarianteId += "p=" + itns[0] + "," + itns[1] + "&";
                 }
             }
         }
         var url =
-            "http://checkout.2bdigital.ecommercestore.com.br/Carrinho/Produto/Add/" +
-            ListProdsTool[0][0];
+            "http://localhost:4000/Carrinho/Produto/Add/" + _produtoVarianteId;
         console.log(url);
 
         fetch(url, { method: "GET" }).then(function(res) {
@@ -200,15 +243,14 @@ $(document).ready(function() {
         $("body").removeClass("menu-mob-open");
     });
 
-    $('.filtroTitle.title').click(function(){
-        $('.fbits-topo-categoria.divmobile').toggleClass('open')
-    })
+    $(".filtroTitle.title").click(function() {
+        $(".fbits-topo-categoria.divmobile").toggleClass("open");
+    });
 
-    $('a#outrasAvaliacoes').html('avaliações')
-
+    $("a#outrasAvaliacoes").html("avaliações");
 
     //produto frete
-    $('input#btnCalculaFreteProduto').attr('value', 'Ok')
+    $("input#btnCalculaFreteProduto").attr("value", "Ok");
     $("input#txtCalculaFreteProduto").attr("placeholder", "Digite seu CEP");
 
     if ($(".category__products >span").length) {
@@ -358,42 +400,44 @@ $(document).ready(function() {
         slidesToScroll: 4,
         arrow: false,
         dots: false,
-        responsive: [{
-            breakpoint: 1300,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                arrows: false
+        responsive: [
+            {
+                breakpoint: 1300,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    autoplay: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    arrows: false
+                }
             }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                autoplay: true,
-                arrows: false
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                autoplay: true,
-                arrows: false
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                autoplay: true,
-                arrows: false
-            }
-        }]
+        ]
     });
 
     //brands

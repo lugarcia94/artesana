@@ -17,6 +17,41 @@
         width: 100%
         @media screen and (min-width: 1024px)
             width: 80%
+
+    & .right
+        display: flex
+        flex-direction: column
+
+        & h2 
+            color: #0080c7;
+            font-family: Exo;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            /* Text style for "produtos q" */
+            letter-spacing: 0.9px;
+            margin-bottom: 33px
+        & p 
+            color: #7e7e7e;
+            font-family: Exo;
+            font-size: 12px;
+            font-weight: 400;
+            /* Text style for "Verificamo" */
+            letter-spacing: 0.6px;
+        & button 
+            height: 50px;
+            border-radius: 4px;
+            background-color: #0080c7;
+            margin-top: 35px
+            color: #ffffff;
+            font-family: Exo;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            /* Text style for "incluir it" */
+            letter-spacing: 0.6px;
+            &:hover
+                background-color: #00A6FF
 .tool
     & > *
         box-sizing: border-box
@@ -32,6 +67,33 @@
         margin-right: 8px
 
     &__product
+        &-input
+            display: flex
+            width: 90px;
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid #e1e1e1;
+            background-color: #ffffff;
+            justify-content: space-between
+            & input 
+                height 40px
+                flex: 1
+                width: calc(100% - 24px)
+                text-align: center
+                border: 0
+                outline: 0
+                background-color: #ffffff;
+                font-family: Exo;
+                font-size: 12px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: 0.6px;
+                color: #4d4d4d;
+            & button 
+                width: 12px
+                flex: 0 0 12px
         &-list
             flex: 0 0 100%
             display: flex
@@ -50,9 +112,10 @@
             background-color: #ffffff;
             width: 100%
             margin-bottom: 11px
+            position relative
         &-item
-            flex: 0 0 calc(33.333333333%)
-            padding: 0 50px
+            flex: 0 0 calc(25%)
+            padding: 0 20px
             display: flex
             flex-direction: column
             flex-wrap: nowrap
@@ -64,6 +127,8 @@
                 & .prices
                     background-color: #e58822;
                     color: #FFFFFF
+                    & small 
+                        color: #f8e95f;
                 & button 
                     border: solid 1px #e0e0e0;
                     background-color: #ffffff;
@@ -75,10 +140,26 @@
                     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAMAAADjyg5GAAAALVBMVEUAAAAAgMsAgsgAgMgAgMcAgMcAgMgAh8MAgMcAgMcAgMYAgcYAgMcAgccAgMYiTb2yAAAAD3RSTlMAIjOq7v9mEYjM3VW7d5lYcN91AAAAWUlEQVR4AUXHXRrEIAgDwAhEWvpz/+OufrHrvA2kNfyZBxluWufSv+1n7Ebi4OIWPHB+QwueKLLXGmu0Mksbdc5rdFyc13gB97x2A8jiUol51zwh9rzvYxh+aU4Dlmk70FAAAAAASUVORK5CYII=')
             & .labels
                 position: absolute
-                width: 100%
+                width: 37px;
+                height: 36px;
+                border-radius: 2px;
+                background-color: #0080c7;
                 left: 0
-                height 40px
                 top 0
+                display: flex
+                flex-direction: column
+                justify-content: center
+                flex-wrap: nowrap
+                align-items: center
+                color: #ffffff;
+                font-family: Exo;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 12px;
+                text-transform: uppercase;
+                /* Text style for "10% , off" */
+                letter-spacing: 0.6px;
+                padding: 5px
             & header 
                 margin: 15px 0
                 margin-bottom: 25px
@@ -107,15 +188,15 @@
                 flex-direction: column
                 align-items: center
                 justify-content: center
+                border-radius: 0 0 4px 4px;
                 & small 
+                    color: #00A6FF;
                     font-family: Exo;
                     font-size: 12px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.5;
-                    letter-spacing: 0.6px;
-                    color: #4c4c4c;
+                    font-weight: 400;
+                    line-height: 18px;
+                    /* Text style for "de ,  por" */
+                    letter-spacing: 0.6px
             & button 
                 border: solid 1px #e0e0e0;
                 background-color: #f4f4f4;
@@ -140,21 +221,6 @@
                     border: solid 1px #e0e0e0;
                     background-color: #ffffff;
                     color: #0080c7
-            & input 
-                height 40px
-                width: 85px
-                text-align: center
-                border: solid 1px #e1e1e1;
-                background-color: #ffffff;
-                font-family: Exo;
-                font-size: 12px;
-                font-weight: normal;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.5;
-                letter-spacing: 0.6px;
-                color: #4d4d4d;
-                margin-bottom: 16px
             & input[type=number]::-webkit-inner-spin-button, 
             input[type=number]::-webkit-outer-spin-button
                 -webkit-appearance: none; 
