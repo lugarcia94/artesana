@@ -204,8 +204,7 @@ $(document).ready(function() {
                 }
             }
         }
-        var url =
-            "http://localhost:4000/Carrinho/Produto/Add/" + _produtoVarianteId;
+        var url = "http://localhost:4000/incluir?" + _produtoVarianteId;
         console.log(url);
 
         fetch(url, { method: "GET" }).then(function(res) {
