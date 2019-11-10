@@ -480,10 +480,29 @@ li.fbits-filtro-pai.category__filter-options-item
             left: 20px
     li.filtroPai, li.fbits-filtroSelecionados-pai, li.fbits-filtro-pai
         border-bottom: none
-
+    @media(max-width 991px)
+        .filtroTitle.title.abert
+            top: 25px !important
+            span.ico-filtrar-busca.ico-filtrar-busca-fecha
+                position: absolute !important;
+                left: -50px !important;
+                top: 0;
+                visibility: visible;
+                opacity: 1;
+                background-color: #fff;
+                z-index: 999999999;
+                height: 46px;
+                border-radius: 5px;
+                border: 1px solid #0080c7;
+                width: 46px;
+                background-image url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5mZWNoYXI8L3RpdGxlPjxnIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiI+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE5Ljg1LDE3LjczYS41LjUsMCwwLDEsMCwuNzFsLTEuNDEsMS40MWEuNS41LDAsMCwxLS43MSwwbC0xLjMyLTEuMzJMMTAsMTIuMTIsMi4yNywxOS44NWEuNS41LDAsMCwxLS43MSwwTC4xNSwxOC40NGEuNS41LDAsMCwxLDAtLjcxTDcuODgsMTAsLjE1LDIuMjdhLjUuNSwwLDAsMSwwLS43MUwxLjU2LjE1YS41LjUsMCwwLDEsLjcxLDBMMTAsNy44OCwxNy43My4xNWEuNS41LDAsMCwxLC43MSwwbDEuNDEsMS40MWEuNS41LDAsMCwxLDAsLjcxTDE4LjUzLDMuNTksMTIuMTIsMTBaIi8+PC9nPjwvZz48L3N2Zz4=')
+                background-position: center 
+                background-repeat: no-repeat
+                background-size: 20px
 .fbits-categoria .interna.cf, .busca .interna.cf
     max-width 1366px
     display flex
+    position relative
     @media(max-width 1300px)
         padding: 0
         max-width 991px
@@ -491,7 +510,79 @@ li.fbits-filtro-pai.category__filter-options-item
         float: none
     @media(max-width 991px)
         .fbits-topo-categoria.divmobile
-            display none !important
+            position absolute
+            top: 80px
+            left: 0
+            right: 0
+            z-index 9
+            width: 100%
+            max-width: 300px
+            margin: 0px auto
+            &.open
+                z-index 999999
+            &:before
+                display: none
+            .filtroTitle.title
+                font-size: 0
+                border: 1px solid #0080c7;
+                background-color: #f7f7f7;
+                height: 30px !important;
+                border-radius: 5px;
+                max-width: 130px;
+                color: #0080c7
+                &:before    
+                    content: 'Refinar busca'
+                    font-size: 12px
+                    font-weight bold
+                    padding-left 10px
+            section.fbits-section-categoria.fbits-filtro
+                position: absolute;
+                top: -55px;
+                left: 12px;
+                .filtros.filtro-topo-categoria
+                    max-width 130px
+                    height: 42px !important
+                    min-height: 42px
+                    .filtroTitle.title
+                        margin-bottom 0 
+                        height: 42px !important
+                        min-height: 42px
+                        width: 100%
+                        span.ico-filtrar-busca
+                            &:before
+                                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy42OCAxNS44MyI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZXRhMl9kb3duPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNy40NiwyLjUyLDE0LjM3LDE1LjYxYS43NS43NSwwLDAsMS0xLjA2LDBMLjIyLDIuNTJhLjc1Ljc1LDAsMCwxLDAtMS4wNkwxLjQ2LjIyYS43NS43NSwwLDAsMSwxLjA2LDBMMTMuODQsMTEuNTEsMjUuMTYuMjJhLjc1Ljc1LDAsMCwxLDEuMDYsMGwxLjI0LDEuMjRBLjc1Ljc1LDAsMCwxLDI3LjQ2LDIuNTJaIi8+PC9nPjwvZz48L3N2Zz4=')
+                                background-size 10px
+                                right: 5px
+            section.fbits-section-ordenar-encontrado
+                border: 1px solid #0080c7;
+                background-color: #f7f7f7 !important
+                border-radius: 5px;
+                max-width: 130px;
+                color: #0080c7
+                right 12px !important
+                .fbits-section-categoria.fbits-ordenacao-categoria
+                    .ordenar
+                        select#Parametro
+                            border: 1px solid #0080c7;
+                            background-color: #f7f7f7;
+                            height: 44px !important;
+                            border-radius: 5px;
+                            max-width: 130px; 
+                            color: #0080c7 !important;
+                            font-size: 12px !important;
+                            font-weight bold !important;
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy42OCAxNS44MyI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZXRhMl9kb3duPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNy40NiwyLjUyLDE0LjM3LDE1LjYxYS43NS43NSwwLDAsMS0xLjA2LDBMLjIyLDIuNTJhLjc1Ljc1LDAsMCwxLDAtMS4wNkwxLjQ2LjIyYS43NS43NSwwLDAsMSwxLjA2LDBMMTMuODQsMTEuNTEsMjUuMTYuMjJhLjc1Ljc1LDAsMCwxLDEuMDYsMGwxLjI0LDEuMjRBLjc1Ljc1LDAsMCwxLDI3LjQ2LDIuNTJaIi8+PC9nPjwvZz48L3N2Zz4=')
+                            background-size 10px
+                            
+    @media(min-width 767px)
+        .fbits-topo-categoria.divmobile
+            section.fbits-section-categoria.fbits-filtro
+                position: absolute;
+                top: -65px;
+                left: 0;
+            .filtroTitle.title
+                &:before    
+                    padding-left 20px
     .spots-interna
         > span 
             display: flex !important;
@@ -506,6 +597,12 @@ li.fbits-filtro-pai.category__filter-options-item
                 .fbits-item-lista-spot
                     flex: 0 1 auto
                     margin 15px !important
+            @media(max-width 480px)
+                .fbits-item-lista-spot
+                    flex: 0 1 135px
+                    margin 5px !important
+                    .spot
+                        min-height initial !important
     .fbits-topo-categoria.divdesk
         width: 300px
         border-right: 1px solid #e1e1e1

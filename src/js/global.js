@@ -7,6 +7,12 @@ $(document).ready(function () {
         $('body').removeClass('menu-mob-open');
     })
 
+    $('.filtroTitle.title').click(function(){
+        $('.fbits-topo-categoria.divmobile').toggleClass('open')
+    })
+
+    $('a#outrasAvaliacoes').html('avaliações')
+
     //produto frete
     $('input#btnCalculaFreteProduto').attr('value', 'Calcular')
     $('input#txtCalculaFreteProduto').attr('placeholder', 'Digite seu CEP')
@@ -130,7 +136,6 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                dots: true,
                 autoplay: true,
                 arrows: false
             }

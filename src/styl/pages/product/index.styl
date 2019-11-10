@@ -1,29 +1,141 @@
 #bodyProduto , #bodyListaCompra
-
-
+    .header__nav
+        height: 42px;
+        border-bottom: 2px solid #fff;
+    .interna.cf
+        background-color: #fff
     padding-top 20px
+
+
+    .detalhe-produto-itens
+        float none!important
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        [class*=product-column]
+            flex: 0 1 33%
+        .product-column-first
+            margin-right 40px
+            *
+                float: none !important
+            #fbits-fabricante-logo
+                display: block
+                width: 100%
+                margin 20px 0
+                img
+                    margin initial !important
+            .fbits-avaliacao
+                margin-bottom: 20px
+                a#outrasAvaliacoes
+                    font-size: 9px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: #b3b3b3;
+            .fbits-produto-prescricao
+                .paddingbox
+                    font-size: 12px
+                    font-weight: 500
+                    color: #949494;
+                    line-height 20px
+            .mais-detalhes
+                display block
+                font-size: 12px
+                font-weight: 500
+                color: #e58822
+                line-height 20px
+                margin-top 40px
+        
+        
+        .product-column-second
+            margin: 0 40px
+            *
+                float: none !important
+                opacity: 1 !important
+                max-height: initial !important
+                
+            .fbits-componente-imagemvariantethumb
+                position: relative !important
+                max-width: 400px;
+                .fbits-produto-imagensMinicarrossel
+                    margin 0 !important
+            .jcarousel 
+                width: 100% !important
+                ul
+                    width: 100% !important
+                    max-width: 100% !important
+                    li
+                        width: initial !important;
+                        img
+                            width: initial !important;
+                            &:hover 
+                                transform: initial
+            .fbits-preco-off
+                position: absolute 
+                top: 5px
+                left: 10px
+                width: 35px !important
+                height: 35px
+                background-color: $cor01 !important
+
+        .product-column-third
+            margin-left 40px
+            *
+                float: none !important
+            .preco-prod
+                .fbits-preco
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between   
+                    max-width 80%  
+                    .precoDe
+                        width: 100%
+                        text-align: left;
+                        font-size: 14px
+                        &:before
+                            content: 'de'
+                        &:after 
+                            content: 'por'
+                            margin-left 5px
+
+
+                
+
+
+        .prodTitle
+            font-size 20px
+            font-weight: 800
+            text-transform uppercase
+            text-align: left
+            color: $cor01
+            margin 10px 0
+        .sku
+            text-align: left
+            font-size 11px
+            font-weight: 500
+
+
     .content.produto
-        margin-top: 140px
+        margin-top: 132px;
         .fbits-breadcrumb
             >ol
                 display: flex
+                align-items: center
+                background-color: #f7f7f8
+                padding: 15px 0
                 >li
                     display: inline
                     &:first-child
                         span[itemprop]
                             font-size: 0px
-                            text-transform uppercase
-                            color: #989898
-                            font-weight 400
+                            color: #818181
+                            font-weight 500
                             &:before
                                 content: 'Home'
                                 font-size: 12px
                     span[itemprop]
                         font-size: 12px
-                        color: #979797
-                        font-weight: 800
-                        line-height: 16px
-                        text-transform uppercase
+                        font-weight 500
+                        color: #818181
 
                     .separador
                         &:before
@@ -34,14 +146,10 @@
                             height 10px
                             background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjOTc5Nzk3IiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUxLjg0NnB4IiBoZWlnaHQ9IjQ1MS44NDdweCIgdmlld0JveD0iMCAwIDQ1MS44NDYgNDUxLjg0NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDUxLjg0NiA0NTEuODQ3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTM0NS40NDEsMjQ4LjI5MkwxNTEuMTU0LDQ0Mi41NzNjLTEyLjM1OSwxMi4zNjUtMzIuMzk3LDEyLjM2NS00NC43NSwwYy0xMi4zNTQtMTIuMzU0LTEyLjM1NC0zMi4zOTEsMC00NC43NDRMMjc4LjMxOCwyMjUuOTJMMTA2LjQwOSw1NC4wMTdjLTEyLjM1NC0xMi4zNTktMTIuMzU0LTMyLjM5NCwwLTQ0Ljc0OGMxMi4zNTQtMTIuMzU5LDMyLjM5MS0xMi4zNTksNDQuNzUsMGwxOTQuMjg3LDE5NC4yODRjNi4xNzcsNi4xOCw5LjI2MiwxNC4yNzEsOS4yNjIsMjIuMzY2QzM1NC43MDgsMjM0LjAxOCwzNTEuNjE3LDI0Mi4xMTUsMzQ1LjQ0MSwyNDguMjkyeiIvPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=')
                             background-repeat no-repeat
-                            background-position: center 
+                            background-position-x: center 
+                            background-position-y bottom
                             background-size: 8px
 
-                    &:last-child
-                        span[itemprop]
-                            font-weight: bold
-                            color $cor02
-                            font-size 12px
 
     #avaliacao-Produto
         max-height: 180px
@@ -129,9 +237,6 @@
             margin: 0!important
 
     #galeria 
-        max-width: 100%
-        margin-top 30px
-        height auto
         .slick-prev
             background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAABRFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0NDQ2NjY3Nzc5OTk6Ojo9PT1BQUFCQkJDQ0NERERPT09TU1NUVFRWVlZYWFhZWVlaWlpdXV1kZGRnZ2doaGhra2tsbGxtbW12dnZ7e3t9fX2EhISFhYWGhoaRkZGSkpKWlpazs7O0tLS6urrBwcHHx8fKysrNzc3Pz8/T09PW1tbc3Nzg4ODi4uLk5OTl5eXn5+fw8PD5+fn6+vr8/Pz9/f3+/v7///+yDEB0AAAAM3RSTlMAAwQFBgcIFhclJicoQEFCQ0VGfH1+gYSFhoeIibi5z9DR0tPe3+Dm5+jp7/Dx8vP19vfuipfMAAABVUlEQVR4AY3T59PSQBgE8KUEAlKCgkLQiAgIEmNgkWLvvSgWxSIWESH//3eRYeTuCHnf3+eb5+b29oEgkjOtmkO7bp0wQvATL53jVtOMQxUtuJR1jscgSVS5q5KCIGvTTzstHOnQn5vBxhGb+9hJrGmnuV9Vwz/HGCSPFd1lEDcOoETFkBITCDcpu/b0/oiCVhgGZZff/Pj8mCIDRcpe/1zOXimXWRRdffHLm7+9RZGFOgVXxlNv9u4GJTVc4Fbv7rfF8v1tyi6Copvfl97kXo8ydCkYPP+6+P3hCSUOGhT1X37x/nx6cImCBk5RMno49ebjgfyuEhXPJh8fSXOKyFLRv3N9qOQcblHVo/JfMBnMPER/dKzkD+4htDPcr6JhLRmwFylsZFz662bxX7rtP8WAIFXhrrMJSGL5DmVuIQqVboqJnz+pw08oV7YaDp2aVT4awdZf/svHPvLAFBEAAAAASUVORK5CYII=') !important
             background-color: transparent !important
@@ -148,7 +253,6 @@
             display: block
             margin: 0
             margin-bottom 15px!important
-            max-width: 85px
 
         
     .fbits-layout-item 
@@ -158,47 +262,6 @@
         [id*="produto-variante"]
             @media(max-width: 768px)
                 bottom: 0
-
-    .fbits-componente-imagemvariantethumb img 
-        border: none
-        border-radius: 3px
-        margin: 0
-        width: auto!important
-        max-width: 90px!important
-
-    .fbits-componente-imagemvariantethumb.fbits-produto-imagens
-        width: 100% 
-        float: none
-        &:first-child
-            a
-                opacity 1!important
-
-        a.active   
-            opacity 1
-
-        a  
-            width 100px
-            height 100px
-            height auto 
-            display: flex!important
-            align-items: center
-            max-width 100px
-            margin: 0 auto!important
-            opacity 0.6 
-            border: 1px solid #cecece
-
-            @media(max-width: 991px)
-                max-width: 100%
-                opacity: 1
-            
-            img   
-                margin: 0 auto
-
-        @media(max-width: 991px)
-            width 100%!important  
-            
-
-             
 
     #msgEstoqueDisponivel
         display none !important
@@ -1472,8 +1535,11 @@ div#fbits-avaliar-produto
                 font-size: 15px
                 font-style: italic 
 
-.detalhe-produto-itens
-    float none!important
+
+
+
+
+
 
 .product__top
     display flex
