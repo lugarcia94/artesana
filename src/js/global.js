@@ -57,23 +57,60 @@ $(document).ready(function() {
                             };
 
                         $.ajax(settings3).done(function(infsProd) {
-                            console.log("infos", infsProd);
-                            var produto =
-                                '<div class="tool__product-item">\
-                                <div class="labels"></div>\
-                                <header>' +
-                                infsProd.nome +
-                                '</header>\
-                                <input type="number" name="qtd-prod" value="1">\
-                                <div class="prices">' +
-                                infsProd.precoPor +
-                                '</div>\
-                                <button class="tool__js-addtoList" data-include="' +
-                                infsProd.produtoVarianteId +
-                                '">Incluir no carrinho</button>\
-                            </div>';
+                            //console.log("infos", infsProd);
+                            var varimgid = infsProd.produtoVarianteId;
+                            console.log("log do id infosprod", varimgid);
 
-                            toolContainer.append(produto);
+                            var imageseting = {
+                                async: true,
+                                crossDomain: true,
+                                url:
+                                    "https://api.fbits.net/produtos/" +
+                                    varimgid +
+                                    "/imagens?tipoIdentificador=ProdutoVarianteId",
+                                method: "GET",
+                                headers: {
+                                    Accept: "application/json",
+                                    Authorization:
+                                        "Basic 2BDig-8dea632a-a11a-4f95-8705-37fe92031c3e",
+                                    "cache-control": "no-cache"
+                                }
+                            };
+
+                            $.ajax(imageseting).done(function(images) {
+                                var figure = "";
+                                for (const im in images) {
+                                    if (images.hasOwnProperty(im)) {
+                                        const objimage = images[im];
+                                        if (objimage.url) {
+                                            figure +=
+                                                '<div class="tool__image"><img src="' +
+                                                objimage.url +
+                                                '"></div>';
+                                            console.log("Resimage: ", figure);
+                                        }
+                                    }
+                                }
+                                var produto =
+                                    '<div class="tool__product-item">\
+                                <div class="tool__product-info">\
+                                    <div class="labels"></div>\
+                                    <div class="tool__imagelist">' +
+                                    figure +
+                                    "</div>\
+                                    <header>" +
+                                    infsProd.nome +
+                                    '</header>\
+                                    <input type="number" name="qtd-prod" value="1">\
+                                    <div class="prices"><span>R$' +
+                                    infsProd.precoPor +
+                                    '</span></div></div>\
+                                    <button class="tool__js-addtoList" data-include="' +
+                                    infsProd.produtoVarianteId +
+                                    '"><i class="tool__iconselect"></i> Incluir no carrinho</button>\
+                                </div>';
+                                toolContainer.append(produto);
+                            });
                         });
                     }
                 }
@@ -90,6 +127,7 @@ $(document).ready(function() {
         var _idProd = $(this).data("include"),
             _qtdProd = $(this)
                 .parent()
+                .toggleClass("select")
                 .find("input")
                 .val();
         $(this).toggleClass("ins");
