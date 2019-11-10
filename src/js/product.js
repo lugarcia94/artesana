@@ -79,6 +79,9 @@ define(['jquery', 'slick-carousel'], ($) => {
         }
     }
 
+    $('input#btnCalculaFreteProduto').attr('value', 'Ok')
+
+
     function productQty(parent) {
         parent.on('click','#maisQtd', function(i){
             let qtd   = $(this).closest('.clear').find('.qtdProduto');

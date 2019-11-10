@@ -38,44 +38,33 @@
     @media(max-width 991px)
         margin: 0 auto
  
-
+.jcarousel
+    overflow initial !important
 #galeria 
-    a  
- 
-        img     
-            @media(max-width 992px)
-                max-width 100%!important 
-
+    
     .slick-next, .slick-prev 
         position: absolute
         background-color: transparent
-        display none!important
 
     .slick-arrow
         width 85px!important
         height 30px
         background-size: auto !important
     .slick-next
+        width: 20px !important
         bottom -20px
+        right -20px !important
         font-size: 0
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAilBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzNJSUldXV19fX2zs7PLy8v19fX///+M4fTRAAAAJnRSTlMAAwQGBxYXJicoP0JDRXt8fYWGh4iJuLnP0NHf4Ofo6e/w8fX295+rfNMAAADtSURBVHjajdRtb4IwGIXhAyJTqwPG5GUISqlnc5v//+9tS0igUHl2fb6Tpu3TYsRTSV61bKs82XtwWac1B3W6xtQq6mjr4hUsTwXnig1Gdhe6XHZDojq6GYXepuUjbb9cUPCxMsCfZy6J8CvsuMSEAF64LAX8WmgaH4q2d04dkNDy9X3jxBEZx273+yzKcKLlcx5V0JQiDdIRfXAMWmw0TuJaFTIpYYZE3PsRSjzDA/xGuIvGB1L53hEaeX4QyXOIoBTmWX4XPXWl21X9650Otm+cK7ewBLGhzcQBpsL0zMH5NYSLt0/ySlNP/7EfWT+O2khDKEMAAAAASUVORK5CYII=')!important
-        transform: scale(1)!important 
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS44MyAyNy42OCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNiNGI0YjQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZXRhMl9SPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yLjUyLjIyLDE1LjYxLDEzLjMxYS43NS43NSwwLDAsMSwwLDEuMDZMMi41MiwyNy40NmEuNzUuNzUsMCwwLDEtMS4wNiwwTC4yMiwyNi4yMmEuNzUuNzUsMCwwLDEsMC0xLjA2TDExLjUxLDEzLjg0LjIyLDIuNTJhLjc1Ljc1LDAsMCwxLDAtMS4wNkwxLjQ2LjIyQS43NS43NSwwLDAsMSwyLjUyLjIyWiIvPjwvZz48L2c+PC9zdmc+')!important
         background-position: center
-
         @media(max-width: 992px)
             right -20px!important 
             bottom: 0!important 
             top: 16%
 
     .slick-prev
-        top: -40px
+        bottom -20px
+        left: -55px !important
         font-size: 0
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAABRFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0NDQ2NjY3Nzc5OTk6Ojo9PT1BQUFCQkJDQ0NERERPT09TU1NUVFRWVlZYWFhZWVlaWlpdXV1kZGRnZ2doaGhra2tsbGxtbW12dnZ7e3t9fX2EhISFhYWGhoaRkZGSkpKWlpazs7O0tLS6urrBwcHHx8fKysrNzc3Pz8/T09PW1tbc3Nzg4ODi4uLk5OTl5eXn5+fw8PD5+fn6+vr8/Pz9/f3+/v7///+yDEB0AAAAM3RSTlMAAwQFBgcIFhclJicoQEFCQ0VGfH1+gYSFhoeIibi5z9DR0tPe3+Dm5+jp7/Dx8vP19vfuipfMAAABVUlEQVR4AY3T59PSQBgE8KUEAlKCgkLQiAgIEmNgkWLvvSgWxSIWESH//3eRYeTuCHnf3+eb5+b29oEgkjOtmkO7bp0wQvATL53jVtOMQxUtuJR1jscgSVS5q5KCIGvTTzstHOnQn5vBxhGb+9hJrGmnuV9Vwz/HGCSPFd1lEDcOoETFkBITCDcpu/b0/oiCVhgGZZff/Pj8mCIDRcpe/1zOXimXWRRdffHLm7+9RZGFOgVXxlNv9u4GJTVc4Fbv7rfF8v1tyi6Copvfl97kXo8ydCkYPP+6+P3hCSUOGhT1X37x/nx6cImCBk5RMno49ebjgfyuEhXPJh8fSXOKyFLRv3N9qOQcblHVo/JfMBnMPER/dKzkD+4htDPcr6JhLRmwFylsZFz662bxX7rtP8WAIFXhrrMJSGL5DmVuIQqVboqJnz+pw08oV7YaDp2aVT4awdZf/svHPvLAFBEAAAAASUVORK5CYII=')!important
-        transform: scale(-1) 
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS44MyAyNy42OCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNiNGI0YjQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZXRhMl9MPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy4zMSwyNy40Ni4yMiwxNC4zN2EuNzUuNzUsMCwwLDEsMC0xLjA2TDEzLjMxLjIyYS43NS43NSwwLDAsMSwxLjA2LDBsMS4yNCwxLjI0YS43NS43NSwwLDAsMSwwLDEuMDZMNC4zMSwxMy44NGwxMS4zLDExLjMyYS43NS43NSwwLDAsMSwwLDEuMDZsLTEuMjQsMS4yNEEuNzUuNzUsMCwwLDEsMTMuMzEsMjcuNDZaIi8+PC9nPjwvZz48L3N2Zz4=')!important
         background-position: center
-
-        @media(max-width: 992px)
-            left -20px!important 
-            transform: rotate(360deg)!important
-            bottom: 0!important 
-            top: 38%

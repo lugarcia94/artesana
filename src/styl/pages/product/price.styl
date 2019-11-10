@@ -180,14 +180,14 @@
     border none
 
 [id*="produto-comprar"]
-    margin: 0 
+    margin: 0
     bottom: 0
     max-width: 100%
     width: 100%
+    max-width: 250px
     height: 50px 
     margin-top: 10px
     
-
     a
         margin: 0
 
@@ -211,6 +211,7 @@
         text-decoration: none
         transition: $transition
         padding-left 0 
+        font-size: 0 !important
         &:hover
             opacity .7
 
@@ -241,8 +242,8 @@
         align-items: center
         margin: 0
         position relative
-        padding-left 52px
-        top: -10px
+        padding-left 25px
+        height: 25px;
 
         @media(max-width 992px) 
             width: 100%
@@ -250,25 +251,26 @@
             margin-bottom: 10px
 
         &:after
-            content: 'Digite seu CEP:'
-            font-size: 15px
+            content: 'Consulte frete e prazo de entrega'
+            font-size: 12px
             text-transform: none
-            font-weight: 600
-            color: #353535
+            font-weight: 500
+            color: #818181
 
         &:before
             content:''
             display inline-block
-            width 48px
-            height 26px
+            width 20px
+            height 20px
             position: absolute;
             left: 0;
-            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAaCAMAAADG6y/lAAABblBMVEUAAAAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAjHyAcCckUAAAAenRSTlMADNr//W8wsIhgzkDEPSgH9Kh40Nn6ZeM0uiAlP4bz/ktBj5BqZ5QPJObhBAH8yRVOVdPgnInRC6L4OofkT5uyA4DwvKwGI6WScXpXrb9rz+9d3Ou5PMigjoTYs+7owC75ECLSWO216lrfgTUfuIvimH7GTGbLwwrUOIWMoBsAAAFaSURBVHjajdLnUsJgEIbRxRelqYCAvQL2AGoUC1ETFCxYsYO9917v3gQxE8gHw/n/7MzuLKkMZWAzlhNTBQoxFQzMFgZrkcBGDCZU2mRV1faSgyyHs5qyalwyd8FA5amlP3X4U88OGhplTc0trWhrp4wOr0/hp6zOrm5NoC7d04u+fmLgAgiGGAENAIPE4gWGQoyA4zFMIy69MORiVB/QGKw0jgImGEEEAk369KYATIuMQEKUGMQZYDZGpQdxYE6kYoHFlDH/f+SFRZGKBoK6pw47SCzJ85cBWwlB/rdyK6trwfX8wGBObmxuMYNhKKTcwL4NmXFSF+xIu4BVciOwJ6lSSDmBdGQfB9KhNjhCxvEJnULnjKNzKC5IFbvkef5CCeLAFa/lUIJroI6/uaVcd0C4JYnAPWn5gYfHKJ5E0nuG4oVy2F8h87wRA/f+IXwmKM/X7beQ/iHFL+2QO5uYW0jgAAAAAElFTkSuQmCC")no-repeat;
+            background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCAzMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiM4MTgxODE7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5mcmV0ZTwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDAsMjN2MmExLDEsMCwwLDEtMSwxSDM2YTYsNiwwLDAsMS0xMiwwSDE2QTYsNiwwLDAsMSw0LDI2SDNhMywzLDAsMCwxLTMtM1YzQTMsMywwLDAsMSwzLDBIMjNhMywzLDAsMCwxLDMsM1Y2aDIuNzZhMywzLDAsMCwxLDIuMTIuODhsNi4yNCw2LjI0QTMsMywwLDAsMSwzOCwxNS4yNFYyMmgxQTEsMSwwLDAsMSw0MCwyM1pNMTMsMjZhMywzLDAsMSwwLTMsM0EzLDMsMCwwLDAsMTMsMjZaTTM1LDE1LjI0LDI4Ljc2LDlIMjZ2N2g5Wk0zMywyNmEzLDMsMCwxLDAtMywzQTMsMywwLDAsMCwzMywyNloiLz48L2c+PC9nPjwvc3ZnPg==")no-repeat;
             top: 4px
-            background-size: 43px
+            background-size: 20px
 
     .details-content 
         display: flex!important
+        flex-wrap: wrap
         align-items: center 
         padding: 0
         position relative
@@ -281,50 +283,30 @@
 
 
     #txtCalculaFreteProduto
-        margin: 0 
-        width 140px
-        text-align: left
-        height 40px
-        border: 1px solid #E8E8E8
-        border-radius: 1px
-        margin-left 15px
-
-        @media(max-width 992px)
-            width 100%
-            margin-bottom 10px
+        width: 180px
+        height: 40px
+        border-radius: 5px
+        border-color: #cecece
+        &::placeholder  
+            font-size: 0
 
     #btnCalculaFreteProduto
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0
-        width 48px
-        height 40px 
-        color: #ffffff
-        background: #1c1d1d
-        border: none
-        cursor: pointer 
-        height 40px
-        font-size: 14px!important
-        font-weight: 700!important
-        padding 0 20px
-
-        @media(max-width: 991px)
-            width 100%
+        width: 40px
+        height: 40px
+        background-color: $cor01
+        color: #fff
+        margin-left 10px
+        border-radius: 5px
+        
 
     a#naoSeiCep 
-        display: block  
-        font-size: 11px
-        line-height 1
-        font-weight 400
-        color #adadad
-        position: absolute
-        bottom: 0
-        left: 53px
-        top: 20px
-        position: absolute;
-        right: -10px;
-        bottom: -15px;
+        display: block;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 400;
+        color: #0080c7;
+        margin-left: 20px;
+        text-transform: capitalize;
         @media(max-width: 992px)
             position relative
             margin-top 15px
@@ -447,32 +429,9 @@
         width: 48%!important
         max-width 100%
 
-.link-add-lista-produto
-    border-radius: 3px
-    text-transform uppercase
-    font-size: 16px
-    line-height: 12px
-    font-weight: 600 
-    width: 100% 
-    text-align: center
-    align-items: center
-    display: flex
-    cursor: pointer
-    justify-content: center
-    margin-top 10px
-    color #999999
-    transition: all 150ms ease-in-out
-
+.link-add-lista-produto    
     &:before
-        @extend $ico-before
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAQCAMAAADDGrRQAAAAJ1BMVEX/fV3/hmn/3dX/7+r/saD/1Mv/9vT/oIr/jnP/l3//w7X/qZT///+8KJ+3AAAADXRSTlP///////////////8APegihgAAAHJJREFUeAFNzUGORCEIANFCafV31/3PO5/FEGujeYSA1fR+0JXAb84fkMuydXhyE8HOh7PKkq86Iob6Jcs4WlikB2WSXiVTZN/2oLgZdoNdNiNGU8RU+qT9o6f2BhZSOINhm58XX/p4WWHRbYVNba7lf38ZvgobxRB6LQAAAABJRU5ErkJggg==')
-        height: 20px
-        width: 20px
-        padding: 0
-        margin-right 3px
-        background-size auto
-
- 
+        content: 'Adicionar a lista'
 
 .product__alertaprazo
     background: $cor02 

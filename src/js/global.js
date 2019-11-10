@@ -168,8 +168,9 @@ $(document).ready(function() {
 
     $('a#outrasAvaliacoes').html('avaliações')
 
+
     //produto frete
-    $("input#btnCalculaFreteProduto").attr("value", "Calcular");
+    $('input#btnCalculaFreteProduto').attr('value', 'Ok')
     $("input#txtCalculaFreteProduto").attr("placeholder", "Digite seu CEP");
 
     if ($(".category__products >span").length) {

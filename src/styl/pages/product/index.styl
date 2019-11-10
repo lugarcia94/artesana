@@ -1,4 +1,8 @@
 #bodyProduto , #bodyListaCompra
+    .zoomContainer
+        .zoomLens
+            display none !important
+            visibility hidden !important
     .header__nav
         height: 42px;
         border-bottom: 2px solid #fff;
@@ -16,6 +20,7 @@
             flex: 0 1 33%
         .product-column-first
             margin-right 40px
+            flex: 0 1 280px
             *
                 float: none !important
             #fbits-fabricante-logo
@@ -48,8 +53,8 @@
         
         .product-column-second
             margin: 0 40px
+            flex: 0 1 280px
             *
-
                 opacity: 1 !important
                 max-height: initial !important
                 
@@ -67,8 +72,12 @@
                         width: initial !important;
                         img
                             width: initial !important;
+                            border: none !important
                             &:hover 
                                 transform: initial
+                                border: none !important
+                                border-color: transparent !important
+                                width: initial !important;
             .fbits-preco-off
                 position: absolute 
                 top: 5px
@@ -77,11 +86,33 @@
                 height: 35px
                 background-color: $cor01 !important
 
+            .slick-dots
+                margin-top: 5px
+                padding-left: 5px
+                li
+                    width: 10px !important
+                    height: 10px !important
+                    margin: 0 2px !important
+                    &[role="presentation"]
+                        button  
+                            border-color: transparent !important
+                            width: 10px !important
+                            height: 10px !important
+                            background-color: #b4b4b4 !important
+                    &.slick-active
+                        button  
+                            border-color: transparent !important
+                            width: 10px !important
+                            height: 10px !important
+                            background-color: $cor01 !important
+
+
+
         .product-column-third
+            flex: 0 1 400px
             margin-left 40px
-            *
-                float: none !important
             .preco-prod
+                position: relative
                 .fbits-preco
                     display: flex
                     flex-wrap: wrap
@@ -94,17 +125,159 @@
                         height: 30px
                         &:before
                             content: 'de'
+                            font-size: initial 
+                            color: #a7a7a7
                         &:after 
                             content: 'por'
                             margin-left 5px
                     .precoPor
+                        display: none
                         height: 30px;
+                        line-height: 25px;
+                        font-size: 25px;
+                        font-weight: 800;
+                    .precoVista
+                        display: block
+                        .fbits-boleto-ou
+                            display: none
+                        .fbits-boleto-preco
+                            height: 30px;
+                            line-height: 25px;
+                            font-size: 25px;
+                            font-weight: 800;
+                            color: $cor01
+                        .fbits-boleto-avista
+                            font-size: 12px
+                            font-weight 500
+                            color: $cor01
+                            margin-left 5px
+                            &:after
+                                content: 'no boleto'
+                                margin-left 5px
+                        .fbits-boleto-desconto
+                            display: none
+                .div-parcelamento    
+                    margin-top: 0
+                    .precoParcela
+                        text-align: left;
+                        color: #a7a7a7
+                        &:before    
+                            content: 'em até'
+                        &:after    
+                            content: 'sem juros'
+                        .parcelavalor
+                            font-weight: 600
             button#btnAlertaValores
                 position: absolute 
                 right: 0
                 top: 10px
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 70px;
+                height: 70px;
+                background-color: #fff
+                border: 1px solid #cecece 
+                border-radius: 5px
+                color: $cor01 
+                text-align: center
+                padding: 0
+                font-size: 0
+                z-index 9
+                &:before
+                    margin: 0
+                    padding: 0
+                    width: 100%
+                    height: 20px
+                    background-size: 20px
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAzMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5hbGVydGE8L3RpdGxlPjxnIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiI+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4LDI0YTIsMiwwLDAsMS0yLDJIMmEyLDIsMCwwLDEtMi0yLDIsMiwwLDAsMSwuNTQtMS4zNkMxLjc1LDIxLjM1LDQsMTkuMzksNCwxM2E5Ljg4LDkuODgsMCwwLDEsOC05LjdWMmEyLDIsMCwwLDEsNCwwVjMuM0E5Ljg4LDkuODgsMCwwLDEsMjQsMTNjMCw2LjM5LDIuMjUsOC4zNSwzLjQ2LDkuNjRBMiwyLDAsMCwxLDI4LDI0Wk0xMCwyOGg4YTQsNCwwLDAsMS04LDBaIi8+PC9nPjwvZz48L3N2Zz4=')
+                    margin-top: -15px;
+                &:after 
+                    font-size: 11px;
+                    color: #0080c7;
+                    width: 100% !important;
+                    max-width: initial;
+                    text-align: center;
+                    margin-top: -18px;
+            
+            .prodVariante
+                #dvGrupoSelecaoAtributos-0
+                    border-top: 1px solid #cecece
+                    .valorAtributoFoto.valorAtributo
+                        width: 50px !important;    
+                        height: 50px !important;
+                        border-radius: 5px !important
+                        background-size cover !important
+                        &.selected
+                            border: 2px solid #e58822 !important
+            li.atributos-container.atributos-tipo
+                display: none !important
+            .produtocomprar-listadesejos 
+                .bt.comprarProduto
+                    background-color: #e58822
+                    background-image none !important
+                    border-radius: 5px
+                    &:before
+                        content: 'Adicionar ao carrinho' !important
+                        line-height: 20px;
+                        font-size: 14px;
+                    &:after
+                        display: none
+                    i
+                        display: none !important
+            a.addListaDesejos
+                position: absolute;
+                top: 65px;
+                right: 0;
+                font-size: 13px;
+                font-weight: 500;
+                color: #a7a7a7;
+                display: flex 
+                flex-wrap: wrap
+                flex-direction: row-reverse
+                align-items: center
+                &:before
+                    width: 100px
+                &:after
+                    content: ''
+                    display: block
+                    width: 12px
+                    height: 12px
+                    margin-right 5px
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAyNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiM4MTgxODE7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5saXN0YTwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMyw2QTMsMywwLDEsMSw2LDMsMywzLDAsMCwxLDMsNlptMyw3YTMsMywwLDEsMS0zLTNBMywzLDAsMCwxLDYsMTNaTTYsMjNhMywzLDAsMSwxLTMtM0EzLDMsMCwwLDEsNiwyM1pNOCw0LjI1VjEuNzVhMSwxLDAsMCwxLDEtMUgzMWExLDEsMCwwLDEsMSwxdjIuNWExLDEsMCwwLDEtMSwxSDlBMSwxLDAsMCwxLDgsNC4yNVptMCwxMHYtMi41YTEsMSwwLDAsMSwxLTFIMzFhMSwxLDAsMCwxLDEsMXYyLjVhMSwxLDAsMCwxLTEsMUg5QTEsMSwwLDAsMSw4LDE0LjI1Wm0wLDEwdi0yLjVhMSwxLDAsMCwxLDEtMUgzMWExLDEsMCwwLDEsMSwxdjIuNWExLDEsMCwwLDEtMSwxSDlBMSwxLDAsMCwxLDgsMjQuMjVaIi8+PC9nPjwvZz48L3N2Zz4=')
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: 12px
+                &:before,
+                &:after
+                    position: absolute 
+                    top: -37px
+                 &:after
+                    right: 100px
+                    top: -35px
+            
+            button.retire-gratis
+                background: transparent
+                text-decoration: underline 
+                font-size: 13px
+                font-weight 400
+                color: #a7a7a7
+                margin-top: 20px
+                display: flex !important
+                align-items: center
+                &:before
+                    content: ''
+                    display: block
+                    width: 12px
+                    min-height: 16px
+                    margin-right 5px
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAzMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiM4MTgxODE7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5waW5fbWFwYTwvdGl0bGU+PGcgaWQ9IkNhbWFkYV8yIiBkYXRhLW5hbWU9IkNhbWFkYSAyIj48ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMCwxMmExMiwxMiwwLDAsMSwyNCwwYzAsNC44NC0xLjY5LDYuMTktMTAuNzcsMTkuMzVhMS41LDEuNSwwLDAsMS0yLjQ2LDBDMS42OSwxOC4xOSwwLDE2Ljg0LDAsMTJabTE3LDBhNSw1LDAsMSwwLTUsNUE1LDUsMCwwLDAsMTcsMTJaIi8+PC9nPjwvZz48L3N2Zz4=')
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: 12px
 
 
+            
         .prodTitle
             font-size 20px
             font-weight: 800
@@ -239,24 +412,6 @@
         padding: 0
         @media(max-width: 992px)
             margin: 0!important
-
-    #galeria 
-        .slick-prev
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAABRFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0NDQ2NjY3Nzc5OTk6Ojo9PT1BQUFCQkJDQ0NERERPT09TU1NUVFRWVlZYWFhZWVlaWlpdXV1kZGRnZ2doaGhra2tsbGxtbW12dnZ7e3t9fX2EhISFhYWGhoaRkZGSkpKWlpazs7O0tLS6urrBwcHHx8fKysrNzc3Pz8/T09PW1tbc3Nzg4ODi4uLk5OTl5eXn5+fw8PD5+fn6+vr8/Pz9/f3+/v7///+yDEB0AAAAM3RSTlMAAwQFBgcIFhclJicoQEFCQ0VGfH1+gYSFhoeIibi5z9DR0tPe3+Dm5+jp7/Dx8vP19vfuipfMAAABVUlEQVR4AY3T59PSQBgE8KUEAlKCgkLQiAgIEmNgkWLvvSgWxSIWESH//3eRYeTuCHnf3+eb5+b29oEgkjOtmkO7bp0wQvATL53jVtOMQxUtuJR1jscgSVS5q5KCIGvTTzstHOnQn5vBxhGb+9hJrGmnuV9Vwz/HGCSPFd1lEDcOoETFkBITCDcpu/b0/oiCVhgGZZff/Pj8mCIDRcpe/1zOXimXWRRdffHLm7+9RZGFOgVXxlNv9u4GJTVc4Fbv7rfF8v1tyi6Copvfl97kXo8ydCkYPP+6+P3hCSUOGhT1X37x/nx6cImCBk5RMno49ebjgfyuEhXPJh8fSXOKyFLRv3N9qOQcblHVo/JfMBnMPER/dKzkD+4htDPcr6JhLRmwFylsZFz662bxX7rtP8WAIFXhrrMJSGL5DmVuIQqVboqJnz+pw08oV7YaDp2aVT4awdZf/svHPvLAFBEAAAAASUVORK5CYII=') !important
-            background-color: transparent !important
-        .slick-next
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAilBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzNJSUldXV19fX2zs7PLy8v19fX///+M4fTRAAAAJnRSTlMAAwQGBxYXJicoP0JDRXt8fYWGh4iJuLnP0NHf4Ofo6e/w8fX295+rfNMAAADtSURBVHjajdRtb4IwGIXhAyJTqwPG5GUISqlnc5v//+9tS0igUHl2fb6Tpu3TYsRTSV61bKs82XtwWac1B3W6xtQq6mjr4hUsTwXnig1Gdhe6XHZDojq6GYXepuUjbb9cUPCxMsCfZy6J8CvsuMSEAF64LAX8WmgaH4q2d04dkNDy9X3jxBEZx273+yzKcKLlcx5V0JQiDdIRfXAMWmw0TuJaFTIpYYZE3PsRSjzDA/xGuIvGB1L53hEaeX4QyXOIoBTmWX4XPXWl21X9650Otm+cK7ewBLGhzcQBpsL0zMH5NYSLt0/ySlNP/7EfWT+O2khDKEMAAAAASUVORK5CYII=')
-            background-color: transparent !important
-        .slick-list
-            height auto!important
-
-        @media(max-width: 991px)
-            margin-top 20px
-            
-        >a
-            display: block
-            margin: 0
-            margin-bottom 15px!important
 
         
     .fbits-layout-item 
@@ -441,7 +596,7 @@
                 margin-right 9px
                 margin-bottom 10px
                 border 1px solid #d7d7d7  !important
-                 
+                
 
                 &[data-atributoselecionado="True"]
                     
@@ -1661,10 +1816,10 @@ div#fbits-avaliar-produto
         position absolute
         bottom: -55px
         right: 0px
-        
-li.atributos-container.atributos-cor 
-    display: none!important
 
+
+li.atributos-container.atributos-tamanho
+    display: none !important
 
 .product__details-topo
     width 100%
