@@ -5,15 +5,15 @@ define(['jquery', 'slick-carousel'], ($) => {
         carousel() {
             const gallery = $('#galeria:not(.slick-initialized)');
         
-            // if(gallery) {
-            //     gallery.slick({
-            //         slidesToShow: 1,
-            //         vertical: false,
-            //         inifinite: false,
-            //         dots: true,
-            //         arrows: true
-            //     });
-            // }
+            if(gallery) {
+                gallery.slick({
+                    slidesToShow: 1,
+                    vertical: false,
+                    inifinite: false,
+                    dots: true,
+                    arrows: true
+                });
+            }
         },
         video() {
             $('#thumbVideo').on('click', function(evt){ 
