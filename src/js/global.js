@@ -200,14 +200,15 @@ $(document).ready(function() {
         $("body").removeClass("menu-mob-open");
     });
 
-    $(".filtroTitle.title").click(function() {
-        $(".fbits-topo-categoria.divmobile").toggleClass("open");
-    });
+    $('.filtroTitle.title').click(function(){
+        $('.fbits-topo-categoria.divmobile').toggleClass('open')
+    })
 
-    $("a#outrasAvaliacoes").html("avaliações");
+    $('a#outrasAvaliacoes').html('avaliações')
+
 
     //produto frete
-    $("input#btnCalculaFreteProduto").attr("value", "Calcular");
+    $('input#btnCalculaFreteProduto').attr('value', 'Ok')
     $("input#txtCalculaFreteProduto").attr("placeholder", "Digite seu CEP");
 
     if ($(".category__products >span").length) {
@@ -357,44 +358,42 @@ $(document).ready(function() {
         slidesToScroll: 4,
         arrow: false,
         dots: false,
-        responsive: [
-            {
-                breakpoint: 1300,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    arrows: false
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    autoplay: true,
-                    arrows: false
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    arrows: false
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    arrows: false
-                }
+        responsive: [{
+            breakpoint: 1300,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false
             }
-        ]
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                autoplay: true,
+                arrows: false
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false
+            }
+        }]
     });
 
     //brands
