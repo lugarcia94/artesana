@@ -30,6 +30,7 @@ $(document).ready(function() {
 
     $.ajax(settings).done(function(response) {
         //Verifica o retorno
+
         if (response) {
             console.log("resposta: ", response);
             for (const _i in response.atributos) {
@@ -142,9 +143,9 @@ $(document).ready(function() {
                                     infsProd.nome +
                                     '</header>\
                                     <div class="tool__product-input">\
-                                        <button class="tool__product-input-plus"></button>\
+                                        <button class="tool__product-input-minus">-</button>\
                                         <input type="number" name="qtd-prod" value="1">\
-                                        <button class="tool__product-input-minus"></button>\
+                                        <button class="tool__product-input-plus">+</button>\
                                         </div>' +
                                     prices +
                                     '\
@@ -154,11 +155,86 @@ $(document).ready(function() {
                                     '"><i class="tool__iconselect"></i> Incluir no carrinho</button>\
                                 </div>';
                                 toolContainer.append(produto);
+                                function slickCarousel() {
+                                    /**
+                                     * Slick Tool
+                                     */
+
+                                    $(".tool__product-list").slick({
+                                        slidesToShow: 4,
+                                        slidesToScroll: 1,
+                                        autoplay: true,
+                                        autoplaySpeed: 5000,
+                                        arrows: true
+                                    });
+                                }
+                                function destroyCarousel() {
+                                    if (
+                                        $(".tool__product-list").hasClass(
+                                            "slick-initialized"
+                                        )
+                                    ) {
+                                        $(".tool__product-list").slick(
+                                            "destroy"
+                                        );
+                                    }
+                                }
+                                destroyCarousel();
+                                slickCarousel();
                             });
                         });
                     }
                 }
             }
+        }
+    });
+
+    /**
+     * tool__product-input-minus
+     * Botão Menos Ferramenta
+     */
+
+    $(document).on("click", ".tool__product-input-minus", function(e) {
+        e.preventDefault();
+        if (
+            $(this)
+                .parent()
+                .find("input")
+                .val() > 1
+        ) {
+            var valuein =
+                parseInt(
+                    $(this)
+                        .parent()
+                        .find("input")
+                        .val()
+                ) - 1;
+            $(this)
+                .parent()
+                .find("input")
+                .val(valuein);
+        }
+    });
+
+    $(document).on("click", ".tool__product-input-plus", function(e) {
+        e.preventDefault();
+        if (
+            $(this)
+                .parent()
+                .find("input")
+                .val() >= 1
+        ) {
+            var valuein =
+                parseInt(
+                    $(this)
+                        .parent()
+                        .find("input")
+                        .val()
+                ) + 1;
+            $(this)
+                .parent()
+                .find("input")
+                .val(valuein);
         }
     });
 
@@ -192,7 +268,7 @@ $(document).ready(function() {
      * Tool add to Cart
      */
     $(document).on("click", ".tool_js-addToCart", function() {
-        var _dominio = "2bdigital.ecommercestore.com.br", //Dominio da loja Trocar para window.location.host
+        var _dominio = "localhost:4000", //Dominio da loja Trocar para window.location.host
             _produtoVarianteId = "";
         for (const id in ListProdsTool) {
             if (ListProdsTool.hasOwnProperty(id)) {
@@ -204,36 +280,21 @@ $(document).ready(function() {
                 }
             }
         }
-        var url = "http://localhost:4000/incluir?" + _produtoVarianteId;
+        var url =
+            "http://checkout." + _dominio + "/incluir?" + _produtoVarianteId;
         console.log(url);
 
         fetch(url, { method: "GET" }).then(function(res) {
             console.log(res);
         });
 
-        //fetch(url, {method: 'GET'})
-
-        /* var data = {
-            Accept: "application/json",
-            Authorization: "Basic 2BDig-8dea632a-a11a-4f95-8705-37fe92031c3e",
-            "cache-control": "no-cache",
-            contentType: "application/json",
-            cache: false
-        };
-
-        $.get(
-            url,
-            "",
-            function(data, textStatus, jqXHR) {
-                console.log(data);
-            },
-            "json"
-        ); */
-
+        $(".tool__product-item").removeClass("select");
+        $(".tool__js-addtoList").removeClass("ins");
         ListProdsTool = [];
         console.log(ListProdsTool);
     });
 
+    $(document).on("tool-ok", function() {});
     //menu mobile
     $(".icomobile-hamburguer").click(function(e) {
         $("body").addClass("menu-mob-open");

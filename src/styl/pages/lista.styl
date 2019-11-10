@@ -10,18 +10,24 @@
     padding-left: 15px
     padding-right: 15px
     background-color: #ffffff
+    position relative
+
     & .left
         flex: 0 0 80%
         display: flex
         justify-content: flex-start
         align-items: center
         width: 100%
+        position relative
         @media screen and (min-width: 1024px)
             width: 80%
 
     & .right
         display: flex
         flex-direction: column
+        justify-content: center
+        flex: 0 0 calc(20% - 10px)
+        height 420px
 
         & h2 
             color: #0080c7;
@@ -56,6 +62,30 @@
 .tool
     & > *
         box-sizing: border-box
+    &__arrow-right
+        width: 22px
+        height 22px
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAAIVBMVEUAAAAAgMgAgMcAgMgAgMcAgMsAh8MAgMcAgMYAgsgAgMfywoCxAAAAC3RSTlMAZoiq/yIRRN0z7gzNGKIAAABSSURBVHjahdExDsAwCENRB5zS9P4H7miVgvjjG5CQgWW5BcD5zwH6zjkv0JAz7oHjjooPGQUj5GK5+Oti+an4EQ9HpGJp8878vJq4maEZrZn4BdgOA+UCq9nvAAAAAElFTkSuQmCC')
+        background-size: 100%
+        background-position: center
+        background-repeat: no-repeat
+        position: absolute
+        right -5px
+        top 50%
+        transform: translateY(-50%)
+        z-index: 3
+    &__arrow-left
+        width: 22px
+        height 22px
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAAIVBMVEUAAAAAgMgAgMcAgMgAgMcAgMsAh8MAgMcAgMYAgsgAgMfywoCxAAAAC3RSTlMAZoiq/yIRRN0z7gzNGKIAAABSSURBVHjahdExDsAwCENRB5zS9P4H7miVgvjjG5CQgWW5BcD5zwH6zjkv0JAz7oHjjooPGQUj5GK5+Oti+an4EQ9HpGJp8878vJq4maEZrZn4BdgOA+UCq9nvAAAAAElFTkSuQmCC')
+        background-size: 100%
+        background-position: center
+        background-repeat: no-repeat
+        position: absolute
+        left -5px
+        top 50%
+        transform: translateY(-50%) rotate(-180deg)
+        z-index: 3
     &__iconselect
         content: ''
         background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAMAAACq939wAAAAIVBMVEUAAACAgICBgYGBgYGBgYGCgoKCgoKAgICBgYGAgICBgYG95T1aAAAAC3RSTlMARHfu/2a7IqqZiLJpgloAAABFSURBVHjaVc7hDkAhBAXgo0Op93/gG/lxfbM1LCDIGIJHqBczNZ33lakGLHUk14VNFO6IJ8o8KIe9478/bVrb0y5IVrd9atIBRiec4u4AAAAASUVORK5CYII=')
@@ -76,10 +106,12 @@
             border: 1px solid #e1e1e1;
             background-color: #ffffff;
             justify-content: space-between
+            align-items: center
+            margin-bottom: 10px
             & input 
-                height 40px
+                height 38px
                 flex: 1
-                width: calc(100% - 24px)
+                width: calc(100% - 34px)
                 text-align: center
                 border: 0
                 outline: 0
@@ -93,8 +125,19 @@
                 letter-spacing: 0.6px;
                 color: #4d4d4d;
             & button 
-                width: 12px
+                width: 12px !important
+                height 12px !important
                 flex: 0 0 12px
+                color: #0080c7 !important
+                font-size: 25px !important
+                font-weight: 400 !important
+                line-height: 12px !important
+                padding: 0 !important
+                border 0 !important
+                outline: none
+                background-color: transparent !important
+                box-shadow: none
+                margin: 0 5px
         &-list
             flex: 0 0 100%
             display: flex
@@ -115,15 +158,14 @@
             margin-bottom: 11px
             position relative
         &-item
-            flex: 0 0 calc(25%)
-            padding: 0 20px
+            flex: 0 0 calc(25% - 30px)
+            margin: 0 15px
             display: flex
             flex-direction: column
             flex-wrap: nowrap
             align-items: center
             height 420px
             position relative
-            margin: 0
             &.select
                 & .prices
                     background-color: #e58822;
