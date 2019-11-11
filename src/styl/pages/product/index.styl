@@ -1,5 +1,13 @@
 #bodyProduto , #bodyListaCompra
-
+    @media(max-width: 1300px)
+        padding-top: 180px
+        .interna.cf
+            max-width: 991px
+            margin: 0 auto
+            padding: 0 
+            float: none
+    @media(max-width: 991px)
+        padding-top: 150px !important
     input[type="text"].inputAvaliacao:hover,
     .textAreaIndicar:hover,
     .textAreaAvaliacao:hover
@@ -10,7 +18,7 @@
     .textAreaAvaliacao
         border-color: #a09f9f !important
         color: #a09f9f
-        
+
     .indicar-avaliar
         margin-top: 40px
         background-color: #fff
@@ -80,11 +88,29 @@
         justify-content: space-between;
         padding: 15px 20px;
         background-color: #fff;
+        @media(max-width: 991px)
+            flex-wrap: wrap
+            .product-column-first
+                order: 2
+            .product-column-second
+                order: 1
+            .product-column-third
+                order: 3
+                width: 100%
+                max-width: 100%
+                min-width: initial !important
+                margin-top: 20px
+                .produtoInfo
+                    border-bottom: 1px solid #cecece
+                    margin-bottom: 20px
         [class*=product-column]
             flex: 0 1 33%
         .product-column-first
             margin-right 40px
             flex: 0 1 280px
+            @media(max-width: 1300px)
+                margin-right 0px
+                min-width: 180px
             *
                 float: none !important
             #fbits-fabricante-logo
@@ -118,6 +144,11 @@
         .product-column-second
             margin: 0 40px
             flex: 0 1 280px
+            @media(max-width: 1300px)
+                flex: 0 1 auto
+            @media(max-width: 991px)
+                margin: 0
+                max-width 100%
             *
                 opacity: 1 !important
                 max-height: initial !important
@@ -125,6 +156,8 @@
             .fbits-componente-imagemvariantethumb
                 position: relative !important
                 max-width: 400px;
+                @media(max-width: 1300px)
+                    max-width: 325px;
                 .fbits-produto-imagensMinicarrossel
                     margin 0 !important
             .jcarousel 
@@ -132,6 +165,9 @@
                 ul
                     width: 100% !important
                     max-width: 100% !important
+                    @media(max-width: 991px)
+                        justify-content: flex-start
+                        margin-bottom: 20px
                     li
                         width: initial !important;
                         img
@@ -175,6 +211,9 @@
         .product-column-third
             flex: 0 1 400px
             margin-left 40px
+            @media(max-width: 1300px)
+                margin-left 0px
+                min-width: 330px
             .preco-prod
                 position: relative
                 .fbits-preco
@@ -187,6 +226,10 @@
                         text-align: left;
                         font-size: 14px
                         height: 30px
+                        @media(max-width: 1300px)
+                            height: 40px
+                        @media(max-width: 991px)
+                            margin-top: 10px
                         &:before
                             content: 'de'
                             font-size: initial 
@@ -225,6 +268,8 @@
                     .precoParcela
                         text-align: left;
                         color: #a7a7a7
+                        @media(max-width: 1300px)
+                            font-size: 12px
                         &:before    
                             content: 'em até'
                         &:after    
@@ -238,7 +283,7 @@
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                width: 70px;
+                width: 70px !important;
                 height: 70px;
                 background-color: #fff
                 border: 1px solid #cecece 
@@ -248,6 +293,8 @@
                 padding: 0
                 font-size: 0
                 z-index 9
+                @media(max-width: 991px)
+                    top: 25px
                 &:before
                     margin: 0
                     padding: 0
@@ -256,6 +303,7 @@
                     background-size: 20px
                     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAzMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5hbGVydGE8L3RpdGxlPjxnIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiI+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4LDI0YTIsMiwwLDAsMS0yLDJIMmEyLDIsMCwwLDEtMi0yLDIsMiwwLDAsMSwuNTQtMS4zNkMxLjc1LDIxLjM1LDQsMTkuMzksNCwxM2E5Ljg4LDkuODgsMCwwLDEsOC05LjdWMmEyLDIsMCwwLDEsNCwwVjMuM0E5Ljg4LDkuODgsMCwwLDEsMjQsMTNjMCw2LjM5LDIuMjUsOC4zNSwzLjQ2LDkuNjRBMiwyLDAsMCwxLDI4LDI0Wk0xMCwyOGg4YTQsNCwwLDAsMS04LDBaIi8+PC9nPjwvZz48L3N2Zz4=')
                     margin-top: -15px;
+                    
                 &:after 
                     font-size: 11px;
                     color: #0080c7;
@@ -362,6 +410,8 @@
                 align-items: center
                 background-color: #f7f7f8
                 padding: 15px 0
+                @media(max-width: 991px)
+                    padding-left 15px
                 >li
                     display: inline
                     &:first-child
@@ -473,8 +523,12 @@
 
     .bread
         padding: 0
+        @media(max-width: 1300px)
+            max-width: 991px
+            margin: 0 auto !important
         @media(max-width: 992px)
             margin: 0!important
+            display: block !important
 
         
     .fbits-layout-item 
@@ -635,10 +689,6 @@
             flex-wrap: wrap 
             margin-bottom 40px
             margin: 0  
-
-            @media(max-width: 767px)
-                justify-content: center
- 
 
             >*
                 font-size: 12px
@@ -1415,7 +1465,8 @@ div#fbits-avaliar-produto
             display: none 
         .content.produto
             margin-top: 0px
-            padding: 0 15px
+            padding: 0
+            
     .etiqueta__produto 
         .fbits-etiqueta-selo 
             max-width: 130px
@@ -2003,4 +2054,32 @@ li.atributos-container.atributos-tamanho
                                     span 
                                         font-weight: 800
                                         color: #4c4c4c
+        @media(max-width: 991px)
+            .paddingbox
+                flex-wrap: wrap
+                margin: 20px 0
+                .descricao
+                    padding: 0 10px
+                    width: 100%
+                    flex: 1 1 100%
+                    h3
+                        margin: 0
+                        text-align: left
+                        font-weight: 500
+                        border-top: 1px solid #cecece
+                        padding: 10px 0
+                        background-image url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDgwYzc7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5tYWlzPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNCwxMXYyYTEsMSwwLDAsMS0xLDFIMTR2OWExLDEsMCwwLDEtMSwxSDExYTEsMSwwLDAsMS0xLTFWMTRIMWExLDEsMCwwLDEtMS0xVjExYTEsMSwwLDAsMSwxLTFoOVYxYTEsMSwwLDAsMSwxLTFoMmExLDEsMCwwLDEsMSwxdjloOUExLDEsMCwwLDEsMjQsMTFaIi8+PC9nPjwvZz48L3N2Zz4=')
+                        background-repeat: no-repeat
+                        background-size: 12px
+                        background-position-x: 95%
+                        background-position-y: center
+                        &.open
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCA0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzAwODBjNzt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPm1lbm9zPC90aXRsZT48ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNCwxVjNhMSwxLDAsMCwxLTEsMUgxQTEsMSwwLDAsMSwwLDNWMUExLDEsMCwwLDEsMSwwSDIzQTEsMSwwLDAsMSwyNCwxWiIvPjwvZz48L2c+PC9zdmc+')
+                            +.content
+                                display: block
+                    .content
+                        display: none
+                    &:last-child
+                        h3
+                            border-bottom: 1px solid #cecece
 
