@@ -11,7 +11,6 @@ $(document).ready(function() {
             const element = Fbits.Produto.ProdutoVariante[i];
         }
     }
-    console.log(productVariant);
 
     var settings = {
         async: true,
@@ -32,12 +31,13 @@ $(document).ready(function() {
         //Verifica o retorno
 
         if (response) {
-            console.log("resposta: ", response);
+            var checkin = 0;
             for (const _i in response.atributos) {
                 if (response.atributos.hasOwnProperty(_i)) {
                     const element = response.atributos[_i];
                     if (element.nome === "idGetProduct") {
-                        console.log("Primeira resposta: ", element);
+                        checkin++;
+
                         const variantreturno = element.valor;
 
                         var resProdSku = variantreturno,
@@ -105,7 +105,6 @@ $(document).ready(function() {
                                                 '<div class="tool__image"><img src="' +
                                                 objimage.url +
                                                 '"></div>';
-                                            console.log("Resimage: ", figure);
                                         }
                                     }
                                 }
@@ -163,8 +162,7 @@ $(document).ready(function() {
                                     $(".tool__product-list").slick({
                                         slidesToShow: 4,
                                         slidesToScroll: 1,
-                                        autoplay: true,
-                                        autoplaySpeed: 5000,
+                                        infinite: false,
                                         arrows: true
                                     });
                                 }
@@ -185,6 +183,9 @@ $(document).ready(function() {
                         });
                     }
                 }
+            }
+            if (checkin == 0) {
+                $(".container__list-atributo").hide();
             }
         }
     });
@@ -269,6 +270,7 @@ $(document).ready(function() {
      */
     $(document).on("click", ".tool_js-addToCart", function() {
         var _dominio = "localhost:4000", //Dominio da loja Trocar para window.location.host
+            _dominio2 = "checkout.2bdigital.ecommercestore.com.br",
             _produtoVarianteId = "";
         for (const id in ListProdsTool) {
             if (ListProdsTool.hasOwnProperty(id)) {
@@ -280,11 +282,18 @@ $(document).ready(function() {
                 }
             }
         }
-        var url =
-            "http://checkout." + _dominio + "/incluir?" + _produtoVarianteId;
+        var url = "http://" + _dominio + "/incluir?" + _produtoVarianteId;
         console.log(url);
 
-        fetch(url, { method: "GET" }).then(function(res) {
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers":
+                    "Origin, X-Requested-With, Content-Type, Accept"
+            }
+        }).then(function(res) {
             console.log(res);
         });
 

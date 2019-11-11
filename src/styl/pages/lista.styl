@@ -12,15 +12,18 @@
     background-color: #ffffff
     position relative
 
+    & .slick-disabled
+        opacity 0.5
+
     & .left
-        flex: 0 0 80%
+        flex: 0 0 calc(80% - 30px)
         display: flex
         justify-content: flex-start
         align-items: center
         width: 100%
         position relative
         @media screen and (min-width: 1024px)
-            width: 80%
+            width: calc(80% - 30px)
 
     & .right
         display: flex
@@ -187,8 +190,8 @@
                 height: 36px;
                 border-radius: 2px;
                 background-color: #0080c7;
-                left: 0
-                top 0
+                left: 5px
+                top 5px
                 display: flex
                 flex-direction: column
                 justify-content: center
