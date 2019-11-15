@@ -77,7 +77,7 @@ $(document).ready(function() {
                                     infsProd.precoPor
                                 );
                             desconto = desconto.toFixed();
-                            console.log("Informação do produto: ", infsProd);
+                            //console.log("Informação do produto: ", infsProd);
 
                             var imageseting = {
                                 async: true,
@@ -163,7 +163,21 @@ $(document).ready(function() {
                                         slidesToShow: 4,
                                         slidesToScroll: 1,
                                         infinite: false,
-                                        arrows: true
+                                        arrows: true,
+                                        responsive: [
+                                            {
+                                                breakpoint: 768,
+                                                settings: {
+                                                    slidesToShow: 2
+                                                }
+                                            },
+                                            {
+                                                breakpoint: 480,
+                                                settings: {
+                                                    slidesToShow: 2
+                                                }
+                                            }
+                                        ]
                                     });
                                 }
                                 function destroyCarousel() {
@@ -270,7 +284,7 @@ $(document).ready(function() {
      */
     $(document).on("click", ".tool_js-addToCart", function() {
         var _dominio = "localhost:4000", //Dominio da loja Trocar para window.location.host
-            _dominio2 = "checkout.2bdigital.ecommercestore.com.br",
+            _dominio2 = "2bdigital.checkout.ecommercestore.com.br",
             _produtoVarianteId = "";
         for (const id in ListProdsTool) {
             if (ListProdsTool.hasOwnProperty(id)) {
@@ -285,17 +299,43 @@ $(document).ready(function() {
         var url = "http://" + _dominio + "/incluir?" + _produtoVarianteId;
         console.log(url);
 
-        fetch(url, {
-            method: "GET",
+        var myHeaders = new Headers({
+            Accept: "application/json",
+            Authorization: "Basic 2BDig-8dea632a-a11a-4f95-8705-37fe92031c3e",
+            "cache-control": "no-cache",
+            "Access-Control-Allow-Origin": "*"
+        });
+
+        $.ajax({
+            url: url,
             headers: {
-                "Content-Type": "application/json",
+                Authorization:
+                    "Basic 2BDig-8dea632a-a11a-4f95-8705-37fe92031c3e",
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Headers":
-                    "Origin, X-Requested-With, Content-Type, Accept"
+                "access-control-allow-credentials": true,
+                "Access-Control-Allow-Headers": "Content-Type"
+            },
+            method: "GET",
+            success: function(data) {
+                console.log("succes: " + data);
             }
+        });
+
+        /* $.get(
+            url,
+            "",
+            function(data, textStatus, jqXHR) {
+                console.log(res);
+            },
+            "dataType"
+        ); */
+
+        /* fetch(url, {
+            method: "GET",
+            headers: myHeaders
         }).then(function(res) {
             console.log(res);
-        });
+        }); */
 
         $(".tool__product-item").removeClass("select");
         $(".tool__js-addtoList").removeClass("ins");
