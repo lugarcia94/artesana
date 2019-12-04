@@ -1,0 +1,72 @@
+<div id="produto-spot-item-@id" class="spot @classSpotHover @classSpot @classDestaque @(disponivel ? "" :"fbits-spot-indisponivel")">
+    
+    <div class="spotHoverPanel spotHoverPanelImg ">
+        <FBITS:ImagensLaterais />
+    </div>
+    
+	<div class="spotContent">
+         	
+	    <a class="spot-parte-um" href="@link">
+    	    <div class="spotImg">
+    	        <div class="etiquetas-spot">
+          		    <FBITS:Etiquetas />
+                </div>
+      		    <FBITS:ImagemProduto />
+    	    </div>
+    	    <FBITS:FacebookLike />
+  	    </a>
+  	    
+        <!-- IMPORTANTE NÃO REMOVER A DIV <div class="fbits-spot-conteudo">...</div> -->
+		<div class="fbits-spot-conteudo">
+            @if (disponivel)
+            {
+                <a class="spot-parte-dois" href="@link">
+                    <h3 class="spotTitle">
+                        <FBITS:Titulo />  
+                    </h3> 
+                    <FBITS:Atributos />
+                    <FBITS:Preco exibirDescontoBoleto="True" fraseDescontoBoleto="{{precoBoleto}}"/>
+                    
+                </a>
+                
+                <div class="spotCategoria">
+                    Cat: <FBITS:CategoriaPrincipal link="True" />
+                </div>
+                
+                <div class="spotFab">
+                    Fab: <FBITS:Fabricante />
+                </div>
+
+                
+               
+                <FBITS:BotoesComprar />
+               
+            }
+            else
+            {
+                <a class="spot-parte-dois" href="@link">
+                    <h3 class="spotTitle">
+                        <FBITS:Titulo />  
+                    </h3>
+                </a>
+                
+                <div class="spotCategoria">
+                     Cat: <FBITS:CategoriaPrincipal link="True" />
+                </div>
+                
+                <div class="spotFab">
+                    Fab: <FBITS:Fabricante />
+                </div>
+
+                <div class="botoesSpot">
+                    <div class="spotIndisponivel">
+                        Produto Indisponível
+                        <br />
+                        <FBITS:LinkProdutoIndisponivel tipo="Botao" texto="Avise-me quando estiver disponível" />
+                    </div>
+                </div>
+
+            }
+		</div>
+    </div>
+</div>
