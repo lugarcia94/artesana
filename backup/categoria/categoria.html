@@ -1,0 +1,275 @@
+<style>
+    .16-off-em-pisos-black .bgResultadosCat {
+    background: yellow !important;
+}
+</style>
+<div class="container-categoria">		
+	<!--BREADCRUMB TOPO-->
+	<section class="fbits-section-categoria fbits-breadcrumb-topo-categoria">
+        <div class="bread">
+			<FBITS:Breadcrumb textoPaginaPrincipal = "Home" />   
+        </div>
+    </section>
+	
+	<!--BANNER TOPO-->
+    <section class="fbits-section-categoria fbits-banner-topo-categoria">
+        <div class="fbits-banner-topo">
+			<FBITS:Banner filtroPosicao="topo" idsBanners="" tipo="carrossel"  configuracaoCarrossel="{
+				  dots: false,
+                  infinite: true,
+                  speed: '300',
+                  autoplay: true,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  responsive: [
+                    {
+                      breakpoint: 1920,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 1280,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 767,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+                  ]
+                }" classeItens="" />          
+        </div>
+    </section>
+	
+	<!--CONTEÚDO TOPO-->
+	<section class="fbits-section-categoria fbits-conteudo-topo-categoria">
+        <div class="fbits-conteudo-topo">
+			<FBITS:Conteudo filtroPosicao="topo" idsConteudos="" tipo="estatico" configuracaoCarrossel="{}" classeItens="componente-conteudo-topo-categoria" />    
+        </div>
+    </section>
+	
+	<div class="interna cf">	
+		<div class="fbits-lateral-categoria">		
+			<!--BANNER FILTRO TOPO-->
+			<section class="fbits-section-categoria fbits-banner-filtroTopo-categoria">
+				<div class="fbits-banner-topofiltro">
+					<FBITS:Banner filtroPosicao="filtros topo" idsBanners="" tipo=""  configuracaoCarrossel="{}" classeItens="" />          
+				</div>
+			</section>
+		
+			<!--FILTRO LATERAL-->
+			<section class="fbits-section-categoria fbits-filtro">
+				<div class="filtros filtro-lateral-categoria">
+					<div class="filtroTitle title">Filtrar por</div>
+					<FBITS:Filtro quantidade="" tipoFiltroPreco="range" filtroPosicao="lateral" classeItens="componente-filtro" />
+				</div>
+			</section>
+			
+			<!--BANNER FILTRO BOTTOM-->
+			<section class="fbits-section-categoria fbits-banner-filtroBottom-categoria">
+				<div class="fbits-banner-rodapefiltro">
+					<FBITS:Banner filtroPosicao="filtros bottom" idsBanners="" tipo=""  configuracaoCarrossel="{}" classeItens="" />          
+				</div>
+			</section>
+			
+			<!--CONTEÚDO LATERAL-->
+			<section class="fbits-section-categoria fbits-conteudo-lateral-categoria">
+				<div class="row row-fbits-conteudo-lateral-categoria">
+					<FBITS:Conteudo filtroPosicao="lateral" idsConteudos="" tipo="estatico" configuracaoCarrossel="{}" classeItens="componente-conteudo-lateral-categoria" />    
+				</div>
+			</section>			
+		</div>
+		
+		<div class="fbits-mainBar">
+			<!--BANNER CENTRO CATEGORIA-->
+			<section class="fbits-section-categoria fbits-banner-centro-categoria">
+				<div class="fbits-banner-centro">
+					<FBITS:Banner filtroPosicao="centro" idsBanners="" tipo=""  configuracaoCarrossel="{}" classeItens="" />          
+				</div>
+			</section>
+			
+			<!--INFORMAÇÃO RESULTADO BUSCA-->
+			<section class="fbits-section-categoria fbits-informacaoResultadoBusca-categoria">
+				<div class="mostrando">
+					<FBITS:InformacaoResultadoBusca textoExibicao="Foram encontrados {{produtos}} produtos nesta página (em {{tempo}} segundos)" /> 
+				</div>
+			</section>	
+			
+			<!--ORDENAÇÃO-->
+			<section class="fbits-section-categoria fbits-ordenacao-categoria">
+				<div class="ordenar">
+					<FBITS:Ordenacao />
+				</div>
+			</section>	
+			
+			<!--VITRINE-->
+			<section class="fbits-section-categoria fbits-vitrine-categoria">
+				<div class="row row-vitrine-categoria">
+					<div class="spots-interna">	
+						<FBITS:ListaSpots idsHotsites="85627" tipo="" configuracaoCarrossel="{}" classeItens="" />						
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<!--FABRICANTES-->
+		<section class="fbits-section-categoria fbits-fabricantes-categoria">
+			<div class="row row-fbits-fabricantes">
+				<div class="col-md-12">
+					<Fbits:ListaMarcas tipo="carrossel" configuracaoCarrossel="{
+					dots: false,
+					infinite: true,
+					speed: 300,
+					slidesToShow: 6,
+					slidesToScroll: 1,
+					autoplay: true,
+					autoplaySpeed: 2000,
+					responsive: [
+					{
+					  breakpoint: 1920,
+					  settings: {
+						slidesToShow: 6,
+						slidesToScroll: 1,
+					  }
+					},
+					{
+					  breakpoint: 1280,
+					  settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1
+					  }
+					},
+					{
+					  breakpoint: 767,
+					  settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					  }
+					}
+					]
+					}" classeItens="" />
+				</div>
+			</div>
+		</section>
+		
+		<!--PRODUTOS QUE VOCÊ JÁ VIU-->
+		<section class="fbits-section-categoria fbits-produtos-vistos">
+			<div class="row row-fbits-produtos-vistos">
+				<div class="col-md-12">
+					<div class="lineHistBusca">
+						<h2 class="titleHistBusca">Produtos que você já viu</h2>
+					</div>               
+					<Fbits:HistoricoProdutos exibirImagem="true" tipo="carrossel" configuracaoCarrossel="{
+					  dots: false,
+					  infinite: true,
+					  speed: '300',
+					  autoplay: true,
+					  slidesToShow: 4,
+					  slidesToScroll: 1,
+					  responsive: [
+						{
+						  breakpoint: 1920,
+						  settings: {
+							slidesToShow: 4,
+							slidesToScroll: 1,
+							infinite: true,
+						  }
+						},
+						{
+						  breakpoint: 1280,
+						  settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1
+						  }
+						},
+						{
+						  breakpoint: 767,
+						  settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						  }
+						}
+					  ]
+					}" classeItens="componente-produtos-vistos" />
+				</div>          
+			</div>
+		</section>
+		
+		
+
+		<!--TERMOS BUSCADOS-->
+		<section class="fbits-section-categoria fbits-termos-buscados">
+			<div class="row row-fbits-termos-buscados">
+				<div class="col-md-12">
+					<div class="lineHistBusca">
+						<h2 class="titleHistBusca">Termos Buscados</h2>
+					</div>					
+					<Fbits:HistoricoTermos classeItens="componente-termos-buscados" />
+				</div>          
+			</div>
+		</section>
+		
+		<!--MAIS PROCURADOS-->
+		<section class="fbits-section-categoria fbits-mais-procurados">
+			<div class="row row-fbits-mais-procurados">
+				<div class="col-md-12">
+					<div class="tagsTitle">
+						<h3 class="title titleTag">Mais procurados</h3>
+					</div>						
+					<Fbits:NuvemTags classeItens="componente-mais-procurados" quantidade="12" />
+				</div>          
+			</div>
+		</section>
+		
+		<!--BUSCA RODAPE-->
+		<section class="fbits-section-categoria fbits-busca-rodape">
+			<div class="row footerSearchBox">
+				<div class="col-md-12">
+					<Fbits:Busca />
+				</div>
+			</div>
+		</section>	
+	</div>
+	
+	<!--NEWSLETTER-->
+    <section class="fbits-section-categoria footerNews">
+        <div class="row row-fbits-news footerNewsletter">
+            <div class="col-md-12 centerContent">
+				<div class="news left">
+					<i class="icon inews"></i>
+				</div>
+				<div class="txtNews left">
+					<span>Newsletter</span><br>
+					CADASTRE-SE E RECEBA OFERTAS EXCLUSIVAS:
+				</div>               
+                <Fbits:CadastroNewsletter exibirCampoSexo="true" />
+            </div>
+        </div>
+    </section>   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

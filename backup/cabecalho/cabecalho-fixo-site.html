@@ -1,0 +1,24 @@
+<div id="fixed-bar" class="fixed-bar hide">
+    <div class="bar-content">
+  <div id="fixed-bar-close" class="close"><i class="arrow left"></i></div>
+  <div class="col1">
+    <div class="logo">
+      @FBITSLogo.Add()
+    </div>
+  </div>
+  <div class="col2">
+	@FBITSLogin.Add()
+    @FBITSSearch.AddFixa()
+  </div>
+  <div class="col3">    
+    @FBITSCarrinho.Add()
+  </div>
+</div>
+</div>
+<div id="fixed-bar-point" class="hide"></div>
+
+
+@Html.RecursosJS( "fbits.framework.js", "fbits.headerFloating.js" )
+
+
+

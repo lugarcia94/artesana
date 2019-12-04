@@ -1,0 +1,82 @@
+
+<div class="container-categoria">		
+	<!--BREADCRUMB TOPO-->
+	<section class="fbits-section-categoria fbits-breadcrumb-topo-categoria">
+        <div class="bread">
+			<FBITS:Breadcrumb textoPaginaPrincipal = "Home" />   
+        </div>
+    </section>
+	
+	<!--BANNER TOPO-->
+    <section class="fbits-section-categoria fbits-banner-topo-categoria">
+        <div class="fbits-banner-topo">
+			<FBITS:Banner filtroPosicao="topo" idsBanners="" tipo=""  configuracaoCarrossel="{}" classeItens="" />          
+        </div>
+    </section>
+	
+	<div class="interna cf">	
+		<div class="fbits-lateral-categoria">
+		
+			<!--FILTRO LATERAL-->
+			<section class="fbits-section-categoria fbits-filtro">
+				<div class="filtros filtro-lateral-categoria">
+					<div class="filtroTitle title">Filtrar por</div>
+					<FBITS:Filtro quantidade="" tipoFiltroPreco="range" filtroPosicao="lateral" classeItens="componente-filtro" />
+				</div>
+			</section>
+			
+			<!--BANNER FILTRO BOTTOM-->
+			<section class="fbits-section-categoria fbits-banner-filtroBottom-categoria">
+				<div class="fbits-banner-rodapefiltro">
+					<FBITS:Banner filtroPosicao="filtros bottom" idsBanners="" tipo=""  configuracaoCarrossel="{}" classeItens="" />          
+				</div>
+			</section>
+			
+		</div>
+		
+		<div class="fbits-mainBar">
+			
+			<!--INFORMAÇÃO RESULTADO BUSCA-->
+			<section class="fbits-section-categoria fbits-informacaoResultadoBusca-categoria">
+				<div class="mostrando">
+					<FBITS:InformacaoResultadoBusca textoExibicao="Foram encontrados {{produtos}} produtos nesta página (em {{tempo}} segundos)" />
+					<FBITS:InformacaoResultadoBusca busca="secundaria" />
+				</div>
+			</section>	
+			
+			<!--ORDENAÇÃO-->
+			<section class="fbits-section-categoria fbits-ordenacao-categoria">
+				<div class="ordenar">
+					<FBITS:Ordenacao />
+				</div>
+			</section>	
+			
+			<!--VITRINE-->
+			<section class="fbits-section-categoria fbits-vitrine-categoria">
+				<div class="row row-vitrine-categoria">
+					<div class="spots-interna">	
+						<FBITS:ListaSpots tipo="" configuracaoCarrossel="{}" classeItens="" />
+						 <FBITS:ListaSpots tipo="" busca="secundaria" configuracaoCarrossel="{}" classeItens="" />	
+					</div>
+				</div>
+			</section>
+		</div>
+		
+	</div>
+	
+	<!--NEWSLETTER-->
+    <section class="fbits-section-categoria footerNews">
+        <div class="row row-fbits-news footerNewsletter">
+            <div class="col-md-12 centerContent">
+				<div class="news left">
+					<i class="icon inews"></i>
+				</div>
+				<div class="txtNews left">
+					<span>Newsletter</span><br>
+					CADASTRE-SE E RECEBA OFERTAS EXCLUSIVAS:
+				</div>               
+                <Fbits:CadastroNewsletter exibirCampoSexo="true" />
+            </div>
+        </div>
+    </section>   
+</div>

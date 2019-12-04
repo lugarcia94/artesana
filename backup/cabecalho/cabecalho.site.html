@@ -1,0 +1,64 @@
+<style>
+    .16-off-em-drywall-black .bgResultadosCat {
+    background: yellow !important;
+}
+.16-off-em-drywall-black {
+    background: #000 !important;
+}
+</style>
+
+<div class="head">
+		<div class="topBar">
+		@*//TODO: CRIAR TOP BAR*@
+		<div class="center">
+			<!--TOP LINKS -->   
+			@using G = Fbits.Plataforma.BLL.Configuracoes.GerenciadorConfiguracoes;
+			<div class="toplinks"> 
+			<a target="_blank" href="https://api.whatsapp.com/send?1=pt_BR&phone=5511963867755"><img style="max-width:25px;" src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1.png"/>
+			(11) 96386-7755
+			</a>
+                 <span class="topEspaco"></span>
+              <a>Atendimento e Televendas: (11) 2066-7447       </a>
+                <span class="topEspaco"></span>
+                
+              <a href="http://www.blog.artesana.com.br/" target="_blank" class="topLink fbits-link-blog"><span class="ico"></span>Blog</a>
+                <span class="topEspaco"></span>
+               <a href="/NossasLojas" class="topLink fbits-link-nossaslojas"><span class="ico"></span>Nossas Lojas</a>
+				<span class="topEspaco"></span>
+				<a href="/Atendimento" class="topLink fbits-link-atendimento"><span class="ico"></span>@G.DadosComponente["FBITS:TopLink-Texto-Atendimento"]</a>
+				<span class="topEspaco"></span>
+				<a href="@string.Format( "{0}ListaDeDesejos", G.UrlEcommerce )" class="topLink fbits-link-listaDesejos"><span class="ico"></span>@G.DadosComponente["FBITS:TopLink-Texto-ListaDesejos"]</a>
+				<span class="topEspaco"></span>
+				<a href="@string.Format( "{0}AtualizarDadosUsuario", G.UrlCarrinho )" class="topLink fbits-link-minhaConta"><span class="ico"></span>@G.DadosComponente["FBITS:TopLink-Texto-MeuCadastro"]</a>
+				<span class="topEspaco"></span>
+				<a href="@string.Format( "{0}HistoricoPedido", G.UrlCarrinho )" class="topLink fbits-link-historicoPedido"><span class="ico"></span>@G.DadosComponente["FBITS:TopLink-Texto-HistoricoPedidos"]</a> 
+			</div>
+			<!--TOP LINKS -->
+			<!--CARRINHO -->
+				@FBITSCarrinho.Add()
+			<!--CARRINHO -->
+		</div>
+	</div>
+	<div class="center">
+		<!--LOGO -->
+		@FBITSLogo.Add()
+		<!--LOGO -->
+
+		<!--LOGIN -->
+		@FBITSLogin.Add()
+		<!--LOGIN -->
+
+		<!--SEARCH -->
+		@FBITSSearch.Add()
+		<!--SEARCH -->
+	</div>
+</div>
+
+<div class="center menu-container">
+  @{Html.RenderAction( "MenuTopo", "Menu" );}
+</div>
+
+@if(Convert.ToBoolean( G.Dados["Search-Barra-Fixa-Ativa"] ))
+{
+  Html.RenderPartial( "HeaderFloating" );
+}

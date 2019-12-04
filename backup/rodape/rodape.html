@@ -1,0 +1,309 @@
+<style>
+
+    .headerLogo {
+        display: inline;
+        width: auto;
+        float: left;
+        margin-top: 5px!important;
+    }
+    /* SLIDESHOW */
+    .fbits-home .slidesjs-pagination { display: table !important; }
+    .slidesjs-pagination { position: absolute; z-index: 10; margin: 0; left: 50%; bottom: 4%; transform: translate(-50%, 0); }
+    .slidesjs-pagination a { width: 14px; height: 14px; background: #9d9ea1 !important; border-radius: 100%; }
+    .slidesjs-pagination .active { background: #5382c2 !important; }
+    
+    /* COMPREJUNTO */
+    #divCompreJunto { }
+    #divCompreJunto .slick-slide { padding: .8% 0; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 { float: left; width: 30%; margin: 0% 0 0 10%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .divFotosProduto { float: left; width: 100%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .divFotosProduto a { display: table; width: 100%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .divFotosProduto a img { display: table; width: 100%; height: auto; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .clear { float: left; width: 100%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .atributo-div { font-size: 11px; text-align: left; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .clear input[id^="item-quantidade"] { width: 100%; padding: 0; text-align: center; }
+    #divCompreJunto .slick-slide .fbits-comprejunto1 .divFotosProduto { }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 { float: right; width: 45%; margin: 0% 10% 0 0; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotRecomendadoText { text-align: left; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotRecomendadoText .nomeRecomendado { float: left; width: 100%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotRecomendadoText .nomeRecomendado a { float: left; width: 100%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotRecomendadoText .nomeRecomendado a .spotTitle { font-size: 11px; text-align: left; float: left; width: 96%; border: none; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento { display: table; width: 100%; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento .left.preco { text-align: left; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento .precoDe { float: left; font-size: 10px; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento .precoPor { float: left; width: auto; font-size: 16px; margin: 5px 0 0 0; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento .precoPor:before { font-size: 10px; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento .precoVista { float: left; width: 100%; line-height: normal; font-size: 10px; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 .spotCompreJuntoPagamento { }
+    #divCompreJunto .slick-slide .fbits-comprejunto3 { float: right; width: 46%; margin: 1% 10% 0 0; }
+    #divCompreJunto .slick-slide .fbits-comprejunto2 { }
+    .divCompreJuntoCarrossel .slick-prev { background: transparent; margin: 0; left: -10px; }
+    .divCompreJuntoCarrossel .slick-prev { }
+    .divCompreJuntoCarrossel .slick-next { background: transparent; margin: 0; right: -10px; }
+    .divCompreJuntoCarrossel .slick-next { }
+    
+        .fbits-home .fbits-banner-centro .slidesjs-previous{
+                display: block!important;
+        }
+        .slidesjs-previous, .slidesjs-next{
+            z-index:1000!important;
+        }
+    </style>
+    <style>
+      .coluna3 .avisoIndisponivel {
+        clear: both;
+    }
+    dl#qtde_desejada {
+        float: left;
+        display: inline;
+        width: 290px;
+        margin: 7px 0 4px 0px;
+        height: 100px;
+    }
+    dl#qtde_desejada dt {
+        color: #058cce;
+        font-size: 11px;
+        display: block;
+        margin-bottom: 4px;
+    }
+      dl#qtde_desejada dd {
+        float: left;
+        display: inline;
+        width: auto;
+        margin: 0 6px 0 0;
+        font-size: 11px;
+    }
+    dl#qtde_desejada dd.input_qtde input {
+        border: 1px solid #abadb3;
+        width: 44px;
+        height: 22px;
+        float: left;
+        line-height: 22px;
+        padding: 0 2px;
+        margin-right: 8px;
+    }
+    dl#qtde_desejada dd.msg_qtde {
+        clear: both;
+        font-size: 11px;
+        color: #db031c;
+        width: 80%;
+        display: block !important;
+    }
+      .addListaDesejos.link-add-lista-produto {
+        clear: both;
+    }
+      
+    .fbits-home .carrosselBg {
+        overflow: initial!important;
+    }
+    .fbits-home h3.titleMarcas {
+        color: #4d4d4d!important;
+        font-weight: bold!important;
+        font-size: 18px!important;
+    }
+    .fbits-home .titleMarcasBg {
+        background: none repeat scroll 0 0 #fff!important;
+        display: block!important;
+        float: initial!important;
+        padding: 0px 10px 0!important;
+        position: absolute!important;
+        top: -13px!important;
+        margin-left: 375px!important;
+    }
+    .fbits-home #carrossel-fabricantes.jcarousel {
+        height: 55px!important;
+        overflow: hidden;
+        margin: 4px 10px 10px 0px!important;
+        width: 1000px!important;
+        padding-top: 23px;
+    }
+      
+    .fbits-home .fbits-carrossel {
+        width: 974px!important;
+    }
+    
+    .fbits-home .carrossel-fabricantes{
+      height: 100px;
+    }  
+      
+    .fbits-home .carrossel-fabricantes .bt-prev-fab {
+        height: 58px!important;
+        left: -45px!important;
+        top: 23px!important;
+    }
+    .fbits-home .carrossel-fabricantes .bt-next-fab {
+        height: 58px!important;
+        right: -45px!important;
+        top: 23px!important;
+    }
+    .fixed-bar .headerSearch {
+        top: 5px!important;
+    }
+      
+    .fbits-home .carrosselBg {
+        margin-top: 45px!important;
+        float: left!important;
+    } 
+    
+    /*Black friday*/
+    .16-off-em-drywall-black .bgResultadosCat {
+        background:yellow !important;
+    }
+    
+    </style>
+    <script>
+     $('.formCadastro>p').after('<span class="ipi">** Alguns produtos estão sujeitos a IPI** </span>');
+    </script>
+    <div class="footer">
+        <div class="footerLinks">
+            <div class="center">
+                <div class="columnLinks columnLinksSmall first">
+                    <ul class="footer-sobrenos">
+                        <li class="title columnHeader">Sobre Nós</li>
+                        <li><a href="/QuemSomos">Quem Somos</a></li>
+                        <li><a href="/PoliticaDePrivacidade">Política de Privacidade</a></li>
+                        <li><a href="http://checkout.artesana.ecommercestore.com.br/Login">Afiliados</a></li>
+                        <li><a href="/NossasLojas">Nossas Lojas</a></li>				
+                    </ul>
+                
+                    <div class="title atendimento-footer columnHeader">Atendimento</div>	
+                    <div class="sacFooter">
+                        <img @LazyLoadExtensions.AdicionarSrc( B.Bal( G.UrlRecursos, "i/sacRodape.png" ), true ) alt="SAC" />
+                        <div class="sacFooter-texto">compre pelo telefone</div>
+                        <div class="sacFoneFooter">@Html.Raw( G.Dados["Contato-TelefoneSAC"] )</div>
+                    </div>
+                    <div class="sacFooter-horario">Seg à Sex das 7:30h - 17:30h</div>
+                    <div class="sacFooter-horario">Sábados das 7:30 ás 12:30</div>
+                </div>
+                
+                <ul class="columnLinks columnLinksSmall">			
+                    <li class="title columnHeader">Ajuda e suporte</li>
+                    <li><a href="/Atendimento">Central de atendimento</a></li>
+                    <li><a href="/TrocaseDevolucoes">Trocas e devoluções</a></li>
+                    <li><a href="/CompraSegura">Compra segura</a></li>
+                    <li><a href="/Entrega">Envio e entrega</a></li>
+                    <li><a href="/ComoComprar">Navegando e comprando</a></li>
+                    <li><a href="/Entrega">Serviços</a></li>
+                    <li><a href="/Atendimento">Fale conosco</a></li>			
+                </ul>
+                
+                <ul class="columnLinks columnLinksWide">
+                    <li class="title small columnHeader">Formas de Pagamento</li>
+                    <li class="formasPagamento replace">Visa, American Express, MasterCard, Visa, Paypal e Discover.</li>
+                    
+                    <li class="title small columnHeader">Certificados de Segurança</li>
+                    <li class="selosFooter">
+                        <span class="selo-seal">
+                            <img alt="Wildcard SSL Certificates" border=0 id="ss_img" src="https://seal.alphassl.com/SiteSeal/images/alpha-ssl-logo.gif" title="SSL Certificate">                    
+                        </span>
+                    
+                    </li>
+                </ul>
+                <div class="columnLinks">				
+                    <div class="fb-like-box" data-href="https://www.facebook.com/artesana.divisorias.forros" data-width="229px" data-height="230px" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+                    <div class="fooAcompanhe">
+                        Acompanhe: 
+                        <span class="fooAcompanheSocial">
+                          <a target="_blank" href="https://www.youtube.com/user/ArtesanaTV">
+                            <img @LazyLoadExtensions.AdicionarSrc( B.Bal( G.UrlRecursos, "i/youTube.png" ), true ) alt="You Tube" />
+                          </a>
+                          <a target="_blank" href="https://twitter.com/_artesana">
+                            <img @LazyLoadExtensions.AdicionarSrc( B.Bal( G.UrlRecursos, "i/twi.png" ), true ) alt="Twitter" />
+                          </a>
+                          <a target="_blank" href="https://www.instagram.com/artesanadivisoriaseforros/">
+                            <img @LazyLoadExtensions.AdicionarSrc( B.Bal( G.UrlRecursos, "i/insta.png" ), true ) alt="Instagram" />
+                          </a>
+                          <a target="_blank" href="http://www.blog.artesana.com.br/">
+                            <img @LazyLoadExtensions.AdicionarSrc( B.Bal( G.UrlRecursos, "i/feed.png" ), true ) alt="Blog" />
+                          </a>
+                        </span>
+                    </div>
+                </div>
+            </div><!-- center -->
+        </div><!-- footerLinks -->
+        <div class="copyright">
+            <div class="center">
+                <address class="fbits-dadosEmpresa">
+                    <span class="razaoSocial" data-nome="Razão Social destaque-dados-empresa">@* @G.Dados["DadosEmpresa-RazaoSocial"] *@ Loja Belenzinho</span>
+                    <span class="endereco" data-nome="Endereço"> | (11) 2797-7444  - <strong>@G.Dados["DadosEmpresa-Endereco"]</strong></span>
+                    <br/>
+                    <span class="razaoSocial" data-nome="Razão Social destaque-dados-empresa">@* @G.Dados["DadosEmpresa-RazaoSocial"] *@ Loja Ipiranga</span>
+                    <span class="bairro" data-nome="Bairro">  | (11) 2066-7444 - <strong>@G.Dados["DadosEmpresa-Bairro"]</strong></span>
+                    <br/>
+                    <span class="razaoSocial" data-nome="Razão Social destaque-dados-empresa">@* @G.Dados["DadosEmpresa-RazaoSocial"] *@ Loja Ceasa</span>
+                    <span class="bairro" data-nome="Bairro">  | (11) 3831-3087 - <strong>CNPJ: 55.010.060/0007-72 | IE: 141.483.888.113 | Rua Hassib Mofarrej, 591 - Vila Leopoldina - São Paulo / SP </strong></span>
+                    <br/>
+                    <span class="razaoSocial" data-nome="Razão Social destaque-dados-empresa">@* @G.Dados["DadosEmpresa-RazaoSocial"] *@ Loja Bonsucesso</span>
+                    <span class="bairro" data-nome="Bairro">  | (11) 2439-9106 / 2438-8599 - <strong>CNPJ: 55.010.060/0008-53 | IE: 796.861.329.119 | Rua Rosa Mafei, 511 - Jardim Fátima - Guarulhos / SP </strong></span>
+                    
+                </address>
+                <div class="centerContent">
+                    <a target="_blank" href="https://www.traycorp.com.br/lp-ecommerce-alta-performance/?utm_source=@(G.NomeEcommerce)-Loja&utm_medium=loja&utm_campaign=RodapeAdmin&utm_term=loja" title="Tray Corp by FBITS"><i class="fstore replace">Tray Corp by FBITS</i></a> 
+                  &copy; TODOS OS DIREITOS RESERVADOS. Eventuais promoções, descontos e prazos de pagamento expostos aqui são válidos apenas para compras <br/>
+                  via internet. As fotos, textos e layout aqui veiculados são de propriedade da Loja. É proibida a utilização total ou parcial sem nossa autorização.
+                </div>
+            </div><!-- center -->
+        </div><!-- copyright -->
+    </div><!-- footer -->
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=328086843983989&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    
+    
+    <script>
+    $( document ).ready(function(){
+      $("#EnviaFormulario").validate({
+                rules: {
+                    Cargo: "required",
+                    Nome: {
+                        required: true,
+                        minlength: 3
+                    },
+                    Email: {
+                        required: true,
+                        email: true
+                    },
+                    Telefone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    comentarios: {
+                        required: true,
+                        minlength: 3
+                    }
+                },
+                messages: {
+                    Cargo: "Por favor, selecione o cargo.",
+                    Email: "Por favor, digite um e-mail válido.",
+                    Nome: {
+                        required: "Por favor, digite o nome",
+                        minlength: "Seu nome tem que ter, no mínimo, 2 caracteres."
+                    },
+                    Telefone: {
+                        required: "Por favor, digite o telefone",
+                        minlength: "Seu nome tem que ter, no mínimo, 10 caracteres."
+                    },
+                    comentarios: {
+                        required: "Por favor, digite um comentário",
+                        minlength: "Seu comentário tem que ter, no mínimo, 3 caracteres."
+                    }
+                    
+                }
+        });
+    });  
+    </script>
+    
+    
+    @Html.Partial( "_ViewSwitcher" )
+    @Zanox.InsertScript( Convert.ToBoolean( G.Dados["ZanoxAtivo"] ) )
+    
+    @*//TODO:2.2*@
+    <div id="headerLoginMaster"></div>
+    

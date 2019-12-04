@@ -1,0 +1,334 @@
+<style>
+    #frase-ipi{
+       display:none;
+    }
+    #divCompreJunto .slick-slide .fbits-comprejunto3 {
+      float: right;
+      width: 46%;
+      margin: 2% 10% 0 0 !important;
+  }
+  dl#qtde_desejada dd {
+      float: left;
+      display: inline;
+      width: auto;
+      margin: 15px 6px 0 0 !important;
+      font-size: 11px;
+  }
+  
+  #divCompreJunto .precoParcela{
+      display: none;
+  }
+  </style>  
+  <div class="interna cf">
+      @Html.Partial( "BreadCrumb", Model )
+  
+      @*Microdata de produto*@
+      <div itemscope itemtype="http://schema.org/Product">
+          <div id="produto-item-@itemId">
+              @*--> Coluna 1*@
+              <div id="imagem-pagina-produto" class="colunaProduto coluna1">
+                  <div id="produto-imagem-@Model.ProdutoId" class="produto-imagem-eazyZoom" data-fancybox="True">
+                      @{ViewBag.URLVideo = Model.URLVideo ?? "";}
+  
+                      @Html.Partial( "Componentes/Produto/FBITSImagem", new Fbits.Plataforma.Model.ViewModel.FBITSProdutoComponenteViewModel { ProdutoViewModel = Model, Configuracoes = new Dictionary<string, string> { } } )
+                      @Html.Partial( "Componentes/Produto/FBITSImagemVarianteThumb", new Fbits.Plataforma.Model.ViewModel.FBITSProdutoComponenteViewModel { ProdutoViewModel = Model, Configuracoes = new Dictionary<string, string> { } } )
+                  </div>
+              </div>
+              @*--> Coluna 2*@
+              <h1 id="produto-nome-@Model.ProdutoId" class="prodTitle title" itemprop="name">@Model.VariantePrincipal.Nome</h1>
+              @{Html.RenderPartial( "FabricanteLogo", Model.Fabricante );}
+              <div class="produtoInfo colunaProduto coluna2">
+                  
+                  <div class="sku">SKU @Model.VariantePrincipal.SKU</div>
+                      
+                  @if(Model.Avaliacao != null)
+                  {
+                      @Html.Partial( "AvaliacaoProduto", Model.Avaliacao )
+                  }
+  
+                  @Html.Partial( "DadosLivro", Model )
+  
+                  @*COMPONENTE DE MATRIZ DE ATRIBUTOS*@
+                  @{Html.RenderPartial( "Componentes/Produto/FBITSMatrizAtributos", componenteModel );}
+                  @*COMPONENTE DE MATRIZ DE ATRIBUTOS*@
+  
+                  @if(!Model.IsMatrizAtributos)
+                  {
+                      
+                      
+                      <div class="prodVariante">
+                          <div id="dvGrupoSelecaoAtributos-0">
+                              @{
+                      Html.RenderPartial( "Produto/OpcoesCombo", Model ); //Transformar em componente.
+                      Html.RenderPartial( "Produto/CombinacaoInexistente", Model.VariantePrincipal );  
+                              }
+                              
+                          </div>
+                      </div>
+                  }
+                  
+                  
+                  @if(Model.ParcelamentoPadrao != null)
+                  {
+                      string classe = "";
+                      if(Model.VariantePrincipal.Assinatura != null && Model.VariantePrincipal.Assinatura.SomenteAssinatura)
+                      {
+                          classe = "hide";
+                      }
+                      <div id="produto-pagamentoparcelamento-@Model.ProdutoId" class="prodVariante @classe">
+                          @{Html.RenderPartial( "ParcelamentoPadrao", Model.ParcelamentoPadrao );}
+                      </div>
+                  }
+                  <FBITS:EtiquetaAtacado />
+                  @{
+                      if(CalculaFretePaginaProdutoAtivo && Convert.ToInt16( G.Dados["Tipo-Exibicao-Frete-Pagina-Produto"] ) == 1)
+                      {
+                     
+                      <div id="formulario-buscar-frete" class="forminline">
+                          <div id="ulFrete" class="carrinhoTxtBlock">
+                              <div id="cepCarrinho" class="details carrinhoInputBlock">
+                                  <div class="summary">Consulte frete e prazo de entrega</div>
+                                  <div class="details-content">
+                                      <label class="simule">
+                                          Simule o frete e o<br />c
+                                          prazo de entrega:
+                                      </label>@Html.TextBox( "txtCalculaFreteProduto", null, htmlAttributes: new { id = "txtCalculaFreteProduto", @class = "input" } )
+                                      <input type="button" class="btnCalculaFreteProduto btnCalcular bt " value="Ok" />
+                                      <br />
+                                      <a id="naoSeiCep" class="helpCep" rel="fancybox" href="../Validacao/BuscaCep">Não sabe o CEP?</a>
+                                      <div class="errosFrete error">
+                                      </div>
+                                      <div class="resultado-frete">
+                                          <div id="valorFrete"></div>
+                                          <div class="frete-prazo"><span id="prazoFreteTexto"></span></div>
+                                      </div>
+                                  </div>
+  
+                              </div>
+                          </div>
+                      </div>
+                      }
+                  }
+                  <div class="share">
+                      <div class="shareFacebook" data-facebook-share="true">
+                          <a target="_blank" href="http://www.facebook.com/sharer.php?u=@urlProduto" class="icon replace preSocialF">Compartilhar no Facebook</a>
+                      </div>
+                      <div class="shareTwitter" data-twitter-share="true">
+                          <a target="_blank" href="http://twitter.com/share?url=@urlProduto" class="icon replace preSocialT">Compartilhar no Twitter</a>
+                      </div>
+                  </div>
+  
+                  <div class="acoesProd">
+                      <a href="#divIndicacaoAmigo" id="indicaAmigo"><i class="indicar icon"></i>Indique este produto</a>
+                  </div>
+                @*
+                 @if(Model.ValorReferente != null)
+                  {
+                      <span id="spnValorReferente" class="alert">
+                          @Html.Raw( Model.ValorReferente )
+                      </span> 
+                  }
+                  *@
+  
+                
+    <p>
+      <strong>
+        <span style="color:#ff0000;">
+          <span style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12.3000001907349px; font-weight: bold;">*Produtos sujeitos a substituição tributária de acordo com a legislação do estado de origem</span>
+          </span>
+       </strong>
+     </p>
+     
+      <p id="frase-vr">
+      <strong>
+        <span style="color:#ff0000;">
+          <span style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12.3000001907349px; font-weight: bold;"><FBITS:ValorReferente /></span>
+          </span>
+       </strong>
+     </p> 
+     
+      <p id="frase-ipi">
+      <strong>
+        <span style="color:#ff0000;">
+          <span style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12.3000001907349px; font-weight: bold;">** Este produto possui IPI**</span>
+          </span>
+       </strong>
+     </p> 
+    
+                
+                
+              </div>
+               
+              @*--> Coluna 3*@
+  
+              <div class="colunaProduto coluna3">
+                  @*COMPONENTE DE PREÇO OFF*@
+                  
+                  @{Html.RenderPartial( "Componentes/Produto/FBITSPrecoOff", componenteModel );}
+              
+                 
+                  @*COMPONENTE DE MATRIZ DE ATRIBUTOS*@
+              
+                  
+                  <div id="produto-variante-@itemId">
+                      @{Html.RenderPartial( "ProdutoVariante" );}
+                  </div>  
+                  @if(!Model.Televendas)
+                  {
+                      if(Model.IsMatrizAtributos)
+                      {
+                          linkListaDesejos = string.Format( "link-lista-de-desejos-produto-{0}", Model.ProdutoId );
+                      <a href="javascript: addProdutoLista(@Model.ProdutoId)" id="@(linkListaDesejos)" class="addListaDesejos link-add-lista-produto"><i class="iWish icon"></i>Adicionar à lista de desejos</a>
+                      }
+                      else
+                      {
+                      <a href="#" id="@(linkListaDesejos)" class="addListaDesejos link-add-lista-produto">
+                          <i class="iWish icon"></i>Adicionar à lista de desejos</a>
+                      }
+                  }
+  
+                  @if(Convert.ToBoolean( G.Dados["PopUp-Adicionar-Carrinho"] ) && !Model.IsMatrizAtributos)
+                  {
+                      <input type="button" value="Adicionar à cesta" id="produto-botao-adicionar-carrinho-@Model.ProdutoId" class="bt addCarrinho" /><FBITS:AlertaValores />
+                  }
+                  
+                  @{
+                      if(CalculaFretePaginaProdutoAtivo && Convert.ToInt16( G.Dados["Tipo-Exibicao-Frete-Pagina-Produto"] ) == 2)
+                      {
+                      <div class="freteProdutoLista fbits-elemento-aberto" data-elemento-tipoproduto="produtoNormal">
+                          <div class="carrinhoTxtBlock">
+                              <div class="details carrinhoInputBlock">
+                                  <div class="summary">Consulte frete e prazo de entrega</div>
+                                  <label class="simule">
+                                      Digite seu CEP: 
+                                  </label>@Html.TextBox( "txtCalculaFreteProduto", null, htmlAttributes: new { id = "txtCalculaFreteProduto", @class = "input" } )
+                                  <input type="button" class="btnCalculaFreteProduto btnCalcular bt " value="Ok" />
+                                  <br />
+                                  <a id="naoSeiCep" class="helpCep" rel="fancybox" href="../Validacao/BuscaCep">Não sabe o CEP?</a>
+                                  <div class="errosFrete error">
+                                  </div>
+                                  <span class="resultado-frete"></span>
+                              </div>
+                          </div>
+                      </div>
+                      }
+                  }
+                  
+              </div>
+              
+              <div style="position: relative; top: -276px;float: right;right: 290px" class="produtoInfo colunaProduto coluna2">
+                  <FBITS:CompreJunto tipo="Carrossel" />
+              </div>
+              
+              @if(Model.Prescricao != null && Model.Prescricao.ProdutoId != 0)
+              {
+                  @Html.Partial( "Prescricao", Model.Prescricao )
+              }
+  
+              <div id="fbits-produto-promocao-divulgacao">
+                  @if(Model.PromocaoDivulgacao != null && Model.PromocaoDivulgacao.Count( x => x.TipoDivulgacao == Fbits.Plataforma.Model.Enums.TipoDivulgacao.Pagina_Produto ) > 0)
+                  {
+                      @Html.Partial( "Produto/PromocaoDivulgacao", Model.PromocaoDivulgacao )
+                  }
+              </div>
+          </div>
+          <div class="fbits-produto-informacoes-extras">
+              @if(Model.CoresModelo.Count > 0)
+              {
+                  @Html.Partial( "CoresProduto", Model.CoresModelo )
+              }
+              @if(Model.GrupoProdutosRelacionados.Count > 0)
+              {
+                  @Html.Partial( "GrupoProdutosRelacionados", Model )
+              }
+  
+              @if(Model.Informacoes.Count() > 0)
+              {
+                  if(G.TipoExibicaoInformacaoProduto == Fbits.Plataforma.Model.Enums.TipoExibicaoInformacaoProduto.Padrao)
+                  {
+                      foreach(var item in Model.Informacoes)
+                      {
+                          Html.RenderPartial( "Informacao", item );
+                      }
+                  }
+                  else if(G.TipoExibicaoInformacaoProduto == Fbits.Plataforma.Model.Enums.TipoExibicaoInformacaoProduto.Abas)
+                  {
+                  <div class="informacao-abas" id="tp1">
+                      <ul>
+                          @foreach(var item in Model.Informacoes.Select( ( x, i ) => new { Value = x, Index = i } ))
+                          {
+                              <li>
+                                  <a href="#conteudo-@item.Index">
+                                      <h3 class="titleBox">@Html.Raw( item.Value.Titulo )</h3>
+                                  </a>
+                              </li>     
+                          }
+                      </ul>
+                      @foreach(var item in Model.Informacoes.Select( ( x, i ) => new { Value = x, Index = i } ))
+                      {
+                          <div id="conteudo-@item.Index">
+                              @{
+                          Html.RenderPartial( "InformacaoAbas", item.Value );
+                              }
+                          </div>
+                      }
+                  </div>
+                  }
+              }
+          </div>
+          <div class="avaliacao-Produto" id="avaliacao-Produto">
+              @if(Model.Avaliacao.Reviews.TotalItemCount > 0)
+              {
+                  @Html.Partial( "ListaAvaliacaoProduto", Model.Avaliacao )
+              }
+          </div>
+      </div>
+      @Html.Partial( "Carrossel" )
+      <a id="avaliarProduto" name="avaliarProduto"></a>
+      <a id="divIndicacaoAmigo" name="divIndicacaoAmigo"></a>
+      @Html.Partial( "IndicacaoAmigo" )
+      @Html.Partial( "AvaliarProduto" )
+  </div>
+  <div class="clear"></div>
+  
+  <script>
+  
+   
+  $(document).ready(function() {  
+    var cars =['65597','66556','65573','65574','65576','65577','65579','65575','65581','65580','66557','65578','66558','66386','66560','66583'];
+    var url = window.location.href.toString();
+    var arrUrl = url.split('-');
+    var ultimoElemento = arrUrl[arrUrl.length - 1];
+    if($.inArray(ultimoElemento,cars) !== -1 ){
+      $("#frase-ipi").css('display','block');
+    }else{
+      $("#frase-ipi").css('display','none');
+    }  
+  });
+  
+  function removeGratis(){
+      $("#opcoes-frete .valor").each(function(){
+          if($(this).html().indexOf("Frete") != -1){
+             //$(this).parent().next().html("Após 3 dias úteis");
+             $(this).parent().html("");
+             
+          }
+      });
+  }
+  
+  $(".btnCalculaFreteProduto").click(function(){
+      setTimeout("removeGratis()",300);
+      setTimeout("removeGratis()",500);
+      setTimeout("removeGratis()",1000);
+      setTimeout("removeGratis()",1500);
+      
+  });
+  
+  </script> 
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  
+  
+  @Html.RecursosCSS( "jquery.sliderTabs.min.css" )
+  @Html.RecursosJS( "fbits.produto.calculafrete.js", "jquery.maskedinput-1.3.min.js" )
+  
