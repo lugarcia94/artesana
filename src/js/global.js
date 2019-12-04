@@ -11,7 +11,6 @@ $(document).ready(function() {
             const element = Fbits.Produto.ProdutoVariante[i];
         }
     }
-    console.log(productVariant);
 
     var settings = {
         async: true,
@@ -32,12 +31,13 @@ $(document).ready(function() {
         //Verifica o retorno
 
         if (response) {
-            console.log("resposta: ", response);
+            var checkin = 0;
             for (const _i in response.atributos) {
                 if (response.atributos.hasOwnProperty(_i)) {
                     const element = response.atributos[_i];
                     if (element.nome === "idGetProduct") {
-                        console.log("Primeira resposta: ", element);
+                        checkin++;
+
                         const variantreturno = element.valor;
 
                         var resProdSku = variantreturno,
@@ -77,7 +77,7 @@ $(document).ready(function() {
                                     infsProd.precoPor
                                 );
                             desconto = desconto.toFixed();
-                            console.log("Informação do produto: ", infsProd);
+                            //console.log("Informação do produto: ", infsProd);
 
                             var imageseting = {
                                 async: true,
@@ -105,7 +105,6 @@ $(document).ready(function() {
                                                 '<div class="tool__image"><img src="' +
                                                 objimage.url +
                                                 '"></div>';
-                                            console.log("Resimage: ", figure);
                                         }
                                     }
                                 }
@@ -163,9 +162,22 @@ $(document).ready(function() {
                                     $(".tool__product-list").slick({
                                         slidesToShow: 4,
                                         slidesToScroll: 1,
-                                        autoplay: true,
-                                        autoplaySpeed: 5000,
-                                        arrows: true
+                                        infinite: false,
+                                        arrows: true,
+                                        responsive: [
+                                            {
+                                                breakpoint: 768,
+                                                settings: {
+                                                    slidesToShow: 2
+                                                }
+                                            },
+                                            {
+                                                breakpoint: 480,
+                                                settings: {
+                                                    slidesToShow: 2
+                                                }
+                                            }
+                                        ]
                                     });
                                 }
                                 function destroyCarousel() {
@@ -185,6 +197,9 @@ $(document).ready(function() {
                         });
                     }
                 }
+            }
+            if (checkin == 0) {
+                $(".container__list-atributo").hide();
             }
         }
     });
@@ -269,6 +284,7 @@ $(document).ready(function() {
      */
     $(document).on("click", ".tool_js-addToCart", function() {
         var _dominio = "localhost:4000", //Dominio da loja Trocar para window.location.host
+            _dominio2 = "2bdigital.checkout.ecommercestore.com.br",
             _produtoVarianteId = "";
         for (const id in ListProdsTool) {
             if (ListProdsTool.hasOwnProperty(id)) {
@@ -280,13 +296,46 @@ $(document).ready(function() {
                 }
             }
         }
-        var url =
-            "http://checkout." + _dominio + "/incluir?" + _produtoVarianteId;
+        var url = "http://" + _dominio + "/incluir?" + _produtoVarianteId;
         console.log(url);
 
-        fetch(url, { method: "GET" }).then(function(res) {
-            console.log(res);
+        var myHeaders = new Headers({
+            Accept: "application/json",
+            Authorization: "Basic 2BDig-8dea632a-a11a-4f95-8705-37fe92031c3e",
+            "cache-control": "no-cache",
+            "Access-Control-Allow-Origin": "*"
         });
+
+        $.ajax({
+            url: url,
+            headers: {
+                Authorization:
+                    "Basic 2BDig-8dea632a-a11a-4f95-8705-37fe92031c3e",
+                "Access-Control-Allow-Origin": "*",
+                "access-control-allow-credentials": true,
+                "Access-Control-Allow-Headers": "Content-Type"
+            },
+            method: "GET",
+            success: function(data) {
+                console.log("succes: " + data);
+            }
+        });
+
+        /* $.get(
+            url,
+            "",
+            function(data, textStatus, jqXHR) {
+                console.log(res);
+            },
+            "dataType"
+        ); */
+
+        /* fetch(url, {
+            method: "GET",
+            headers: myHeaders
+        }).then(function(res) {
+            console.log(res);
+        }); */
 
         $(".tool__product-item").removeClass("select");
         $(".tool__js-addtoList").removeClass("ins");
