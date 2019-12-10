@@ -694,26 +694,26 @@ $(document).ready(function() {
     }
 });
 
-$(document).ajaxComplete(function(event, xhr, settings) {
-    if (settings.url.indexOf("CadastroNews") >= 0) {
-        $(".popUp-News input#modal-Nome").attr("placeholder", "Seu nome aqui");
-        $(".popUp-News input#modal-Email").attr(
-            "placeholder",
-            "Seu e-mail aqui"
-        );
-        $(".popUp-News input#btnCadastrarNews").attr("value", "QUERO GANHAR!");
-    }
-    $("input.inputSearch[type='text']").attr(
-        "placeholder",
-        "O que você esta buscando?"
-    );
+// $(document).ajaxComplete(function(event, xhr, settings) {
+//     if (settings.url.indexOf("CadastroNews") >= 0) {
+//         $(".popUp-News input#modal-Nome").attr("placeholder", "Seu nome aqui");
+//         $(".popUp-News input#modal-Email").attr(
+//             "placeholder",
+//             "Seu e-mail aqui"
+//         );
+//         $(".popUp-News input#btnCadastrarNews").attr("value", "QUERO GANHAR!");
+//     }
+//     $("input.inputSearch[type='text']").attr(
+//         "placeholder",
+//         "O que você esta buscando?"
+//     );
 
-    if ($(".conteudoAbasProduto .price__none").length) {
-        $(".conteudoAbasProduto .price__none").appendTo(
-            $(".product__details-topo")
-        );
-    }
-});
+//     if ($(".conteudoAbasProduto .price__none").length) {
+//         $(".conteudoAbasProduto .price__none").appendTo(
+//             $(".product__details-topo")
+//         );
+//     }
+// });
 
 if ($(window).width() < 992) {
     $(".full__banner-list").slick({

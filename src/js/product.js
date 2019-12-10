@@ -257,12 +257,12 @@ define(['jquery', 'slick-carousel'], ($) => {
         scrollFixed();
     }
 
-    $fbits(document).ajaxComplete((evt, xhr, settings) => {
-        // Atualiza Produto
-        if(settings.url.indexOf('AtualizarProduto') !== -1) {
-            $(document).trigger('UPDATE:PRODUCT', JSON.parse(xhr.responseText));
-            $('#fbits-forma-pagamento .product__boleto').remove();
-            $('.product__boleto').clone().appendTo($('#fbits-forma-pagamento'));
-        }
-    });
+    // $fbits(document).ajaxComplete((evt, xhr, settings) => {
+    //     // Atualiza Produto
+    //     if(settings.url.indexOf('AtualizarProduto') !== -1) {
+    //         $(document).trigger('UPDATE:PRODUCT', JSON.parse(xhr.responseText));
+    //         $('#fbits-forma-pagamento .product__boleto').remove();
+    //         $('.product__boleto').clone().appendTo($('#fbits-forma-pagamento'));
+    //     }
+    // });
 });
