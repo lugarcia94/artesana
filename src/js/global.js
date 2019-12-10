@@ -1,5 +1,43 @@
 $(document).ready(function() {
     /**
+     * Calculadora
+     */
+
+    $(document).on("keypress", ".calc-qtd > input", function() {
+        var valcub = $(this).val();
+
+        calccubagem(valcub);
+    });
+
+    function calccubagem(valsom) {
+        //Pegar cubagem
+        var apiCubagemprod = Fbits.Produto.ProdutoVariante;
+
+        for (const cv in apiCubagemprod) {
+            if (apiCubagemprod.hasOwnProperty(cv)) {
+                const element = apiCubagemprod[cv];
+                apiCubagemprod = element;
+            }
+        }
+
+        console.log(apiCubagemprod.CubagemMetroQuadrado);
+
+        //pegar metragem do input
+        var valmult = valsom;
+
+        //multiplicar cubagem por valor do input
+        var resfunc = apiCubagemprod.CubagemMetroQuadrado / valmult;
+
+        //printar quantidade de caixa
+        if (resfunc) {
+            $(".unid-calc").html(resfunc);
+        } else {
+            $(".unid-calc").html("indisponível");
+        }
+        console.log(resfunc);
+    }
+
+    /**
      * Ferramenta de carrinho
      */
     var toolContainer = $(".tool__product-list"),
@@ -283,7 +321,7 @@ $(document).ready(function() {
      * Tool add to Cart
      */
     $(document).on("click", ".tool_js-addToCart", function() {
-        var _dominio = "localhost:4000", //Dominio da loja Trocar para window.location.host
+        var _dominio = "localhost:3000", //Dominio da loja Trocar para window.location.host
             _dominio2 = "2bdigital.checkout.ecommercestore.com.br",
             _produtoVarianteId = "";
         for (const id in ListProdsTool) {
@@ -296,7 +334,7 @@ $(document).ready(function() {
                 }
             }
         }
-        var url = "http://" + _dominio + "/incluir?" + _produtoVarianteId;
+        var url = "https://" + _dominio2 + "/incluir?" + _produtoVarianteId;
         console.log(url);
 
         var myHeaders = new Headers({
