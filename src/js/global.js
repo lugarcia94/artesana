@@ -16,7 +16,9 @@ $(document).ready(function() {
         for (const cv in apiCubagemprod) {
             if (apiCubagemprod.hasOwnProperty(cv)) {
                 const element = apiCubagemprod[cv];
-                apiCubagemprod = element;
+                if (element.ProdutoId == Fbits.Produto.ProdutoId) {
+                    apiCubagemprod = element;
+                }
             }
         }
 
@@ -26,15 +28,15 @@ $(document).ready(function() {
         var valmult = valsom;
 
         //multiplicar cubagem por valor do input
-        var resfunc = apiCubagemprod.CubagemMetroQuadrado / valmult;
+        var resfunc = valmult / apiCubagemprod.CubagemMetroQuadrado;
 
         //printar quantidade de caixa
-        if (resfunc) {
-            $(".unid-calc").html(resfunc);
+        if (resfunc || resfunc.toFixed() != "Infinity") {
+            $(".unid-calc").html(resfunc.toFixed());
         } else {
             $(".unid-calc").html("indisponível");
         }
-        console.log(resfunc);
+        console.log(resfunc.toFixed());
     }
 
     /**
