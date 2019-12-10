@@ -113,9 +113,14 @@
             align-items: center
             height: 40px !important;
             min-height: initial !important
+            &.menu-geral
+                max-width initial !important
             &:hover
                 ul.filho
-                    display flex
+                    display: none
+                a 
+                    &:after
+                        display none
             &.ultimo
                 width: 88px !important
                 display: flex
@@ -274,8 +279,13 @@
                     min-height: 30px
             &.todas-categorias
                 position: static
+                max-width: 220px !important;
+                width: initial !important;
                 &:hover
                     background-color: #fff !important
+                    a
+                        &:after
+                            display block
                     .todas-categorias
                         background-color: #fff !important
                     ul.filho
@@ -306,18 +316,19 @@
                         z-index 1
                         border-right: 1px solid #cecece
                     li.item
-                        height: 30px !important;
+                        height: 40px !important;
                         min-height: initial !important;
                         padding-bottom: 0 !important;
                         position: initial;
                         padding 0px 15px !important
-                        width: 220px !important;
+                        width: 100% !important;
                         min-width: 210px !important;
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCI+PGcgaWQ9Imljb21vb24taWdub3JlIj48L2c+PHBhdGggZmlsbD0iIzdmN2Y3ZiIgZD0iTTI3NC45NzEgMTAuMjMybC01MS4yOTUgNTEuMjk5Yy02Ljg1IDYuODM2LTEwLjI2NCAxNC43MS0xMC4yNjQgMjMuNjEyIDAgOC44OCAzLjQxNCAxNi43NTEgMTAuMjY0IDIzLjU4N2w0MDMuMjQ0IDQwMy4yNjUtNDAzLjIzMyA0MDMuMjQ3Yy02Ljg1IDYuODM5LTEwLjI2NCAxNC43MS0xMC4yNjQgMjMuNjAxIDAgOC44OTUgMy40MTQgMTYuNzY1IDEwLjI2NCAyMy42MDFsNTEuMjk5IDUxLjI5MmM2LjgzNiA2Ljg1IDE0LjcwNiAxMC4yNjQgMjMuNjAxIDEwLjI2NCA4Ljg4OCAwIDE2Ljc1OC0zLjQyNSAyMy41OTQtMTAuMjY0bDQ3OC4xNTEtNDc4LjE0YzYuODM5LTYuODM2IDEwLjI1Ny0xNC43MSAxMC4yNTctMjMuNjAxcy0zLjQxOC0xNi43NTEtMTAuMjU3LTIzLjU4M2wtNDc4LjE1MS00NzguMThjLTYuODM5LTYuODM2LTE0LjcxLTEwLjIzMi0yMy41OTQtMTAuMjMyLTguODk1IDAtMTYuNzY1IDMuMzk2LTIzLjYxNSAxMC4yMzJ6Ij48L3BhdGg+PC9zdmc+');
                         background-repeat: no-repeat;
                         background-position-x: 95%;
                         background-position-y: 8px
                         background-size: 12px;
+                        margin: 0
                         a
                             font-size 13px
                             font-weight: 400 !important
@@ -326,6 +337,8 @@
                             height: 30px !important;
                             display: flex;
                             align-items: center;
+                            line-height: 15px;
+                            height: 40px !important;
                         &:hover
                             background-color: #e6e6e6 !important
                             ul.filho
@@ -336,7 +349,7 @@
                             position: absolute !important;
                             top: 0 !important;
                             background-color: #fff !important;
-                            right: -300px !important;
+                            right: -290px !important;
                             height: fit-content !important;
                             padding: 15px 40px !important;
                             min-width 300px !important
@@ -511,7 +524,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    padding-left: 20px
+                    padding-left: 25px
                     @media(max-width : 1300px)
                         padding-left: 30px
                 &:after 
