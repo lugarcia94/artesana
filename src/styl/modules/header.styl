@@ -122,7 +122,7 @@
         transition: .3s
         @media(max-width: 991px)
             .menu-nav
-                flex: 0 1 250px !important
+                flex: 0 1 100% !important
                 ul.menu
                     > li.item.todas-categorias
                         display: none !important
@@ -137,7 +137,7 @@
                     color: #e58822 !important
                     background-color: transparent !important
         .menu-nav
-            flex: 0 1 770px
+            flex: 0 1 850px
             @media(max-width: 1299px)
                 flex: 0 1 640px
         &-right
@@ -280,20 +280,19 @@
                     .textloginp.usuario_nao_identificado
                         display flex
                         flex-wrap: wrap
-                        font-size: 0
+                        font-size: 12px
+                        text-transform: initial
+                        width: 80px;
                         span 
                             display: block
                             text-transform: initial
-                            &:before    
-                                content: 'Olá,'
-                                margin-right 5px
-                            &:after    
-                                content: 'Entrar'
-                                display block
-                                font-size: 16px;
-                                font-weight: 800;
-                                line-height: 8px;
-                                letter-spacing: 1px
+                        &:after    
+                            content: 'Entrar'
+                            display block
+                            font-size: 16px;
+                            font-weight: 800;
+                            line-height: 8px;
+                            letter-spacing: 1px
         .ico-carrinho,
         .carrinhoHead
             width: 190px !important

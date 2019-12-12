@@ -95,7 +95,7 @@
                     max-width: 70px !important
                     a
                         font-size: 12px !important
-                &:nth-child(5)
+                &:nth-child(n+5)
                     display none !important
                 &:nth-child(6)
                     display none !important
@@ -114,7 +114,7 @@
             height: 40px !important;
             min-height: initial !important
             &.menu-geral
-                max-width initial !important
+                max-width 110px !important
             &:hover
                 ul.filho
                     display: none
@@ -137,7 +137,7 @@
             > a
                 color $cor01 !important
                 padding 0 !important
-                font-size: 14px !important
+                font-size: 12px !important
                 font-weight: 500 !important
                 height: 40px !important;
                 text-transform initial !important
@@ -524,7 +524,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    padding-left: 25px
+                    padding-left: 45px
                     @media(max-width : 1300px)
                         padding-left: 30px
                 &:after 
@@ -532,7 +532,7 @@
                     display: inline-block;
                     width: 10px;
                     height: 10px;
-                    margin-left: 5px;
+                    margin-right: 5px
                     background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDA4MGM3IiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjg0LjkyOXB4IiBoZWlnaHQ9IjI4NC45MjlweCIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTI4Mi4wODIsNzYuNTExbC0xNC4yNzQtMTQuMjczYy0xLjkwMi0xLjkwNi00LjA5My0yLjg1Ni02LjU3LTIuODU2Yy0yLjQ3MSwwLTQuNjYxLDAuOTUtNi41NjMsMi44NTZMMTQyLjQ2NiwxNzQuNDQxTDMwLjI2Miw2Mi4yNDFjLTEuOTAzLTEuOTA2LTQuMDkzLTIuODU2LTYuNTY3LTIuODU2Yy0yLjQ3NSwwLTQuNjY1LDAuOTUtNi41NjcsMi44NTZMMi44NTYsNzYuNTE1QzAuOTUsNzguNDE3LDAsODAuNjA3LDAsODMuMDgyYzAsMi40NzMsMC45NTMsNC42NjMsMi44NTYsNi41NjVsMTMzLjA0MywxMzMuMDQ2YzEuOTAyLDEuOTAzLDQuMDkzLDIuODU0LDYuNTY3LDIuODU0czQuNjYxLTAuOTUxLDYuNTYyLTIuODU0TDI4Mi4wODIsODkuNjQ3YzEuOTAyLTEuOTAzLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY1QzI4NC45MjksODAuNjA3LDI4My45ODQsNzguNDE3LDI4Mi4wODIsNzYuNTExeiIvPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=');
                     background-repeat: no-repeat;
                     background-position: center;
@@ -713,3 +713,7 @@ button.btn-close-menu-mobile
                 background-repeat: no-repeat
                 background-size: 25px
                 border-radius 50px  
+
+@media(min-width: 1300px)
+    .top-icons.icons-right .ico-carrinho:hover section.submenu-carrinho
+        display: none !important
