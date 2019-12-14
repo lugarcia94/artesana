@@ -51,8 +51,14 @@ $(document).ready(function() {
 
         //printar quantidade de caixa
         if (valpercentremove || valpercentremove.toFixed() != "Infinity") {
-            $(".unid-calc").html(valpercentremove.toFixed());
-            $(".qtdProduto").val(valpercentremove.toFixed());
+            var intVal;
+            if (valpercentremove.toFixed() < 1) {
+                intVal = 1;
+            } else {
+                intVal = valpercentremove.toFixed();
+            }
+            $(".unid-calc").html(intVal);
+            $(".qtdProduto").val(intVal);
         } else {
             $(".unid-calc").html("indisponível");
         }
